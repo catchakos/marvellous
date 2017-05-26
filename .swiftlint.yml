@@ -1,0 +1,10 @@
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+line_length: 200 
+force_cast: warning
+type_name:
+  min_length: 4 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
