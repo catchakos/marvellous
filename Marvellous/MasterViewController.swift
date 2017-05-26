@@ -24,6 +24,14 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        let request = CharactersRequest()
+        let apiHandler = MarvelApiHandler()
+        let parser = MarvelParser()
+        
+        apiHandler.get(request) { (json, error) in
+            parser.parse()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -19,5 +19,101 @@
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marvellous/MarvelApiHandler.swift"
+            timestampString = "517526584.556866"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "get(_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marvellous.MarvelApiHandler.(get (Marvellous.MarvelApiRequest, completion : (Swift.Optional&lt;SwiftyJSON.JSON&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Marvellous"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexandroskatsaprakakis/Marvellous/Marvellous/MarvelApiHandler.swift"
+                  timestampString = "517526634.3326"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "491">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marvellous.MarvelApiHandler.(get (Marvellous.MarvelApiRequest, completion : (Swift.Optional&lt;SwiftyJSON.JSON&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Marvellous"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexandroskatsaprakakis/Marvellous/Marvellous/MarvelApiHandler.swift"
+                  timestampString = "517526634.335505"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "875">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marvellous/MarvelApiHandler.swift"
+            timestampString = "517526625.294123"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "get(_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marvellous.MarvelApiHandler.get (Marvellous.MarvelApiRequest, completion : (Swift.Optional&lt;SwiftyJSON.JSON&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Marvellous"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexandroskatsaprakakis/Marvellous/Marvellous/MarvelApiHandler.swift"
+                  timestampString = "517526634.348697"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "393">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marvellous.MarvelApiHandler.(get (Marvellous.MarvelApiRequest, completion : (Swift.Optional&lt;SwiftyJSON.JSON&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Marvellous"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexandroskatsaprakakis/Marvellous/Marvellous/MarvelApiHandler.swift"
+                  timestampString = "517526634.351102"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

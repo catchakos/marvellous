@@ -18,6 +18,10 @@
 		ACF0AAC01ED8B41000301B0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF0AABE1ED8B41000301B0C /* LaunchScreen.storyboard */; };
 		ACF0AACB1ED8B41000301B0C /* MarvellousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AACA1ED8B41000301B0C /* MarvellousTests.swift */; };
 		ACF0AAD61ED8B41000301B0C /* MarvellousUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAD51ED8B41000301B0C /* MarvellousUITests.swift */; };
+		ACF0AAEE1ED8C50500301B0C /* MarvelApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAED1ED8C50500301B0C /* MarvelApiHandler.swift */; };
+		ACF0AAF01ED8C67F00301B0C /* Cryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAEF1ED8C67F00301B0C /* Cryptor.swift */; };
+		ACF0AAF41ED8C96100301B0C /* MarvelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAF31ED8C96100301B0C /* MarvelParser.swift */; };
+		ACF0AAF61ED8D13F00301B0C /* CharactersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAF51ED8D13F00301B0C /* CharactersRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		ACF0AAD11ED8B41000301B0C /* MarvellousUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvellousUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF0AAD51ED8B41000301B0C /* MarvellousUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvellousUITests.swift; sourceTree = "<group>"; };
 		ACF0AAD71ED8B41000301B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACF0AAED1ED8C50500301B0C /* MarvelApiHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelApiHandler.swift; sourceTree = "<group>"; };
+		ACF0AAEF1ED8C67F00301B0C /* Cryptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cryptor.swift; sourceTree = "<group>"; };
+		ACF0AAF31ED8C96100301B0C /* MarvelParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelParser.swift; sourceTree = "<group>"; };
+		ACF0AAF51ED8D13F00301B0C /* CharactersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersRequest.swift; sourceTree = "<group>"; };
 		B03C1530E3FA7959CF724D7D /* Pods_MarvellousUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvellousUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66434670331E61FAE22B891 /* Pods-MarvellousUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvellousUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvellousUITests/Pods-MarvellousUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D227F098ED2D24A34F1BBF88 /* Pods-MarvellousTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvellousTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvellousTests/Pods-MarvellousTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +150,10 @@
 				ACF0AAB31ED8B41000301B0C /* AppDelegate.swift */,
 				ACF0AAB51ED8B41000301B0C /* MasterViewController.swift */,
 				ACF0AAB71ED8B41000301B0C /* DetailViewController.swift */,
+				ACF0AAED1ED8C50500301B0C /* MarvelApiHandler.swift */,
+				ACF0AAF51ED8D13F00301B0C /* CharactersRequest.swift */,
+				ACF0AAF31ED8C96100301B0C /* MarvelParser.swift */,
+				ACF0AAEF1ED8C67F00301B0C /* Cryptor.swift */,
 				ACF0AAB91ED8B41000301B0C /* Main.storyboard */,
 				ACF0AABC1ED8B41000301B0C /* Assets.xcassets */,
 				ACF0AABE1ED8B41000301B0C /* LaunchScreen.storyboard */,
@@ -466,7 +478,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF0AAEE1ED8C50500301B0C /* MarvelApiHandler.swift in Sources */,
+				ACF0AAF41ED8C96100301B0C /* MarvelParser.swift in Sources */,
 				ACF0AAB81ED8B41000301B0C /* DetailViewController.swift in Sources */,
+				ACF0AAF61ED8D13F00301B0C /* CharactersRequest.swift in Sources */,
+				ACF0AAF01ED8C67F00301B0C /* Cryptor.swift in Sources */,
 				ACF0AAB61ED8B41000301B0C /* MasterViewController.swift in Sources */,
 				ACF0AAB41ED8B41000301B0C /* AppDelegate.swift in Sources */,
 			);
