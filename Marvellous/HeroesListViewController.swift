@@ -15,7 +15,9 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     var heroDetailViewController: HeroDetailViewController?
     
     let itemPadding: CGFloat = 8.0
+    let itemHeight: CGFloat = 100.0
     let numberOfColumns: Int = 2
+    var collectionItemSize: CGSize = CGSize.zero
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,6 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
         if let split = splitViewController {
             let controllers = split.viewControllers
             heroDetailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? HeroDetailViewController
-            
         }
     }
 
@@ -34,7 +35,21 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView.collectionViewLayout.invalidateLayout()
+        if collectionItemSize == CGSize.zero {
+            updateCollectionViewLayout(with: view.bounds.size)
+        }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        updateCollectionViewLayout(with: size)
+    }
+    
+    private func updateCollectionViewLayout(with size: CGSize) {
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            collectionItemSize = CGSize(width: size.width / CGFloat(numberOfColumns) - CGFloat(numberOfColumns - 1)*itemPadding, height: itemHeight)
+            layout.invalidateLayout()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,7 +77,7 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.size.width / CGFloat(numberOfColumns) - CGFloat(numberOfColumns - 1)*itemPadding, height: 100.0)
+        return collectionItemSize
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

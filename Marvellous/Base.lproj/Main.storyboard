@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,7 +39,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E81-kb-ajZ">
-                                <rect key="frame" x="16" y="108" width="343" height="559"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" red="0.27752590673575128" green="0.27752590673575128" blue="0.27752590673575128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Ozp-W1-Xjr">
                                     <size key="itemSize" width="50" height="50"/>
@@ -61,10 +60,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="E81-kb-ajZ" firstAttribute="leading" secondItem="d24-hW-do8" secondAttribute="leadingMargin" id="5Xq-09-JQF"/>
+                            <constraint firstItem="E81-kb-ajZ" firstAttribute="leading" secondItem="d24-hW-do8" secondAttribute="leading" id="5Xq-09-JQF"/>
                             <constraint firstItem="FIM-Xp-xfv" firstAttribute="leading" secondItem="d24-hW-do8" secondAttribute="leading" id="APQ-0F-dCd"/>
                             <constraint firstItem="E81-kb-ajZ" firstAttribute="top" secondItem="FIM-Xp-xfv" secondAttribute="bottom" id="CAP-fQ-VHz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="E81-kb-ajZ" secondAttribute="trailing" id="D9V-ZP-hDk"/>
+                            <constraint firstAttribute="trailing" secondItem="E81-kb-ajZ" secondAttribute="trailing" id="D9V-ZP-hDk"/>
                             <constraint firstItem="FIM-Xp-xfv" firstAttribute="top" secondItem="mr9-s7-rZ8" secondAttribute="bottom" id="GLv-e1-TcY"/>
                             <constraint firstAttribute="trailing" secondItem="FIM-Xp-xfv" secondAttribute="trailing" id="L3P-be-X2I"/>
                             <constraint firstItem="7s7-th-7XW" firstAttribute="top" secondItem="E81-kb-ajZ" secondAttribute="bottom" id="zIN-pp-J9g"/>
@@ -104,8 +103,9 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iay-hL-DiW">
                                 <rect key="frame" x="0.0" y="264" width="375" height="366"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
