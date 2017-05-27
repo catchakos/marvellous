@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  HeroDetailViewController.swift
 //  Marvellous
 //
 //  Created by Alexandros Katsaprakakis on 26/05/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class HeroDetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
