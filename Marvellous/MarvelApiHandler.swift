@@ -14,6 +14,7 @@ import SwiftyJSON
 protocol MarvelApiRequest {
     var resourcePath: String {get}
     var parameters: Parameters? {get}
+    var parseRequest: MarvelParseRequest? {get}
 }
 
 class MarvelApiHandler {

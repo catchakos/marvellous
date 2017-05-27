@@ -30,7 +30,7 @@ struct HeroModels {
     
     struct Detail {
         struct Request {
-            
+            let characterID: Int
         }
         struct Response {
 

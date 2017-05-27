@@ -10,6 +10,8 @@
 		404998AB0C7FE9A31CA6B3C1 /* Pods_MarvellousUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03C1530E3FA7959CF724D7D /* Pods_MarvellousUITests.framework */; };
 		5179B73238E6B2E0CA288AC4 /* Pods_MarvellousTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8223BA1B7C68BF6A5D68BDBE /* Pods_MarvellousTests.framework */; };
 		5492936558AC4FC8F1415EB0 /* Pods_Marvellous.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16ECEE390F24282BEF7E1012 /* Pods_Marvellous.framework */; };
+		AC6026961ED9ECF70034FFE7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6026951ED9ECF70034FFE7 /* CoreDataStack.swift */; };
+		AC6026981ED9EDA60034FFE7 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6026971ED9EDA60034FFE7 /* ModelInterface.swift */; };
 		ACF0AAB41ED8B41000301B0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAB31ED8B41000301B0C /* AppDelegate.swift */; };
 		ACF0AABB1ED8B41000301B0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF0AAB91ED8B41000301B0C /* Main.storyboard */; };
 		ACF0AABD1ED8B41000301B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACF0AABC1ED8B41000301B0C /* Assets.xcassets */; };
@@ -22,8 +24,6 @@
 		ACF0AAF61ED8D13F00301B0C /* CharactersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAF51ED8D13F00301B0C /* CharactersRequest.swift */; };
 		ACF0AAFD1ED97D4800301B0C /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF0AAFC1ED97D4800301B0C /* characters.json */; };
 		ACF0AB001ED9803C00301B0C /* CharactersParseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAFF1ED9803C00301B0C /* CharactersParseRequest.swift */; };
-		ACF0AB021ED9821F00301B0C /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB011ED9821F00301B0C /* Hero.swift */; };
-		ACF0AB031ED9821F00301B0C /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB011ED9821F00301B0C /* Hero.swift */; };
 		ACF0AB181ED991C900301B0C /* HeroesListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB151ED991C900301B0C /* HeroesListCollectionViewCell.swift */; };
 		ACF0AB191ED991C900301B0C /* HeroesListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF0AB161ED991C900301B0C /* HeroesListCollectionViewCell.xib */; };
 		ACF0AB1A1ED991C900301B0C /* HeroesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB171ED991C900301B0C /* HeroesListViewController.swift */; };
@@ -36,6 +36,13 @@
 		ACF0AB311ED9A86300301B0C /* HeroDetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB301ED9A86300301B0C /* HeroDetailViewPresenter.swift */; };
 		ACF0AB331ED9AADF00301B0C /* HeroDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB321ED9AADF00301B0C /* HeroDetailConfigurator.swift */; };
 		ACF0AB351ED9AAE800301B0C /* HeroesListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB341ED9AAE800301B0C /* HeroesListConfigurator.swift */; };
+		ACF0AB3C1ED9E4DE00301B0C /* HeroModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB3A1ED9E4DE00301B0C /* HeroModel.xcdatamodeld */; };
+		ACF0AB4F1ED9EA4800301B0C /* Hero+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB491ED9EA4800301B0C /* Hero+CoreDataClass.swift */; };
+		ACF0AB501ED9EA4800301B0C /* Hero+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB4A1ED9EA4800301B0C /* Hero+CoreDataProperties.swift */; };
+		ACF0AB511ED9EA4800301B0C /* Series+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB4B1ED9EA4800301B0C /* Series+CoreDataClass.swift */; };
+		ACF0AB521ED9EA4800301B0C /* Series+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB4C1ED9EA4800301B0C /* Series+CoreDataProperties.swift */; };
+		ACF0AB531ED9EA4800301B0C /* Comic+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB4D1ED9EA4800301B0C /* Comic+CoreDataClass.swift */; };
+		ACF0AB541ED9EA4800301B0C /* Comic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB4E1ED9EA4800301B0C /* Comic+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +69,8 @@
 		5248F9474ACD59CD521FA1B3 /* Pods-Marvellous.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvellous.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marvellous/Pods-Marvellous.debug.xcconfig"; sourceTree = "<group>"; };
 		60794BCE921F4A611D69B2A5 /* Pods-Marvellous.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvellous.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvellous/Pods-Marvellous.release.xcconfig"; sourceTree = "<group>"; };
 		8223BA1B7C68BF6A5D68BDBE /* Pods_MarvellousTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvellousTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC6026951ED9ECF70034FFE7 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		AC6026971ED9EDA60034FFE7 /* ModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
 		ACF0AAB01ED8B41000301B0C /* Marvellous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvellous.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF0AAB31ED8B41000301B0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACF0AABA1ED8B41000301B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,7 +89,6 @@
 		ACF0AAF51ED8D13F00301B0C /* CharactersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersRequest.swift; sourceTree = "<group>"; };
 		ACF0AAFC1ED97D4800301B0C /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
 		ACF0AAFF1ED9803C00301B0C /* CharactersParseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersParseRequest.swift; sourceTree = "<group>"; };
-		ACF0AB011ED9821F00301B0C /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		ACF0AB151ED991C900301B0C /* HeroesListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesListCollectionViewCell.swift; sourceTree = "<group>"; };
 		ACF0AB161ED991C900301B0C /* HeroesListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroesListCollectionViewCell.xib; sourceTree = "<group>"; };
 		ACF0AB171ED991C900301B0C /* HeroesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesListViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +101,13 @@
 		ACF0AB301ED9A86300301B0C /* HeroDetailViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailViewPresenter.swift; sourceTree = "<group>"; };
 		ACF0AB321ED9AADF00301B0C /* HeroDetailConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailConfigurator.swift; sourceTree = "<group>"; };
 		ACF0AB341ED9AAE800301B0C /* HeroesListConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesListConfigurator.swift; sourceTree = "<group>"; };
+		ACF0AB3B1ED9E4DE00301B0C /* HeroModel.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; path = HeroModel.xcdatamodel; sourceTree = "<group>"; };
+		ACF0AB491ED9EA4800301B0C /* Hero+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hero+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ACF0AB4A1ED9EA4800301B0C /* Hero+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hero+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ACF0AB4B1ED9EA4800301B0C /* Series+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Series+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ACF0AB4C1ED9EA4800301B0C /* Series+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Series+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ACF0AB4D1ED9EA4800301B0C /* Comic+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comic+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ACF0AB4E1ED9EA4800301B0C /* Comic+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comic+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B03C1530E3FA7959CF724D7D /* Pods_MarvellousUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvellousUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66434670331E61FAE22B891 /* Pods-MarvellousUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvellousUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvellousUITests/Pods-MarvellousUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D227F098ED2D24A34F1BBF88 /* Pods-MarvellousTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvellousTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvellousTests/Pods-MarvellousTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -229,7 +244,15 @@
 		ACF0AB051ED98C2100301B0C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ACF0AB011ED9821F00301B0C /* Hero.swift */,
+				AC6026951ED9ECF70034FFE7 /* CoreDataStack.swift */,
+				AC6026971ED9EDA60034FFE7 /* ModelInterface.swift */,
+				ACF0AB3A1ED9E4DE00301B0C /* HeroModel.xcdatamodeld */,
+				ACF0AB491ED9EA4800301B0C /* Hero+CoreDataClass.swift */,
+				ACF0AB4A1ED9EA4800301B0C /* Hero+CoreDataProperties.swift */,
+				ACF0AB4B1ED9EA4800301B0C /* Series+CoreDataClass.swift */,
+				ACF0AB4C1ED9EA4800301B0C /* Series+CoreDataProperties.swift */,
+				ACF0AB4D1ED9EA4800301B0C /* Comic+CoreDataClass.swift */,
+				ACF0AB4E1ED9EA4800301B0C /* Comic+CoreDataProperties.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -500,7 +523,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"Install Swiftlint\"\nfi";
+			shellScript = "#if which swiftlint >/dev/null; then\n#swiftlint\n#else\n#echo \"Install Swiftlint\"\n#fi";
 		};
 		B85ABBAC9558AEFD394DFF08 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -585,22 +608,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACF0AAEE1ED8C50500301B0C /* MarvelApiHandler.swift in Sources */,
+				ACF0AB541ED9EA4800301B0C /* Comic+CoreDataProperties.swift in Sources */,
+				ACF0AB521ED9EA4800301B0C /* Series+CoreDataProperties.swift in Sources */,
 				ACF0AB2C1ED9A54D00301B0C /* HeroesListViewPresenter.swift in Sources */,
+				ACF0AB531ED9EA4800301B0C /* Comic+CoreDataClass.swift in Sources */,
+				ACF0AB511ED9EA4800301B0C /* Series+CoreDataClass.swift in Sources */,
 				ACF0AB2F1ED9A85B00301B0C /* HeroDetailInteractor.swift in Sources */,
 				ACF0AAF41ED8C96100301B0C /* MarvelParser.swift in Sources */,
 				ACF0AB181ED991C900301B0C /* HeroesListCollectionViewCell.swift in Sources */,
 				ACF0AB1D1ED991DF00301B0C /* HeroDetailViewController.swift in Sources */,
-				ACF0AB021ED9821F00301B0C /* Hero.swift in Sources */,
 				ACF0AB331ED9AADF00301B0C /* HeroDetailConfigurator.swift in Sources */,
 				ACF0AB351ED9AAE800301B0C /* HeroesListConfigurator.swift in Sources */,
+				ACF0AB4F1ED9EA4800301B0C /* Hero+CoreDataClass.swift in Sources */,
 				ACF0AB281ED9A4FC00301B0C /* Navigator.swift in Sources */,
 				ACF0AB2A1ED9A54200301B0C /* HeroesListInteractor.swift in Sources */,
 				ACF0AB241ED9934800301B0C /* HeroModels.swift in Sources */,
 				ACF0AB001ED9803C00301B0C /* CharactersParseRequest.swift in Sources */,
+				ACF0AB501ED9EA4800301B0C /* Hero+CoreDataProperties.swift in Sources */,
 				ACF0AAF61ED8D13F00301B0C /* CharactersRequest.swift in Sources */,
+				AC6026981ED9EDA60034FFE7 /* ModelInterface.swift in Sources */,
 				ACF0AB311ED9A86300301B0C /* HeroDetailViewPresenter.swift in Sources */,
+				AC6026961ED9ECF70034FFE7 /* CoreDataStack.swift in Sources */,
 				ACF0AB1A1ED991C900301B0C /* HeroesListViewController.swift in Sources */,
 				ACF0AAF01ED8C67F00301B0C /* Cryptor.swift in Sources */,
+				ACF0AB3C1ED9E4DE00301B0C /* HeroModel.xcdatamodeld in Sources */,
 				ACF0AAB41ED8B41000301B0C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,7 +641,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACF0AACB1ED8B41000301B0C /* MarvellousTests.swift in Sources */,
-				ACF0AB031ED9821F00301B0C /* Hero.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -886,6 +916,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ACF0AB3A1ED9E4DE00301B0C /* HeroModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ACF0AB3B1ED9E4DE00301B0C /* HeroModel.xcdatamodel */,
+			);
+			currentVersion = ACF0AB3B1ED9E4DE00301B0C /* HeroModel.xcdatamodel */;
+			path = HeroModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ACF0AAA81ED8B41000301B0C /* Project object */;
 }

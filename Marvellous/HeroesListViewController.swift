@@ -16,6 +16,8 @@ protocol HeroesListViewControllerInput {
 protocol HeroesListViewControllerOutput {
     func fetchDefaultCharacters(_ request: HeroModels.List.DefaultRequest)
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest)
+    
+    func characterIdentifierAt(index: Int) -> Int?
 }
 
 class HeroesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, HeroesListViewControllerInput {
@@ -131,18 +133,20 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     }
 
     func navigateToDetailAt(indexPath: IndexPath) {
-        if let hero = heroesList?.items[indexPath.item] {
-            let detailVM = HeroModels.Detail.ViewModel(name: hero.name, thumbnailUrl: hero.thumbnailUrl, description: "Hero description text..")
-            performSegue(withIdentifier: "showDetail", sender: detailVM)
+        if let heroID = output?.characterIdentifierAt(index: indexPath.item) {
+            performSegue(withIdentifier: "showDetail", sender: heroID)
         }
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
-            let controller = (segue.destination as! UINavigationController).topViewController as! HeroDetailViewController
-            let detailInfo = sender as! HeroModels.Detail.ViewModel
-            controller.detailViewModel = detailInfo
+            guard let controller = (segue.destination as! UINavigationController).topViewController as? HeroDetailViewController, 
+                  let detailID = sender as? Int 
+                else{
+                    return
+                }
+            controller.heroID = detailID
             controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
             controller.navigationItem.leftItemsSupplementBackButton = true
         }

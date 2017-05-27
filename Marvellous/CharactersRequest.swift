@@ -10,8 +10,10 @@ import Foundation
 import Alamofire
 
 class CharactersRequest: MarvelApiRequest {
-    
     let resourcePath = "v1/public/characters"
+    var parseRequest: MarvelParseRequest? {
+        return CharactersParseRequest()
+    }
     
     var parameters: Parameters? {
         let searchText = "Hulk"

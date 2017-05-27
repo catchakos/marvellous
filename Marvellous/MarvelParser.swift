@@ -8,9 +8,10 @@
 
 import Foundation
 import SwiftyJSON
+import CoreData
 
 protocol MarvelParseRequest {
-    func inflateElement(_ json: JSON) -> Any?
+    func inflateElementIfNeeded(_ json: JSON,_ intoContext: NSManagedObjectContext) -> Any?
 }
 
 class MarvelParser {
@@ -24,10 +25,11 @@ class MarvelParser {
         let dataArray = json["data"]["results"] 
         var results = [Any]()
         for element in dataArray.array! {
-            if let result = parseRequest.inflateElement(element) {
+            if let result = parseRequest.inflateElementIfNeeded(element, CoreDataStack.sharedInstance.managedObjectContext) {
                 results.append(result)
             }
         }
+        CoreDataStack.sharedInstance.saveContext()
         return results
     } 
 }

@@ -42,14 +42,18 @@ class HeroDetailViewController: UIViewController, HeroDetailViewControllerInput 
         super.didReceiveMemoryWarning()
     }
 
-    var detailViewModel: HeroModels.Detail.ViewModel? {
+    var heroID: Int? {
         didSet {
-            
+            if let identifier = heroID { 
+                let request = HeroModels.Detail.Request(characterID: identifier)
+                output?.fetchCharacterInfo(request)
+            }
         }
     }
     
     func displayCharacterInfo(_ viewModel: HeroModels.Detail.ViewModel) {
         heroDetail = viewModel
+        
         if let label = detailDescriptionLabel {
             label.text = viewModel.name
         }

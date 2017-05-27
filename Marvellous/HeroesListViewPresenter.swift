@@ -23,7 +23,12 @@ class HeroesListViewPresenter: HeroesListViewPresenterInput {
     func presentCharacters(_ response: HeroModels.List.Response) {
         var heroesListModels: [HeroModels.List.ItemViewModel] = []
         for hero in response.heroes {
-            let vm = HeroModels.List.ItemViewModel(name: hero.name, thumbnailUrl: hero.thumbnailUrl)
+            guard let name = hero.name, 
+                  let url = hero.thumbnailUrl
+                else{
+                    continue
+            }
+            let vm = HeroModels.List.ItemViewModel(name: name, thumbnailUrl: url)
             heroesListModels.append(vm)
         }
         let viewModel = HeroModels.List.ViewModel(items: heroesListModels)
