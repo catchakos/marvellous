@@ -10,6 +10,7 @@
 		2AFF4A231EDA2F3800767C8B /* HeroesListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF4A221EDA2F3800767C8B /* HeroesListInteractorTests.swift */; };
 		2AFF4A251EDA358500767C8B /* RespositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF4A241EDA358500767C8B /* RespositoryMock.swift */; };
 		2AFF4A271EDA38A800767C8B /* CoreDataStackFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF4A261EDA38A800767C8B /* CoreDataStackFake.swift */; };
+		2AFF4A291EDA3D8400767C8B /* HeroesListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF4A281EDA3D8400767C8B /* HeroesListPresenterTests.swift */; };
 		404998AB0C7FE9A31CA6B3C1 /* Pods_MarvellousUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03C1530E3FA7959CF724D7D /* Pods_MarvellousUITests.framework */; };
 		5179B73238E6B2E0CA288AC4 /* Pods_MarvellousTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8223BA1B7C68BF6A5D68BDBE /* Pods_MarvellousTests.framework */; };
 		5492936558AC4FC8F1415EB0 /* Pods_Marvellous.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16ECEE390F24282BEF7E1012 /* Pods_Marvellous.framework */; };
@@ -71,6 +72,7 @@
 		2AFF4A221EDA2F3800767C8B /* HeroesListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesListInteractorTests.swift; sourceTree = "<group>"; };
 		2AFF4A241EDA358500767C8B /* RespositoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RespositoryMock.swift; sourceTree = "<group>"; };
 		2AFF4A261EDA38A800767C8B /* CoreDataStackFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackFake.swift; sourceTree = "<group>"; };
+		2AFF4A281EDA3D8400767C8B /* HeroesListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesListPresenterTests.swift; sourceTree = "<group>"; };
 		48CD3C3DFC7755CD4D4041C3 /* Pods-MarvellousTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvellousTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvellousTests/Pods-MarvellousTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4AA7BC0F6CA80362167173B5 /* Pods-MarvellousUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvellousUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvellousUITests/Pods-MarvellousUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5248F9474ACD59CD521FA1B3 /* Pods-Marvellous.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvellous.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marvellous/Pods-Marvellous.debug.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				ACF0AACA1ED8B41000301B0C /* MarvellousTests.swift */,
 				2AFF4A221EDA2F3800767C8B /* HeroesListInteractorTests.swift */,
+				2AFF4A281EDA3D8400767C8B /* HeroesListPresenterTests.swift */,
 				2AFF4A241EDA358500767C8B /* RespositoryMock.swift */,
 				2AFF4A261EDA38A800767C8B /* CoreDataStackFake.swift */,
 				ACF0AAFC1ED97D4800301B0C /* characters.json */,
@@ -654,6 +657,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AFF4A251EDA358500767C8B /* RespositoryMock.swift in Sources */,
+				2AFF4A291EDA3D8400767C8B /* HeroesListPresenterTests.swift in Sources */,
 				2AFF4A231EDA2F3800767C8B /* HeroesListInteractorTests.swift in Sources */,
 				2AFF4A271EDA38A800767C8B /* CoreDataStackFake.swift in Sources */,
 				ACF0AACB1ED8B41000301B0C /* MarvellousTests.swift in Sources */,

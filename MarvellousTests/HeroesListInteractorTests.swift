@@ -31,6 +31,7 @@ class HeroesListInteractorTests: XCTestCase {
     }
     
     override func tearDown() {
+        repoMock.clear()
         super.tearDown()
     }
     
@@ -70,4 +71,6 @@ class HeroesListInteractorTests: XCTestCase {
             XCTFail()
         }
     }
+    
+    
 }

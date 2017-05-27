@@ -14,9 +14,8 @@ class CoreDataStackFake {
     var managedObjectContext : NSManagedObjectContext!
     
     init() {
-        managedObjectContext = CoreDataStack.sharedInstance.managedObjectContext //setUpInMemoryManagedObjectContext()
+        managedObjectContext = setUpInMemoryManagedObjectContext()
         _ = createFakeHero()
-        save()
     }
     
     func tearDown() {
@@ -36,28 +35,25 @@ class CoreDataStackFake {
         hero.name = "FakeHero"
         hero.desc = "FakeDescription"
         hero.identifier = 100
+        hero.thumbnailUrl = "http://url"
         return hero
     }
 
-    
-    
-    //TODO: Should setup CoreDataStack on the fly somehow
-    /*
-     func setUpInMemoryManagedObjectContext() -> NSManagedObjectContext {
-     let managedObjectModel = NSManagedObjectModel.mergedModel(from: [Bundle.main])!
-     
-     let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-     
-     do {
-     try persistentStoreCoordinator.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil, options: nil)
-     } catch {
-     print("Adding in-memory persistent store failed")
-     }
-     
-     let managedObjectContext = NSManagedObjectContext()
-     managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
-     
-     return managedObjectContext
-     }
-     */
+    func setUpInMemoryManagedObjectContext() -> NSManagedObjectContext {
+        let managedObjectModel = NSManagedObjectModel.mergedModel(from: [Bundle.main])!
+        
+        let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
+        
+        do {
+            try persistentStoreCoordinator.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil, options: nil)
+        } catch {
+            print("Adding in-memory persistent store failed")
+        }
+        
+        let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
+        
+        return managedObjectContext
+    }
+
 }
