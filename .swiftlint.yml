@@ -1,4 +1,4 @@
-disabled_rules: 
+disabled_rules:
   - trailing_whitespace
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Carthage
@@ -10,3 +10,4 @@ type_name:
   max_length: # warning and error
     warning: 40
     error: 50
+
