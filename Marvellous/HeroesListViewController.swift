@@ -9,10 +9,22 @@
 import UIKit
 import SDWebImage
 
+protocol HeroesListViewControllerInput {
+    func displayCharacters(_ viewModel: HeroModels.List.ViewModel)
+}
+
+protocol HeroesListViewControllerOutput {
+    func fetchDefaultCharacters(_ request: HeroModels.List.Request)
+    func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest)
+}
+
 class HeroesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var output: HeroesListViewControllerOutput?
+    
+    //TODO: remove
     var heroDetailViewController: HeroDetailViewController?
     
     let itemPadding: CGFloat = 8.0

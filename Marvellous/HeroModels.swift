@@ -13,6 +13,9 @@ struct HeroModels {
         struct Request {
             
         }
+        struct SearchRequest {
+            let startsWith: String
+        }
         struct Response {
             
         }

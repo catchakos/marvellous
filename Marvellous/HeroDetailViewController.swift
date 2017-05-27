@@ -9,6 +9,14 @@
 import UIKit
 import SDWebImage
 
+protocol HeroDetailViewControllerInput {
+    func displayCharacterInfo(_ viewModel: HeroModels.Detail.ViewModel)
+}
+
+protocol HeroDetailViewControllerOutput {
+    func fetchCharacterInfo(_ request: HeroModels.Detail.Request)
+}
+
 class HeroDetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
@@ -48,6 +56,10 @@ class HeroDetailViewController: UIViewController {
             // Update the view.
             configureView()
         }
+    }
+    
+    func displayCharacterInfo(_ viewModel: HeroModels.Detail.ViewModel) {
+        configureView()
     }
 
 }
