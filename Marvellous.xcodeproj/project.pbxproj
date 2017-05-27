@@ -36,6 +36,8 @@
 		ACF0AB311ED9A86300301B0C /* HeroDetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB301ED9A86300301B0C /* HeroDetailViewPresenter.swift */; };
 		ACF0AB331ED9AADF00301B0C /* HeroDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB321ED9AADF00301B0C /* HeroDetailConfigurator.swift */; };
 		ACF0AB351ED9AAE800301B0C /* HeroesListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB341ED9AAE800301B0C /* HeroesListConfigurator.swift */; };
+		ACF0AB371ED9BD5A00301B0C /* CharacterDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB361ED9BD5A00301B0C /* CharacterDetailRequest.swift */; };
+		ACF0AB391ED9C1D700301B0C /* CharacterDetailParseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB381ED9C1D700301B0C /* CharacterDetailParseRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		ACF0AB301ED9A86300301B0C /* HeroDetailViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailViewPresenter.swift; sourceTree = "<group>"; };
 		ACF0AB321ED9AADF00301B0C /* HeroDetailConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailConfigurator.swift; sourceTree = "<group>"; };
 		ACF0AB341ED9AAE800301B0C /* HeroesListConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesListConfigurator.swift; sourceTree = "<group>"; };
+		ACF0AB361ED9BD5A00301B0C /* CharacterDetailRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailRequest.swift; sourceTree = "<group>"; };
+		ACF0AB381ED9C1D700301B0C /* CharacterDetailParseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailParseRequest.swift; sourceTree = "<group>"; };
 		B03C1530E3FA7959CF724D7D /* Pods_MarvellousUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvellousUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66434670331E61FAE22B891 /* Pods-MarvellousUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvellousUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvellousUITests/Pods-MarvellousUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D227F098ED2D24A34F1BBF88 /* Pods-MarvellousTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvellousTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvellousTests/Pods-MarvellousTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 			children = (
 				ACF0AAED1ED8C50500301B0C /* MarvelApiHandler.swift */,
 				ACF0AAF51ED8D13F00301B0C /* CharactersRequest.swift */,
+				ACF0AB361ED9BD5A00301B0C /* CharacterDetailRequest.swift */,
 				ACF0AB041ED9832200301B0C /* Parser */,
 				ACF0AAEF1ED8C67F00301B0C /* Cryptor.swift */,
 			);
@@ -222,6 +227,7 @@
 			children = (
 				ACF0AAF31ED8C96100301B0C /* MarvelParser.swift */,
 				ACF0AAFF1ED9803C00301B0C /* CharactersParseRequest.swift */,
+				ACF0AB381ED9C1D700301B0C /* CharacterDetailParseRequest.swift */,
 			);
 			name = Parser;
 			sourceTree = "<group>";
@@ -595,6 +601,8 @@
 				ACF0AB351ED9AAE800301B0C /* HeroesListConfigurator.swift in Sources */,
 				ACF0AB281ED9A4FC00301B0C /* Navigator.swift in Sources */,
 				ACF0AB2A1ED9A54200301B0C /* HeroesListInteractor.swift in Sources */,
+				ACF0AB371ED9BD5A00301B0C /* CharacterDetailRequest.swift in Sources */,
+				ACF0AB391ED9C1D700301B0C /* CharacterDetailParseRequest.swift in Sources */,
 				ACF0AB241ED9934800301B0C /* HeroModels.swift in Sources */,
 				ACF0AB001ED9803C00301B0C /* CharactersParseRequest.swift in Sources */,
 				ACF0AAF61ED8D13F00301B0C /* CharactersRequest.swift in Sources */,
