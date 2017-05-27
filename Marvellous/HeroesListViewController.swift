@@ -17,7 +17,7 @@ protocol HeroesListViewControllerOutput {
     func fetchDefaultCharacters(_ request: HeroModels.List.DefaultRequest)
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest)
     
-    func characterIdentifierAt(index: Int) -> Int?
+    func characterIdentifierAt(index: Int) -> Int64?
 }
 
 class HeroesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, HeroesListViewControllerInput {
@@ -92,6 +92,8 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
             let set = IndexSet(integer:0)
             self.collectionView.reloadSections(set)
         }, completion: nil)
+        let zeroIndexPath = IndexPath(item: 0, section: 0)
+        self.navigateToDetailAt(indexPath: zeroIndexPath)
         
         spinner.stopAnimating()
     }
@@ -142,7 +144,7 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             guard let controller = (segue.destination as! UINavigationController).topViewController as? HeroDetailViewController, 
-                  let detailID = sender as? Int 
+                  let detailID = sender as? Int64 
                 else{
                     return
                 }

@@ -12,7 +12,7 @@ protocol HeroesListViewInteractorInput {
     func fetchDefaultCharacters(_ request: HeroModels.List.DefaultRequest)
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest) 
     
-    func characterIdentifierAt(index: Int) -> Int?
+    func characterIdentifierAt(index: Int) -> Int64?
 }
 
 protocol HeroesListViewInteractorOutput {
@@ -26,8 +26,9 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput {
     
     func fetchDefaultCharacters(_ request: HeroModels.List.DefaultRequest) {
         let request = CharactersRequest()
-        CoreDataStack.sharedInstance.modelInterface.getCharacters(request) { (heroes, error) in
-            if let heroesFetched = heroes {
+        CoreDataStack.sharedInstance.modelInterface.getCharacters(request) { (newHeroes, error) in
+            if let heroesFetched = newHeroes {
+                self.heroes = heroesFetched
                 let response = HeroModels.List.Response(heroes: heroesFetched)
                 self.output?.presentCharacters(response)
             }
@@ -38,10 +39,10 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput {
     
     }
     
-    func characterIdentifierAt(index: Int) -> Int? {
+    func characterIdentifierAt(index: Int) -> Int64? {
         guard let heroes = heroes else { return nil }
         if heroes.count > index {
-            return Int(heroes[index].identifier)
+            return heroes[index].identifier
         }else{
             return nil
         }

@@ -20,20 +20,35 @@ class ModelInterface {
         fetchLocalCharacters()
         fetchCharactersRemotely(request)
     }
+    
+    func getCharacter(_ identifier: Int64) -> Hero? {
+        let request = NSFetchRequest<Hero>(entityName: "Hero")
+        let predicate = NSPredicate(format: "identifier = %@", argumentArray: [identifier])
+        request.predicate = predicate
+        request.fetchLimit = 1
+        
+        do {
+            let heroes = try CoreDataStack.sharedInstance.managedObjectContext.fetch(request) as [Hero]
+            return heroes.first    
+        } catch let error as NSError {
+            print(error.description)
+            return nil
+        }
+    }
 
-    func informHeroes(_ heroes: [Hero]?) {
+    private func informHeroes(_ heroes: [Hero]?) {
         if let closure = completionHandler {
             closure(heroes, nil)            
         }
     }
 
-    func informError(_ error: Error?) {
+    private func informError(_ error: Error?) {
         if let closure = completionHandler {
             closure(nil, error)            
         }
     }
     
-    func fetchLocalCharacters() {
+    private func fetchLocalCharacters() {
         let request = NSFetchRequest<Hero>(entityName: "Hero")
         let predicate = NSPredicate(format: "identifier != 0")
         request.predicate = predicate
@@ -47,7 +62,7 @@ class ModelInterface {
         }
     }
     
-    func fetchCharactersRemotely(_ request: CharactersRequest) {
+    private func fetchCharactersRemotely(_ request: CharactersRequest) {
         let apiHandler = MarvelApiHandler()
         apiHandler.get(request) { (json, error) in
             if let jsonFetched = json {

@@ -30,10 +30,10 @@ struct HeroModels {
     
     struct Detail {
         struct Request {
-            let characterID: Int
+            let characterID: Int64
         }
         struct Response {
-
+            let hero: Hero
         }
         struct ViewModel {
             let name: String

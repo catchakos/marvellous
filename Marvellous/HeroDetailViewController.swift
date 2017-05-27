@@ -36,13 +36,16 @@ class HeroDetailViewController: UIViewController, HeroDetailViewControllerInput 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let info = heroDetail {
+            displayCharacterInfo(info)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
-    var heroID: Int? {
+    var heroID: Int64? {
         didSet {
             if let identifier = heroID { 
                 let request = HeroModels.Detail.Request(characterID: identifier)
@@ -67,7 +70,9 @@ class HeroDetailViewController: UIViewController, HeroDetailViewControllerInput 
         
         self.title = viewModel.name
         
-        spinner.stopAnimating()
+        if let spinner = spinner {
+            spinner.stopAnimating()
+        }
     }
 
 }
