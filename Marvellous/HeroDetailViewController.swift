@@ -17,11 +17,14 @@ protocol HeroDetailViewControllerOutput {
     func fetchCharacterInfo(_ request: HeroModels.Detail.Request)
 }
 
-class HeroDetailViewController: UIViewController {
+class HeroDetailViewController: UIViewController, HeroDetailViewControllerInput {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var detailDescription: UITextView!
+    
+    var configurator: HeroDetailConfigurator = HeroDetailConfigurator()
+    var output: HeroDetailViewControllerOutput?
 
     func configureView() {
         // Update the user interface for the detail item.
@@ -39,6 +42,11 @@ class HeroDetailViewController: UIViewController {
             
             self.title = viewModel.name
         }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        configurator.configure(self)
     }
 
     override func viewDidLoad() {

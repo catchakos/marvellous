@@ -34,6 +34,8 @@
 		ACF0AB2C1ED9A54D00301B0C /* HeroesListViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB2B1ED9A54D00301B0C /* HeroesListViewPresenter.swift */; };
 		ACF0AB2F1ED9A85B00301B0C /* HeroDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB2E1ED9A85B00301B0C /* HeroDetailInteractor.swift */; };
 		ACF0AB311ED9A86300301B0C /* HeroDetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB301ED9A86300301B0C /* HeroDetailViewPresenter.swift */; };
+		ACF0AB331ED9AADF00301B0C /* HeroDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB321ED9AADF00301B0C /* HeroDetailConfigurator.swift */; };
+		ACF0AB351ED9AAE800301B0C /* HeroesListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB341ED9AAE800301B0C /* HeroesListConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		ACF0AB2B1ED9A54D00301B0C /* HeroesListViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesListViewPresenter.swift; sourceTree = "<group>"; };
 		ACF0AB2E1ED9A85B00301B0C /* HeroDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailInteractor.swift; sourceTree = "<group>"; };
 		ACF0AB301ED9A86300301B0C /* HeroDetailViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailViewPresenter.swift; sourceTree = "<group>"; };
+		ACF0AB321ED9AADF00301B0C /* HeroDetailConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailConfigurator.swift; sourceTree = "<group>"; };
+		ACF0AB341ED9AAE800301B0C /* HeroesListConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesListConfigurator.swift; sourceTree = "<group>"; };
 		B03C1530E3FA7959CF724D7D /* Pods_MarvellousUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvellousUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66434670331E61FAE22B891 /* Pods-MarvellousUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvellousUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvellousUITests/Pods-MarvellousUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D227F098ED2D24A34F1BBF88 /* Pods-MarvellousTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvellousTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvellousTests/Pods-MarvellousTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				ACF0AB171ED991C900301B0C /* HeroesListViewController.swift */,
+				ACF0AB341ED9AAE800301B0C /* HeroesListConfigurator.swift */,
 				ACF0AB291ED9A54200301B0C /* HeroesListInteractor.swift */,
 				ACF0AB2B1ED9A54D00301B0C /* HeroesListViewPresenter.swift */,
 				ACF0AB2D1ED9A84300301B0C /* Cells */,
@@ -245,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				ACF0AB1C1ED991DF00301B0C /* HeroDetailViewController.swift */,
+				ACF0AB321ED9AADF00301B0C /* HeroDetailConfigurator.swift */,
 				ACF0AB2E1ED9A85B00301B0C /* HeroDetailInteractor.swift */,
 				ACF0AB301ED9A86300301B0C /* HeroDetailViewPresenter.swift */,
 			);
@@ -585,6 +591,8 @@
 				ACF0AB181ED991C900301B0C /* HeroesListCollectionViewCell.swift in Sources */,
 				ACF0AB1D1ED991DF00301B0C /* HeroDetailViewController.swift in Sources */,
 				ACF0AB021ED9821F00301B0C /* Hero.swift in Sources */,
+				ACF0AB331ED9AADF00301B0C /* HeroDetailConfigurator.swift in Sources */,
+				ACF0AB351ED9AAE800301B0C /* HeroesListConfigurator.swift in Sources */,
 				ACF0AB281ED9A4FC00301B0C /* Navigator.swift in Sources */,
 				ACF0AB2A1ED9A54200301B0C /* HeroesListInteractor.swift in Sources */,
 				ACF0AB241ED9934800301B0C /* HeroModels.swift in Sources */,

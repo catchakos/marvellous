@@ -19,7 +19,7 @@ protocol HeroesListViewInteractorOutput {
 
 class HeroesListViewInteractor: HeroesListViewInteractorInput {
     
-    var output: HeroesListViewControllerOutput?
+    var output: HeroesListViewInteractorOutput?
     
     func fetchDefaultCharacters(_ request: HeroModels.List.Request) {
         

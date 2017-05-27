@@ -18,14 +18,12 @@ protocol HeroesListViewControllerOutput {
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest)
 }
 
-class HeroesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class HeroesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, HeroesListViewControllerInput {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var configurator: HeroesListConfigurator = HeroesListConfigurator()
     var output: HeroesListViewControllerOutput?
-    
-    //TODO: remove
-    var heroDetailViewController: HeroDetailViewController?
     
     let itemPadding: CGFloat = 8.0
     let itemHeight: CGFloat = 100.0
@@ -34,15 +32,15 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
         
     private var heroesList: [HeroModels.List.ViewModel]?
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        configurator.configure(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureView()
-        if let split = splitViewController {
-            let controllers = split.viewControllers
-            heroDetailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? HeroDetailViewController
-        }
-        
         requestCharacters()
     }
     
@@ -108,6 +106,11 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
         collectionView.allowsSelection = true
     }
 
+    // MARK: - Input 
+    func displayCharacters(_ viewModel: HeroModels.List.ViewModel) {
+        
+    }
+    
     // MARK: - CollectionView DataSource & Delegate
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -158,4 +161,5 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
             controller.navigationItem.leftItemsSupplementBackButton = true
         }
     }
+    
 }
