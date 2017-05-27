@@ -1,5 +1,5 @@
 //
-//  ModelInterface.swift
+//  CharactersOperation.swift
 //  Marvellous
 //
 //  Created by Alexandros Katsaprakakis on 27/05/2017.
@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 import CoreData
 
-class ModelInterface {
+class CharactersOperation {
     
     private var completionHandler: (([Hero]?,Error?) -> Void)?
     

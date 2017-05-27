@@ -15,7 +15,7 @@ class CoreDataStack: NSObject {
     
     private override init() {}
     
-    let modelInterface: ModelInterface = ModelInterface()
+    let charactersOperation: CharactersOperation = CharactersOperation()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
         let modelURL = Bundle.main.url(forResource: "HeroModel", withExtension: "momd")!
@@ -37,7 +37,7 @@ class CoreDataStack: NSObject {
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
             NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
         }
-        
+                
         return coordinator
     }()
     
@@ -45,10 +45,22 @@ class CoreDataStack: NSObject {
         let coordinator = self.persistentStoreCoordinator
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(managedObjectContextObjectsDidSave), name: NSNotification.Name.NSManagedObjectContextDidSave, object: managedObjectContext)
+
         return managedObjectContext
     }()
     
     // MARK: - Core Data Saving support
+    
+    func managedObjectContextObjectsDidSave(notification: Notification) {
+        guard let contextSaved = notification.object as? NSManagedObjectContext else { return } 
+        if  contextSaved != managedObjectContext && contextSaved.persistentStoreCoordinator == managedObjectContext.persistentStoreCoordinator {
+            managedObjectContext.mergeChanges(fromContextDidSave: notification)
+            print("save child")   
+        }
+    }
     
     func saveContext () {
         if managedObjectContext.hasChanges {
@@ -59,6 +71,12 @@ class CoreDataStack: NSObject {
                 NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func insertionContext() -> NSManagedObjectContext {
+        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        context.persistentStoreCoordinator = self.persistentStoreCoordinator
+        return context
     }
     
     lazy var applicationDocumentsDirectory: URL = {

@@ -21,15 +21,14 @@ class MarvelParser {
         parseRequest = request
     }
     
-    func parse(json: JSON) -> [Any]? {
+    func parse(json: JSON) {
         let dataArray = json["data"]["results"] 
-        var results = [Any]()
-        for element in dataArray.array! {
-            if let result = parseRequest.inflateElementIfNeeded(element, CoreDataStack.sharedInstance.managedObjectContext) {
-                results.append(result)
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            for element in dataArray.array! {
+                let context = CoreDataStack.sharedInstance.insertionContext()
+                _ = self.parseRequest.inflateElementIfNeeded(element, context)
             }
-        }
-        CoreDataStack.sharedInstance.saveContext()
-        return results
-    } 
+        } 
+    }
 }

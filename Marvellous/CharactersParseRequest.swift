@@ -26,6 +26,7 @@ class CharactersParseRequest: MarvelParseRequest {
         
         
         let request = NSFetchRequest<Hero>(entityName: "Hero")
+        //TODO: check modified date as well
         let predicate = NSPredicate(format: "identifier == %@", argumentArray: [Int64(heroID)])
         request.predicate = predicate
         request.fetchLimit = 1
