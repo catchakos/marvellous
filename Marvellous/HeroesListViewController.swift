@@ -90,8 +90,6 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
             let set = IndexSet(integer:0)
             self.collectionView.reloadSections(set)
         }, completion: nil)
-        let zeroIndexPath = IndexPath(item: 0, section: 0)
-        self.navigateToDetailAt(indexPath: zeroIndexPath)
         
         spinner.stopAnimating()
     }
