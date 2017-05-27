@@ -53,6 +53,9 @@
                                     <outlet property="delegate" destination="rMq-3D-lE9" id="Y4e-VO-Org"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Tgw-TC-kZM">
+                                <rect key="frame" x="169.5" y="315.5" width="37" height="37"/>
+                            </activityIndicatorView>
                             <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="FIM-Xp-xfv">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -61,17 +64,20 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="E81-kb-ajZ" firstAttribute="leading" secondItem="d24-hW-do8" secondAttribute="leading" id="5Xq-09-JQF"/>
+                            <constraint firstItem="Tgw-TC-kZM" firstAttribute="centerY" secondItem="d24-hW-do8" secondAttribute="centerY" id="81t-Wh-wlR"/>
                             <constraint firstItem="FIM-Xp-xfv" firstAttribute="leading" secondItem="d24-hW-do8" secondAttribute="leading" id="APQ-0F-dCd"/>
                             <constraint firstItem="E81-kb-ajZ" firstAttribute="top" secondItem="FIM-Xp-xfv" secondAttribute="bottom" id="CAP-fQ-VHz"/>
                             <constraint firstAttribute="trailing" secondItem="E81-kb-ajZ" secondAttribute="trailing" id="D9V-ZP-hDk"/>
                             <constraint firstItem="FIM-Xp-xfv" firstAttribute="top" secondItem="mr9-s7-rZ8" secondAttribute="bottom" id="GLv-e1-TcY"/>
                             <constraint firstAttribute="trailing" secondItem="FIM-Xp-xfv" secondAttribute="trailing" id="L3P-be-X2I"/>
+                            <constraint firstItem="Tgw-TC-kZM" firstAttribute="centerX" secondItem="d24-hW-do8" secondAttribute="centerX" id="kKd-Af-eEz"/>
                             <constraint firstItem="7s7-th-7XW" firstAttribute="top" secondItem="E81-kb-ajZ" secondAttribute="bottom" id="zIN-pp-J9g"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xZ2-ka-nHe"/>
                     <connections>
                         <outlet property="collectionView" destination="E81-kb-ajZ" id="Ogl-Mb-VQu"/>
+                        <outlet property="spinner" destination="Tgw-TC-kZM" id="7Rz-q1-aMy"/>
                         <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="vLb-zC-5PM"/>
                     </connections>
                 </viewController>
@@ -104,19 +110,23 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iay-hL-DiW">
                                 <rect key="frame" x="0.0" y="264" width="375" height="366"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="QGw-9h-fym">
+                                <rect key="frame" x="169" y="315.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.27752590669999999" green="0.27752590669999999" blue="0.27752590669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="iay-hL-DiW" secondAttribute="trailing" id="8UW-eP-JPx"/>
                             <constraint firstItem="iAC-WP-hlk" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="AvB-Q5-bfp"/>
                             <constraint firstItem="iAC-WP-hlk" firstAttribute="height" secondItem="svH-Pt-448" secondAttribute="height" multiplier="0.3" id="Fc5-XA-e1g"/>
+                            <constraint firstItem="QGw-9h-fym" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="LCz-et-pnn"/>
                             <constraint firstItem="iay-hL-DiW" firstAttribute="top" secondItem="iAC-WP-hlk" secondAttribute="bottom" id="LFo-4J-wXd"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="top" secondItem="iay-hL-DiW" secondAttribute="bottom" id="M2G-wH-qnQ"/>
+                            <constraint firstItem="QGw-9h-fym" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="Q6c-4q-YRm"/>
                             <constraint firstItem="iAC-WP-hlk" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="SLZ-iX-fHj"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
                             <constraint firstItem="iay-hL-DiW" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="pX9-r9-aeA"/>
@@ -131,6 +141,7 @@
                         <outlet property="detailDescription" destination="iay-hL-DiW" id="ub9-og-YIK"/>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
                         <outlet property="detailImageView" destination="iAC-WP-hlk" id="Xs2-Jm-MzB"/>
+                        <outlet property="spinner" destination="QGw-9h-fym" id="S2M-Kj-DjK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>

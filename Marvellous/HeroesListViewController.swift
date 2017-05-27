@@ -14,13 +14,14 @@ protocol HeroesListViewControllerInput {
 }
 
 protocol HeroesListViewControllerOutput {
-    func fetchDefaultCharacters(_ request: HeroModels.List.Request)
+    func fetchDefaultCharacters(_ request: HeroModels.List.DefaultRequest)
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest)
 }
 
 class HeroesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, HeroesListViewControllerInput {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var configurator: HeroesListConfigurator = HeroesListConfigurator()
     var output: HeroesListViewControllerOutput?
@@ -30,7 +31,7 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     let numberOfColumns: Int = 2
     var collectionItemSize: CGSize = CGSize.zero
         
-    private var heroesList: [HeroModels.List.ViewModel]?
+    private var heroesList: HeroModels.List.ViewModel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,32 +46,8 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func requestCharacters() {
-        let request = CharactersRequest()
-        let apiHandler = MarvelApiHandler()
-        
-        apiHandler.get(request) { (json, error) in
-            if let jsonFetched = json {
-                let charactersParseRequest = CharactersParseRequest()
-                let parser = MarvelParser(request: charactersParseRequest)
-                
-                if let heroes : [Hero] = parser.parse(json: jsonFetched) as? [Hero] {
-                    var heroesListModels: [HeroModels.List.ViewModel] = []
-                    for hero in heroes {
-                        let vm = HeroModels.List.ViewModel(name: hero.name, thumbnailUrl: hero.thumbnailUrl)
-                        heroesListModels.append(vm)
-                    }
-                    self.heroesList = heroesListModels
-                    self.collectionView.performBatchUpdates({
-                        let set = IndexSet(integer:0)
-                        self.collectionView.reloadSections(set)
-                    }, completion: nil)
-                    let zeroIndexPath = IndexPath(item: 0, section: 0)
-                    self.navigateToDetailAt(indexPath: zeroIndexPath)
-                }
-            }else{
-                // TODO: handle
-            }
-        }
+        let request = HeroModels.List.DefaultRequest()
+        output?.fetchDefaultCharacters(request)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -108,8 +85,18 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
 
     // MARK: - Input 
     func displayCharacters(_ viewModel: HeroModels.List.ViewModel) {
+        self.heroesList = viewModel
+        self.collectionView.performBatchUpdates({
+            let set = IndexSet(integer:0)
+            self.collectionView.reloadSections(set)
+        }, completion: nil)
+        let zeroIndexPath = IndexPath(item: 0, section: 0)
+        self.navigateToDetailAt(indexPath: zeroIndexPath)
         
+        spinner.stopAnimating()
     }
+    
+    
     
     // MARK: - CollectionView DataSource & Delegate
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -118,7 +105,8 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let heroes = heroesList {
-            return heroes.count
+            return heroes.items.count
+            
         }else{
             return 0
         }
@@ -128,7 +116,7 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
         guard let heroCell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroesListCollectionViewCell.nibName(), for: indexPath) as? HeroesListCollectionViewCell else {
             return UICollectionViewCell() 
         }
-        if let hero = heroesList?[indexPath.item] {
+        if let hero = heroesList?.items[indexPath.item] {
             heroCell.heroNameLabel.text = hero.name
             let url = URL(string: hero.thumbnailUrl)
             heroCell.heroImageView.sd_setImage(with: url, placeholderImage: nil, options: .refreshCached)
@@ -145,7 +133,7 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     }
 
     func navigateToDetailAt(indexPath: IndexPath) {
-        if let hero = heroesList?[indexPath.item] {
+        if let hero = heroesList?.items[indexPath.item] {
             let detailVM = HeroModels.Detail.ViewModel(name: hero.name, thumbnailUrl: hero.thumbnailUrl, description: "Hero description text..")
             performSegue(withIdentifier: "showDetail", sender: detailVM)
         }

@@ -21,6 +21,12 @@ class HeroesListViewPresenter: HeroesListViewPresenterInput {
     weak var output: HeroesListViewPresenterOutput!
     
     func presentCharacters(_ response: HeroModels.List.Response) {
-        
+        var heroesListModels: [HeroModels.List.ItemViewModel] = []
+        for hero in response.heroes {
+            let vm = HeroModels.List.ItemViewModel(name: hero.name, thumbnailUrl: hero.thumbnailUrl)
+            heroesListModels.append(vm)
+        }
+        let viewModel = HeroModels.List.ViewModel(items: heroesListModels)
+        output.displayCharacters(viewModel)
     } 
 }

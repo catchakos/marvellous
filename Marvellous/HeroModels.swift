@@ -10,16 +10,19 @@ import Foundation
 
 struct HeroModels {
     struct List {
-        struct Request {
+        struct DefaultRequest {
             
         }
         struct SearchRequest {
             let startsWith: String
         }
         struct Response {
-            
+            let heroes: [Hero]
         }
         struct ViewModel {
+            let items: [ItemViewModel]
+        }
+        struct ItemViewModel {
             let name: String
             let thumbnailUrl: String
         }
@@ -30,7 +33,7 @@ struct HeroModels {
             
         }
         struct Response {
-            
+
         }
         struct ViewModel {
             let name: String
