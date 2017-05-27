@@ -21,6 +21,13 @@ class ModelInterface {
         fetchCharactersRemotely(request)
     }
     
+    func getCharacters(_ request: CharactersSearchRequest, completion: @escaping(_ responseHeroes: [Hero]?, _ error: Error?) -> Void) {
+        completionHandler = completion
+        
+        fetchLocalCharacters()
+        fetchCharactersRemotely(request)
+    }
+    
     func getCharacter(_ identifier: Int64) -> Hero? {
         let request = NSFetchRequest<Hero>(entityName: "Hero")
         let predicate = NSPredicate(format: "identifier = %@", argumentArray: [identifier])
@@ -62,7 +69,7 @@ class ModelInterface {
         }
     }
     
-    private func fetchCharactersRemotely(_ request: CharactersRequest) {
+    private func fetchCharactersRemotely(_ request: MarvelApiRequest) {
         let apiHandler = MarvelApiHandler()
         apiHandler.get(request) { (json, error) in
             if let jsonFetched = json {

@@ -36,7 +36,14 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput {
     }
     
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest) {
-    
+        let request = CharactersSearchRequest(text: request.startsWith)
+        CoreDataStack.sharedInstance.modelInterface.getCharacters(request) { (newHeroes, error) in
+            if let heroesFetched = newHeroes {
+                self.heroes = heroesFetched
+                let response = HeroModels.List.Response(heroes: heroesFetched)
+                self.output?.presentCharacters(response)
+            }
+        }
     }
     
     func characterIdentifierAt(index: Int) -> Int64? {

@@ -20,7 +20,7 @@ protocol HeroesListViewControllerOutput {
     func characterIdentifierAt(index: Int) -> Int64?
 }
 
-class HeroesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, HeroesListViewControllerInput {
+class HeroesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, HeroesListViewControllerInput, UISearchBarDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -44,12 +44,17 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
         super.viewDidLoad()
 
         configureView()
-        requestCharacters()
+        requestCharacters(nil)
     }
     
-    func requestCharacters() {
-        let request = HeroModels.List.DefaultRequest()
-        output?.fetchDefaultCharacters(request)
+    func requestCharacters(_ text: String?) {
+        if let searchText = text {
+            let request = HeroModels.List.SearchRequest(startsWith: searchText)
+            output?.fetchCharactersStartingWith(request)
+        }else{
+            let request = HeroModels.List.DefaultRequest()
+            output?.fetchDefaultCharacters(request)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -92,8 +97,8 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
             let set = IndexSet(integer:0)
             self.collectionView.reloadSections(set)
         }, completion: nil)
-        let zeroIndexPath = IndexPath(item: 0, section: 0)
-        self.navigateToDetailAt(indexPath: zeroIndexPath)
+//        let zeroIndexPath = IndexPath(item: 0, section: 0)
+//        self.navigateToDetailAt(indexPath: zeroIndexPath)
         
         spinner.stopAnimating()
     }
@@ -151,6 +156,21 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
             controller.heroID = detailID
             controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
             controller.navigationItem.leftItemsSupplementBackButton = true
+        }
+    }
+    
+    //MARK - Search
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            if text.characters.count > 2 {
+                let request = HeroModels.List.SearchRequest(startsWith: text)
+                output?.fetchCharactersStartingWith(request)        
+            }
+            searchBar.resignFirstResponder()
         }
     }
     

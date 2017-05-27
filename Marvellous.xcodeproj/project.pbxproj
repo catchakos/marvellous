@@ -12,6 +12,7 @@
 		5492936558AC4FC8F1415EB0 /* Pods_Marvellous.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16ECEE390F24282BEF7E1012 /* Pods_Marvellous.framework */; };
 		AC6026961ED9ECF70034FFE7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6026951ED9ECF70034FFE7 /* CoreDataStack.swift */; };
 		AC6026981ED9EDA60034FFE7 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6026971ED9EDA60034FFE7 /* ModelInterface.swift */; };
+		AC60269A1ED9FF090034FFE7 /* CharactersSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6026991ED9FF090034FFE7 /* CharactersSearchRequest.swift */; };
 		ACF0AAB41ED8B41000301B0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAB31ED8B41000301B0C /* AppDelegate.swift */; };
 		ACF0AABB1ED8B41000301B0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF0AAB91ED8B41000301B0C /* Main.storyboard */; };
 		ACF0AABD1ED8B41000301B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACF0AABC1ED8B41000301B0C /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		8223BA1B7C68BF6A5D68BDBE /* Pods_MarvellousTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvellousTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6026951ED9ECF70034FFE7 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		AC6026971ED9EDA60034FFE7 /* ModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
+		AC6026991ED9FF090034FFE7 /* CharactersSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersSearchRequest.swift; sourceTree = "<group>"; };
 		ACF0AAB01ED8B41000301B0C /* Marvellous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvellous.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF0AAB31ED8B41000301B0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACF0AABA1ED8B41000301B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				ACF0AAED1ED8C50500301B0C /* MarvelApiHandler.swift */,
 				ACF0AAF51ED8D13F00301B0C /* CharactersRequest.swift */,
+				AC6026991ED9FF090034FFE7 /* CharactersSearchRequest.swift */,
 				ACF0AB041ED9832200301B0C /* Parser */,
 				ACF0AAEF1ED8C67F00301B0C /* Cryptor.swift */,
 			);
@@ -618,6 +621,7 @@
 				ACF0AB181ED991C900301B0C /* HeroesListCollectionViewCell.swift in Sources */,
 				ACF0AB1D1ED991DF00301B0C /* HeroDetailViewController.swift in Sources */,
 				ACF0AB331ED9AADF00301B0C /* HeroDetailConfigurator.swift in Sources */,
+				AC60269A1ED9FF090034FFE7 /* CharactersSearchRequest.swift in Sources */,
 				ACF0AB351ED9AAE800301B0C /* HeroesListConfigurator.swift in Sources */,
 				ACF0AB4F1ED9EA4800301B0C /* Hero+CoreDataClass.swift in Sources */,
 				ACF0AB281ED9A4FC00301B0C /* Navigator.swift in Sources */,
