@@ -23,10 +23,15 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput {
     
     var output: HeroesListViewInteractorOutput?
     private var heroes: [Hero]?
+    var dataRepository: ModelInterface
+    
+    required init(repository: ModelInterface) {
+        dataRepository = repository
+    }
     
     func fetchDefaultCharacters(_ request: HeroModels.List.DefaultRequest) {
         let request = CharactersRequest()
-        CoreDataStack.sharedInstance.modelInterface.getCharacters(request) { (newHeroes, error) in
+        dataRepository.getCharacters(request) { (newHeroes, error) in
             if let heroesFetched = newHeroes {
                 self.heroes = heroesFetched
                 let response = HeroModels.List.Response(heroes: heroesFetched)
@@ -37,7 +42,7 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput {
     
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest) {
         let request = CharactersSearchRequest(text: request.startsWith)
-        CoreDataStack.sharedInstance.modelInterface.getCharacters(request) { (newHeroes, error) in
+        dataRepository.getCharacters(request) { (newHeroes, error) in
             if let heroesFetched = newHeroes {
                 self.heroes = heroesFetched
                 let response = HeroModels.List.Response(heroes: heroesFetched)

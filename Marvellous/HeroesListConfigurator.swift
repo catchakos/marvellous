@@ -15,7 +15,7 @@ extension HeroesListViewPresenter: HeroesListViewInteractorOutput { }
 class HeroesListConfigurator {
     
     func configure(_ vc: HeroesListViewController) {
-        let interactor = HeroesListViewInteractor()
+        let interactor = HeroesListViewInteractor(repository: CoreDataStack.sharedInstance.modelInterface)
         vc.output = interactor
         
         let presenter = HeroesListViewPresenter()
