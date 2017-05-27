@@ -27,10 +27,15 @@ class MasterViewController: UITableViewController {
         
         let request = CharactersRequest()
         let apiHandler = MarvelApiHandler()
-        let parser = MarvelParser()
         
         apiHandler.get(request) { (json, error) in
-            parser.parse()
+            if let jsonFetched = json {
+                let charactersParseRequest = CharactersParseRequest()
+                let parser = MarvelParser(request: charactersParseRequest)
+                parser.parse(json: jsonFetched)
+            }else{
+                // TODO: handle
+            }
         }
     }
 

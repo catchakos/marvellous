@@ -22,6 +22,10 @@
 		ACF0AAF01ED8C67F00301B0C /* Cryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAEF1ED8C67F00301B0C /* Cryptor.swift */; };
 		ACF0AAF41ED8C96100301B0C /* MarvelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAF31ED8C96100301B0C /* MarvelParser.swift */; };
 		ACF0AAF61ED8D13F00301B0C /* CharactersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAF51ED8D13F00301B0C /* CharactersRequest.swift */; };
+		ACF0AAFD1ED97D4800301B0C /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF0AAFC1ED97D4800301B0C /* characters.json */; };
+		ACF0AB001ED9803C00301B0C /* CharactersParseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAFF1ED9803C00301B0C /* CharactersParseRequest.swift */; };
+		ACF0AB021ED9821F00301B0C /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB011ED9821F00301B0C /* Hero.swift */; };
+		ACF0AB031ED9821F00301B0C /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB011ED9821F00301B0C /* Hero.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,9 @@
 		ACF0AAEF1ED8C67F00301B0C /* Cryptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cryptor.swift; sourceTree = "<group>"; };
 		ACF0AAF31ED8C96100301B0C /* MarvelParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelParser.swift; sourceTree = "<group>"; };
 		ACF0AAF51ED8D13F00301B0C /* CharactersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersRequest.swift; sourceTree = "<group>"; };
+		ACF0AAFC1ED97D4800301B0C /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
+		ACF0AAFF1ED9803C00301B0C /* CharactersParseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersParseRequest.swift; sourceTree = "<group>"; };
+		ACF0AB011ED9821F00301B0C /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		B03C1530E3FA7959CF724D7D /* Pods_MarvellousUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvellousUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66434670331E61FAE22B891 /* Pods-MarvellousUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvellousUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvellousUITests/Pods-MarvellousUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D227F098ED2D24A34F1BBF88 /* Pods-MarvellousTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvellousTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvellousTests/Pods-MarvellousTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,10 +157,8 @@
 				ACF0AAB31ED8B41000301B0C /* AppDelegate.swift */,
 				ACF0AAB51ED8B41000301B0C /* MasterViewController.swift */,
 				ACF0AAB71ED8B41000301B0C /* DetailViewController.swift */,
-				ACF0AAED1ED8C50500301B0C /* MarvelApiHandler.swift */,
-				ACF0AAF51ED8D13F00301B0C /* CharactersRequest.swift */,
-				ACF0AAF31ED8C96100301B0C /* MarvelParser.swift */,
-				ACF0AAEF1ED8C67F00301B0C /* Cryptor.swift */,
+				ACF0AB051ED98C2100301B0C /* Model */,
+				ACF0AAFB1ED97C0200301B0C /* Networking */,
 				ACF0AAB91ED8B41000301B0C /* Main.storyboard */,
 				ACF0AABC1ED8B41000301B0C /* Assets.xcassets */,
 				ACF0AABE1ED8B41000301B0C /* LaunchScreen.storyboard */,
@@ -166,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				ACF0AACA1ED8B41000301B0C /* MarvellousTests.swift */,
+				ACF0AAFC1ED97D4800301B0C /* characters.json */,
 				ACF0AACC1ED8B41000301B0C /* Info.plist */,
 			);
 			path = MarvellousTests;
@@ -178,6 +184,34 @@
 				ACF0AAD71ED8B41000301B0C /* Info.plist */,
 			);
 			path = MarvellousUITests;
+			sourceTree = "<group>";
+		};
+		ACF0AAFB1ED97C0200301B0C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				ACF0AAED1ED8C50500301B0C /* MarvelApiHandler.swift */,
+				ACF0AAF51ED8D13F00301B0C /* CharactersRequest.swift */,
+				ACF0AB041ED9832200301B0C /* Parser */,
+				ACF0AAEF1ED8C67F00301B0C /* Cryptor.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		ACF0AB041ED9832200301B0C /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				ACF0AAF31ED8C96100301B0C /* MarvelParser.swift */,
+				ACF0AAFF1ED9803C00301B0C /* CharactersParseRequest.swift */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
+		ACF0AB051ED98C2100301B0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ACF0AB011ED9821F00301B0C /* Hero.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF0AAFD1ED97D4800301B0C /* characters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +515,9 @@
 			files = (
 				ACF0AAEE1ED8C50500301B0C /* MarvelApiHandler.swift in Sources */,
 				ACF0AAF41ED8C96100301B0C /* MarvelParser.swift in Sources */,
+				ACF0AB021ED9821F00301B0C /* Hero.swift in Sources */,
 				ACF0AAB81ED8B41000301B0C /* DetailViewController.swift in Sources */,
+				ACF0AB001ED9803C00301B0C /* CharactersParseRequest.swift in Sources */,
 				ACF0AAF61ED8D13F00301B0C /* CharactersRequest.swift in Sources */,
 				ACF0AAF01ED8C67F00301B0C /* Cryptor.swift in Sources */,
 				ACF0AAB61ED8B41000301B0C /* MasterViewController.swift in Sources */,
@@ -493,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACF0AACB1ED8B41000301B0C /* MarvellousTests.swift in Sources */,
+				ACF0AB031ED9821F00301B0C /* Hero.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

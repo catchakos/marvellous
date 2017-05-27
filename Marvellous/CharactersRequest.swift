@@ -13,22 +13,22 @@ class CharactersRequest: MarvelApiRequest {
     
     let resourcePath = "v1/public/characters"
     
-    var parameters: Parameters {
+    var parameters: Parameters? {
         let searchText = "Hulk"
         
         let privateData = createHashFromTimestampAndKeys()
         
-        let hash = privateData["hash"]
-        let ts = privateData["ts"]
-        let apiKey = privateData["apiKey"]
+        guard let hash = privateData["hash"], let ts = privateData["ts"], let apiKey = privateData["apikey"] else{
+            return nil
+        }
         
         let params: Parameters = [
             "nameStartsWith": searchText,
             "limit": 20,
             "offset": 0,
-            "hash": hash as Any,
-            "ts": ts as Any,
-            "apikey": apiKey as Any
+            "hash": hash,
+            "ts": ts,
+            "apikey": apiKey
         ]
         return params
     }
