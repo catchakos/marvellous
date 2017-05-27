@@ -28,6 +28,7 @@
 		ACF0AB191ED991C900301B0C /* HeroesListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF0AB161ED991C900301B0C /* HeroesListCollectionViewCell.xib */; };
 		ACF0AB1A1ED991C900301B0C /* HeroesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB171ED991C900301B0C /* HeroesListViewController.swift */; };
 		ACF0AB1D1ED991DF00301B0C /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB1C1ED991DF00301B0C /* HeroDetailViewController.swift */; };
+		ACF0AB241ED9934800301B0C /* HeroModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AB231ED9934800301B0C /* HeroModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		ACF0AB161ED991C900301B0C /* HeroesListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroesListCollectionViewCell.xib; sourceTree = "<group>"; };
 		ACF0AB171ED991C900301B0C /* HeroesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesListViewController.swift; sourceTree = "<group>"; };
 		ACF0AB1C1ED991DF00301B0C /* HeroDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
+		ACF0AB231ED9934800301B0C /* HeroModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroModels.swift; sourceTree = "<group>"; };
 		B03C1530E3FA7959CF724D7D /* Pods_MarvellousUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvellousUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66434670331E61FAE22B891 /* Pods-MarvellousUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvellousUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvellousUITests/Pods-MarvellousUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D227F098ED2D24A34F1BBF88 /* Pods-MarvellousTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvellousTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvellousTests/Pods-MarvellousTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,8 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				ACF0AAB31ED8B41000301B0C /* AppDelegate.swift */,
-				ACF0AB1E1ED991E200301B0C /* HeroDetailScene */,
-				ACF0AB1B1ED991CD00301B0C /* HeroesListScene */,
+				ACF0AB251ED993D300301B0C /* Scenes */,
 				ACF0AB051ED98C2100301B0C /* Model */,
 				ACF0AAFB1ED97C0200301B0C /* Networking */,
 				ACF0AAB91ED8B41000301B0C /* Main.storyboard */,
@@ -234,6 +235,24 @@
 				ACF0AB1C1ED991DF00301B0C /* HeroDetailViewController.swift */,
 			);
 			name = HeroDetailScene;
+			sourceTree = "<group>";
+		};
+		ACF0AB251ED993D300301B0C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				ACF0AB261ED993DD00301B0C /* Models */,
+				ACF0AB1E1ED991E200301B0C /* HeroDetailScene */,
+				ACF0AB1B1ED991CD00301B0C /* HeroesListScene */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		ACF0AB261ED993DD00301B0C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ACF0AB231ED9934800301B0C /* HeroModels.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,6 +560,7 @@
 				ACF0AB181ED991C900301B0C /* HeroesListCollectionViewCell.swift in Sources */,
 				ACF0AB1D1ED991DF00301B0C /* HeroDetailViewController.swift in Sources */,
 				ACF0AB021ED9821F00301B0C /* Hero.swift in Sources */,
+				ACF0AB241ED9934800301B0C /* HeroModels.swift in Sources */,
 				ACF0AB001ED9803C00301B0C /* CharactersParseRequest.swift in Sources */,
 				ACF0AAF61ED8D13F00301B0C /* CharactersRequest.swift in Sources */,
 				ACF0AB1A1ED991C900301B0C /* HeroesListViewController.swift in Sources */,

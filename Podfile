@@ -7,7 +7,8 @@ target 'Marvellous' do
   pod 'Alamofire' 
   pod 'SwiftyJSON'
   pod 'CryptoSwift'
-
+  pod 'SDWebImage', '~>3.8'
+  
   target 'MarvellousTests' do
     inherit! :search_paths
     # Pods for testing

@@ -7,17 +7,29 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HeroDetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var detailImageView: UIImageView!
+    @IBOutlet weak var detailDescription: UITextView!
 
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = detailItem {
+        if let viewModel = detailViewModel {
             if let label = detailDescriptionLabel {
-                label.text = detail
+                label.text = viewModel.name
             }
+            if let desc = detailDescription {
+                desc.text = viewModel.description
+            }
+            if let image = detailImageView {
+                let url = URL(string: viewModel.thumbnailUrl)
+                image.sd_setImage(with: url, placeholderImage: nil, options: .refreshCached)
+            }
+            
+            self.title = viewModel.name
         }
     }
 
@@ -31,7 +43,7 @@ class HeroDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var detailItem: String? {
+    var detailViewModel: HeroModels.Detail.ViewModel? {
         didSet {
             // Update the view.
             configureView()

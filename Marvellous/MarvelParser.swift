@@ -20,7 +20,7 @@ class MarvelParser {
         parseRequest = request
     }
     
-    func parse(json: JSON) {
+    func parse(json: JSON) -> [Any]? {
         let dataArray = json["data"]["results"] 
         var results = [Any]()
         for element in dataArray.array! {
@@ -28,7 +28,6 @@ class MarvelParser {
                 results.append(result)
             }
         }
-        print("\(results)")
+        return results
     } 
-    
 }

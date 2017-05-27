@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HeroesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -19,6 +20,8 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     let numberOfColumns: Int = 2
     var collectionItemSize: CGSize = CGSize.zero
         
+    private var heroesList: [HeroModels.List.ViewModel]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +42,21 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
             if let jsonFetched = json {
                 let charactersParseRequest = CharactersParseRequest()
                 let parser = MarvelParser(request: charactersParseRequest)
-                parser.parse(json: jsonFetched)
+                
+                if let heroes : [Hero] = parser.parse(json: jsonFetched) as? [Hero] {
+                    var heroesListModels: [HeroModels.List.ViewModel] = []
+                    for hero in heroes {
+                        let vm = HeroModels.List.ViewModel(name: hero.name, thumbnailUrl: hero.thumbnailUrl)
+                        heroesListModels.append(vm)
+                    }
+                    self.heroesList = heroesListModels
+                    self.collectionView.performBatchUpdates({
+                        let set = IndexSet(integer:0)
+                        self.collectionView.reloadSections(set)
+                    }, completion: nil)
+                    let zeroIndexPath = IndexPath(item: 0, section: 0)
+                    self.navigateToDetailAt(indexPath: zeroIndexPath)
+                }
             }else{
                 // TODO: handle
             }
@@ -85,11 +102,22 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        if let heroes = heroesList {
+            return heroes.count
+        }else{
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let heroCell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroesListCollectionViewCell.nibName(), for: indexPath)
+        guard let heroCell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroesListCollectionViewCell.nibName(), for: indexPath) as? HeroesListCollectionViewCell else {
+            return UICollectionViewCell() 
+        }
+        if let hero = heroesList?[indexPath.item] {
+            heroCell.heroNameLabel.text = hero.name
+            let url = URL(string: hero.thumbnailUrl)
+            heroCell.heroImageView.sd_setImage(with: url, placeholderImage: nil, options: .refreshCached)
+        }
         return heroCell
     }
     
@@ -98,15 +126,22 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetail", sender: indexPath)
+        navigateToDetailAt(indexPath: indexPath)
     }
 
+    func navigateToDetailAt(indexPath: IndexPath) {
+        if let hero = heroesList?[indexPath.item] {
+            let detailVM = HeroModels.Detail.ViewModel(name: hero.name, thumbnailUrl: hero.thumbnailUrl, description: "Hero description text..")
+            performSegue(withIdentifier: "showDetail", sender: detailVM)
+        }
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             let controller = (segue.destination as! UINavigationController).topViewController as! HeroDetailViewController
-            let indexPath = sender as! IndexPath
-            controller.detailItem = indexPath.description
+            let detailInfo = sender as! HeroModels.Detail.ViewModel
+            controller.detailViewModel = detailInfo
             controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
             controller.navigationItem.leftItemsSupplementBackButton = true
         }
