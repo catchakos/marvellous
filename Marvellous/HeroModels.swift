@@ -39,6 +39,8 @@ struct HeroModels {
             let name: String
             let thumbnailUrl: String
             let description: String
+            let seriesNames: [String]
+            let comicsNames: [String]
         }
     }
 }

@@ -29,7 +29,6 @@ class CharactersSearchRequest: MarvelApiRequest {
         
         let params: Parameters = [
             "nameStartsWith": searchText,
-            "limit": 20,
             "offset": 0,
             "hash": hash,
             "ts": ts,

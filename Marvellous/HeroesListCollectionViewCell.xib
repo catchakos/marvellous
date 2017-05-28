@@ -21,10 +21,13 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-9p-bxx">
                         <rect key="frame" x="0.0" y="0.0" width="178" height="67"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jV8-Kg-koB">
-                        <rect key="frame" x="128" y="39" width="42" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="jV8-Kg-koB">
+                        <rect key="frame" x="130.5" y="39.5" width="39.5" height="19.5"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="34" id="b5g-Ym-OV8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -33,6 +36,7 @@
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Rhr-9p-bxx" secondAttribute="bottom" id="94P-wC-XEi"/>
+                <constraint firstItem="jV8-Kg-koB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="G13-ZN-TAM"/>
                 <constraint firstAttribute="bottom" secondItem="jV8-Kg-koB" secondAttribute="bottom" constant="8" id="Qvw-lV-efF"/>
                 <constraint firstAttribute="trailing" secondItem="Rhr-9p-bxx" secondAttribute="trailing" id="Umn-qT-Lwy"/>
                 <constraint firstItem="Rhr-9p-bxx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XMa-ki-buf"/>

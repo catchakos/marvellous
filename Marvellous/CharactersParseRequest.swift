@@ -41,6 +41,27 @@ class CharactersParseRequest: MarvelParseRequest {
             hero?.desc = desc
             hero?.thumbnailUrl = thumbUrl
             hero?.identifier = heroID
+            
+            if let jsonSeries = json["series"]["items"].array {
+                for oneJsonSeries in jsonSeries {
+                    if let series = NSEntityDescription.insertNewObject(forEntityName: "Series", into: intoContext) as? Series {
+                        series.name = oneJsonSeries["name"].string
+                        series.resourceURI = oneJsonSeries["resourceURI"].string
+                        hero?.addToAppearsInSeries(series)
+                    }
+                }
+            }
+            
+            if let jsonComics = json["comics"]["items"].array {
+                for jsonComic in jsonComics {
+                    if let comic = NSEntityDescription.insertNewObject(forEntityName: "Comic", into: intoContext) as? Comic {
+                        comic.name = jsonComic["name"].string
+                        comic.resourceURI = jsonComic["resourceURI"].string
+                        hero?.addToAppearsInComics(comic)
+                    }
+                }
+            }
+            
             return hero
         } catch let error as NSError {
             print(error.description)

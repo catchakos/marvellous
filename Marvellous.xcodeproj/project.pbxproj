@@ -14,6 +14,8 @@
 		404998AB0C7FE9A31CA6B3C1 /* Pods_MarvellousUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03C1530E3FA7959CF724D7D /* Pods_MarvellousUITests.framework */; };
 		5179B73238E6B2E0CA288AC4 /* Pods_MarvellousTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8223BA1B7C68BF6A5D68BDBE /* Pods_MarvellousTests.framework */; };
 		5492936558AC4FC8F1415EB0 /* Pods_Marvellous.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16ECEE390F24282BEF7E1012 /* Pods_Marvellous.framework */; };
+		AC11D5B21EDAFC6F00568DD1 /* HeroDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11D5B01EDAFC6F00568DD1 /* HeroDetailTableViewCell.swift */; };
+		AC11D5B31EDAFC6F00568DD1 /* HeroDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC11D5B11EDAFC6F00568DD1 /* HeroDetailTableViewCell.xib */; };
 		AC18A7491EDAB3B9001C832D /* HeroesListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC18A7481EDAB3B9001C832D /* HeroesListWorker.swift */; };
 		AC6026961ED9ECF70034FFE7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6026951ED9ECF70034FFE7 /* CoreDataStack.swift */; };
 		AC6026981ED9EDA60034FFE7 /* CharactersOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6026971ED9EDA60034FFE7 /* CharactersOperation.swift */; };
@@ -79,6 +81,8 @@
 		5248F9474ACD59CD521FA1B3 /* Pods-Marvellous.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvellous.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marvellous/Pods-Marvellous.debug.xcconfig"; sourceTree = "<group>"; };
 		60794BCE921F4A611D69B2A5 /* Pods-Marvellous.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvellous.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvellous/Pods-Marvellous.release.xcconfig"; sourceTree = "<group>"; };
 		8223BA1B7C68BF6A5D68BDBE /* Pods_MarvellousTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvellousTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC11D5B01EDAFC6F00568DD1 /* HeroDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailTableViewCell.swift; sourceTree = "<group>"; };
+		AC11D5B11EDAFC6F00568DD1 /* HeroDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroDetailTableViewCell.xib; sourceTree = "<group>"; };
 		AC18A7481EDAB3B9001C832D /* HeroesListWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesListWorker.swift; sourceTree = "<group>"; };
 		AC6026951ED9ECF70034FFE7 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CoreDataStack.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AC6026971ED9EDA60034FFE7 /* CharactersOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CharactersOperation.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -174,6 +178,15 @@
 				4AA7BC0F6CA80362167173B5 /* Pods-MarvellousUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AC11D5B41EDAFC7200568DD1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AC11D5B01EDAFC6F00568DD1 /* HeroDetailTableViewCell.swift */,
+				AC11D5B11EDAFC6F00568DD1 /* HeroDetailTableViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		ACF0AAA71ED8B41000301B0C = {
@@ -294,6 +307,7 @@
 				ACF0AB321ED9AADF00301B0C /* HeroDetailConfigurator.swift */,
 				ACF0AB2E1ED9A85B00301B0C /* HeroDetailInteractor.swift */,
 				ACF0AB301ED9A86300301B0C /* HeroDetailViewPresenter.swift */,
+				AC11D5B41EDAFC7200568DD1 /* Cells */,
 			);
 			name = HeroDetailScene;
 			sourceTree = "<group>";
@@ -445,6 +459,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC11D5B31EDAFC6F00568DD1 /* HeroDetailTableViewCell.xib in Resources */,
 				ACF0AB191ED991C900301B0C /* HeroesListCollectionViewCell.xib in Resources */,
 				ACF0AAC01ED8B41000301B0C /* LaunchScreen.storyboard in Resources */,
 				ACF0AABD1ED8B41000301B0C /* Assets.xcassets in Resources */,
@@ -651,6 +666,7 @@
 				AC6026961ED9ECF70034FFE7 /* CoreDataStack.swift in Sources */,
 				ACF0AB1A1ED991C900301B0C /* HeroesListViewController.swift in Sources */,
 				ACF0AAF01ED8C67F00301B0C /* Cryptor.swift in Sources */,
+				AC11D5B21EDAFC6F00568DD1 /* HeroDetailTableViewCell.swift in Sources */,
 				ACF0AB3C1ED9E4DE00301B0C /* HeroModel.xcdatamodeld in Sources */,
 				ACF0AAB41ED8B41000301B0C /* AppDelegate.swift in Sources */,
 			);
