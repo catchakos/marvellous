@@ -115,14 +115,19 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
             break
         }
         
+        let firstHeroesDisplayed : Bool = viewModel.type == .AllHeroes && self.heroesList?.items == nil
+        
         self.heroesList = viewModel
         self.collectionView.performBatchUpdates({
             let set = IndexSet(integer:0)
             self.collectionView.reloadSections(set)
         }, completion: nil)
-//        let zeroIndexPath = IndexPath(item: 0, section: 0)
-//        self.navigateToDetailAt(indexPath: zeroIndexPath)
         
+        if firstHeroesDisplayed && splitViewController?.traitCollection.horizontalSizeClass == .regular {
+            let zeroIndexPath = IndexPath(item: 0, section: 0)
+            self.navigateToDetailAt(indexPath: zeroIndexPath)            
+        }
+                
         changeSpinnerState(viewModel.isLoading)
         
         switcher.isUserInteractionEnabled = !viewModel.isLoading
