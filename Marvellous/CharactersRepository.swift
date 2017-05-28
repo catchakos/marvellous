@@ -16,15 +16,11 @@ class CharactersRepository {
     
     func getCharacters(_ request: CharactersRequest, completion: @escaping(_ responseHeroes: [Hero]?, _ error: Error?) -> Void) {
         completionHandler = completion
-        
-        fetchLocalCharacters()
         fetchCharactersRemotely(request)
     }
     
     func getCharacters(_ request: CharactersSearchRequest, completion: @escaping(_ responseHeroes: [Hero]?, _ error: Error?) -> Void) {
         completionHandler = completion
-        
-        fetchLocalCharacters()
         fetchCharactersRemotely(request)
     }
     
@@ -52,20 +48,6 @@ class CharactersRepository {
     private func informError(_ error: Error?) {
         if let closure = completionHandler {
             closure(nil, error)            
-        }
-    }
-    
-    private func fetchLocalCharacters() {
-        let request = NSFetchRequest<Hero>(entityName: "Hero")
-        let predicate = NSPredicate(format: "identifier != 0")
-        request.predicate = predicate
-        
-        do {
-            let heroes = try CoreDataStack.sharedInstance.managedObjectContext.fetch(request) as [Hero]
-            informHeroes(heroes)
-        } catch let error as NSError {
-            print(error.description)
-            informHeroes(nil)
         }
     }
     

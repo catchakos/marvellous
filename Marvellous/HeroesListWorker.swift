@@ -18,7 +18,11 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
     var activeRequest: MarvelApiRequest?
     var requestType: HeroesListType?
     weak var delegate: HeroesListWorkerDelegate?
+    var isFetching: Bool = false
     
+    var offset: Int = 0
+    var batchSize: Int = 20
+
     override init() {
         super.init()
     }
@@ -57,13 +61,24 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
         guard let request = activeRequest, let type = requestType else {
             return
         }
+        isFetching = true
         switch type {
         case .AllHeroes:
-            CoreDataStack.sharedInstance.charactersRepository.getCharacters(request as! CharactersRequest) { (newHeroes, error) in }            
+            if let allRequest = request as? CharactersRequest {
+                offset = allRequest.offset
+                batchSize = allRequest.batchSize
+                print("getting characters with offset \(offset)")
+                CoreDataStack.sharedInstance.charactersRepository.getCharacters(allRequest) { (newHeroes, error) in 
+                    self.isFetching = false
+                }
+            }
         case .Search:
-            CoreDataStack.sharedInstance.charactersRepository.getCharacters(request as! CharactersSearchRequest) { (newHeroes, error) in }
+            if let searchRequest = request as? CharactersSearchRequest {
+                CoreDataStack.sharedInstance.charactersRepository.getCharacters(searchRequest) { (newHeroes, error) in 
+                    self.isFetching = false
+                }
+            }
         }
-
     }
     
     // MARK: - Fetched results controller & Delegate

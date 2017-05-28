@@ -160,11 +160,9 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == collectionView {
-            if (scrollView.contentOffset.y + scrollView.bounds.size.height >= scrollView.contentSize.height)
-            {
-                print("bottom \(scrollView.contentOffset)")
+            if (scrollView.contentOffset.y + scrollView.bounds.size.height >= scrollView.contentSize.height) {
+                output?.nextPage()
             }
-
         }
     }
     

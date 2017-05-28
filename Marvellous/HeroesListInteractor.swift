@@ -41,7 +41,7 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
     }
     
     func fetchDefaultCharacters(_ request: HeroModels.List.DefaultRequest) {
-        startFetchingAllCharacters()
+        fetchAllCharactersFromOffset(offset: 0)
     }
     
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest) {
@@ -49,13 +49,16 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
         worker.fetch(request: request, type: .Search)
     }
     
-    func startFetchingAllCharacters() {
+    func fetchAllCharactersFromOffset(offset: Int) {
         let request = CharactersRequest()
+        request.offset = offset
         worker.fetch(request: request, type: .AllHeroes)
     }
     
     func nextPage() {
-        
+        if worker.requestType == .AllHeroes && !worker.isFetching {
+            fetchAllCharactersFromOffset(offset: worker.offset + worker.batchSize)
+        }
     }
     
     func changeListType(typeIndex: Int) {
@@ -64,7 +67,7 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
             worker.requestType = .AllHeroes
             heroes.removeAll()    
             output?.presentEmpty(.AllHeroes)
-            startFetchingAllCharacters()
+            fetchAllCharactersFromOffset(offset: 0)
         case 1:
             worker.requestType = .Search
             output?.presentEmpty(.Search)

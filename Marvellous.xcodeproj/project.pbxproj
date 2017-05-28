@@ -16,7 +16,7 @@
 		5492936558AC4FC8F1415EB0 /* Pods_Marvellous.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16ECEE390F24282BEF7E1012 /* Pods_Marvellous.framework */; };
 		AC18A7491EDAB3B9001C832D /* HeroesListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC18A7481EDAB3B9001C832D /* HeroesListWorker.swift */; };
 		AC6026961ED9ECF70034FFE7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6026951ED9ECF70034FFE7 /* CoreDataStack.swift */; };
-		AC6026981ED9EDA60034FFE7 /* CharactersOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6026971ED9EDA60034FFE7 /* CharactersOperation.swift */; };
+		AC6026981ED9EDA60034FFE7 /* CharactersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6026971ED9EDA60034FFE7 /* CharactersRepository.swift */; };
 		AC60269A1ED9FF090034FFE7 /* CharactersSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6026991ED9FF090034FFE7 /* CharactersSearchRequest.swift */; };
 		ACF0AAB41ED8B41000301B0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAB31ED8B41000301B0C /* AppDelegate.swift */; };
 		ACF0AABB1ED8B41000301B0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF0AAB91ED8B41000301B0C /* Main.storyboard */; };
@@ -81,7 +81,7 @@
 		8223BA1B7C68BF6A5D68BDBE /* Pods_MarvellousTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvellousTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC18A7481EDAB3B9001C832D /* HeroesListWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesListWorker.swift; sourceTree = "<group>"; };
 		AC6026951ED9ECF70034FFE7 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CoreDataStack.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		AC6026971ED9EDA60034FFE7 /* CharactersOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CharactersOperation.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		AC6026971ED9EDA60034FFE7 /* CharactersRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CharactersRepository.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AC6026991ED9FF090034FFE7 /* CharactersSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersSearchRequest.swift; sourceTree = "<group>"; };
 		ACF0AAB01ED8B41000301B0C /* Marvellous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvellous.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF0AAB31ED8B41000301B0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -262,7 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				AC6026951ED9ECF70034FFE7 /* CoreDataStack.swift */,
-				AC6026971ED9EDA60034FFE7 /* CharactersOperation.swift */,
+				AC6026971ED9EDA60034FFE7 /* CharactersRepository.swift */,
 				ACF0AB3A1ED9E4DE00301B0C /* HeroModel.xcdatamodeld */,
 				ACF0AB491ED9EA4800301B0C /* Hero+CoreDataClass.swift */,
 				ACF0AB4A1ED9EA4800301B0C /* Hero+CoreDataProperties.swift */,
@@ -646,7 +646,7 @@
 				ACF0AB001ED9803C00301B0C /* CharactersParseRequest.swift in Sources */,
 				ACF0AB501ED9EA4800301B0C /* Hero+CoreDataProperties.swift in Sources */,
 				ACF0AAF61ED8D13F00301B0C /* CharactersRequest.swift in Sources */,
-				AC6026981ED9EDA60034FFE7 /* CharactersOperation.swift in Sources */,
+				AC6026981ED9EDA60034FFE7 /* CharactersRepository.swift in Sources */,
 				ACF0AB311ED9A86300301B0C /* HeroDetailViewPresenter.swift in Sources */,
 				AC6026961ED9ECF70034FFE7 /* CoreDataStack.swift in Sources */,
 				ACF0AB1A1ED991C900301B0C /* HeroesListViewController.swift in Sources */,
