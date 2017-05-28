@@ -14,6 +14,8 @@ class CharactersRequest: MarvelApiRequest {
     var parseRequest: MarvelParseRequest? {
         return CharactersParseRequest()
     }
+    let batchSize = 20
+    var offset = 0
     
     var parameters: Parameters? {
         let searchText = "Hulk"
@@ -26,8 +28,8 @@ class CharactersRequest: MarvelApiRequest {
         
         let params: Parameters = [
             "nameStartsWith": searchText,
-            "limit": 20,
-            "offset": 0,
+            "limit": batchSize,
+            "offset": offset,
             "hash": hash,
             "ts": ts,
             "apikey": apiKey

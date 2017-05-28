@@ -25,10 +25,11 @@ class MarvelParser {
         let dataArray = json["data"]["results"] 
         
         DispatchQueue.global(qos: .userInitiated).async {
+            let context = CoreDataStack.sharedInstance.insertionContext()
             for element in dataArray.array! {
-                let context = CoreDataStack.sharedInstance.insertionContext()
                 _ = self.parseRequest.inflateElementIfNeeded(element, context)
             }
+            context.saveChanges()
         } 
     }
 }

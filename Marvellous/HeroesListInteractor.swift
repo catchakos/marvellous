@@ -19,35 +19,33 @@ protocol HeroesListViewInteractorOutput {
     func presentCharacters(_ response: HeroModels.List.Response)
 }
 
-class HeroesListViewInteractor: HeroesListViewInteractorInput {
+enum HeroesListType {
+    case AllHeroes
+    case Search
+}
+
+class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerDelegate {
     
     var output: HeroesListViewInteractorOutput?
-    private var heroes: [Hero]?
+    private var heroes = [Hero]()
+    private var worker: HeroesListWorker =  HeroesListWorker()
+    
+    init() {
+        worker.delegate = self
+    }
+    
     
     func fetchDefaultCharacters(_ request: HeroModels.List.DefaultRequest) {
         let request = CharactersRequest()
-        CoreDataStack.sharedInstance.charactersOperation.getCharacters(request) { (newHeroes, error) in
-            if let heroesFetched = newHeroes {
-                self.heroes = heroesFetched
-                let response = HeroModels.List.Response(heroes: heroesFetched)
-                self.output?.presentCharacters(response)
-            }
-        }
+        worker.fetch(request: request, type: .AllHeroes)
     }
     
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest) {
         let request = CharactersSearchRequest(text: request.startsWith)
-        CoreDataStack.sharedInstance.charactersOperation.getCharacters(request) { (newHeroes, error) in
-            if let heroesFetched = newHeroes {
-                self.heroes = heroesFetched
-                let response = HeroModels.List.Response(heroes: heroesFetched)
-                self.output?.presentCharacters(response)
-            }
-        }
+        worker.fetch(request: request, type: .Search)
     }
     
     func characterIdentifierAt(index: Int) -> Int64? {
-        guard let heroes = heroes else { return nil }
         if heroes.count > index {
             return heroes[index].identifier
         }else{
@@ -55,4 +53,21 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput {
         }
     }
     
+    
+    // MARK - HeroesList Worker Delegate
+    func didFetchHeroes(_ heroesFetched: [Hero]?, forRequest: MarvelApiRequest, ofType: HeroesListType) {
+        switch ofType {
+        case .AllHeroes:
+            break
+        case .Search:
+            heroes.removeAll()    
+        }
+        
+        if let fetchedHeroes = heroesFetched {
+            self.heroes.append(contentsOf:fetchedHeroes)  
+            let response = HeroModels.List.Response(heroes: self.heroes)
+            self.output?.presentCharacters(response)
+        }
+    }
+
 }

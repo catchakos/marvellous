@@ -46,9 +46,6 @@ class CoreDataStack: NSObject {
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
         
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(managedObjectContextObjectsDidSave), name: NSNotification.Name.NSManagedObjectContextDidSave, object: managedObjectContext)
-
         return managedObjectContext
     }()
     
@@ -62,20 +59,15 @@ class CoreDataStack: NSObject {
         }
     }
     
-    func saveContext () {
-        if managedObjectContext.hasChanges {
-            do {
-                try managedObjectContext.save()
-            } catch {
-                let nserror = error as NSError
-                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
-    
     func insertionContext() -> NSManagedObjectContext {
         let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         context.persistentStoreCoordinator = self.persistentStoreCoordinator
+
+        DispatchQueue.main.async {
+            let notificationCenter = NotificationCenter.default
+            notificationCenter.addObserver(self, selector: #selector(self.managedObjectContextObjectsDidSave), name: NSNotification.Name.NSManagedObjectContextDidSave, object: context)            
+        }
+        
         return context
     }
     
@@ -84,4 +76,17 @@ class CoreDataStack: NSObject {
         return urls[urls.count-1]
     }()
     
+}
+
+extension NSManagedObjectContext {
+    func saveChanges() {
+        if hasChanges {
+            do {
+                try save()
+            } catch {
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
 }
