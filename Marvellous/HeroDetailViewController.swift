@@ -19,7 +19,6 @@ protocol HeroDetailViewControllerOutput {
 
 class HeroDetailViewController: UIViewController, HeroDetailViewControllerInput, UITableViewDataSource {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var detailDescription: UITextView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -72,10 +71,7 @@ class HeroDetailViewController: UIViewController, HeroDetailViewControllerInput,
     
     func displayCharacterInfo(_ viewModel: HeroModels.Detail.ViewModel) {
         heroDetail = viewModel
-        
-        if let label = detailDescriptionLabel {
-            label.text = viewModel.name
-        }
+
         if let desc = detailDescription {
             desc.text = viewModel.description
         }        

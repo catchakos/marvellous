@@ -12,7 +12,7 @@ import XCTest
 class HeroesListPresenterTests: XCTestCase {
     var outputSpy: HeroesListViewPresenterOutputSpy!
     var sut: HeroesListViewPresenter!
-    var repoMock: RespositoryMock!
+    var repoMock: RepositoryMock!
     
     class HeroesListViewPresenterOutputSpy: HeroesListViewPresenterOutput {
         var displayCalled: Bool = false
@@ -38,10 +38,11 @@ class HeroesListPresenterTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
+        repoMock.clear()
     }
     
     func setupPresenter() {
-        repoMock = RespositoryMock()
+        repoMock = RepositoryMock()
         sut = HeroesListViewPresenter()
         outputSpy = HeroesListViewPresenterOutputSpy()
         sut.output = outputSpy

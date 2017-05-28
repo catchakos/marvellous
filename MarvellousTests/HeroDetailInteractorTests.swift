@@ -7,30 +7,55 @@
 //
 
 import XCTest
+@testable import Marvellous
 
 class HeroDetailInteractorTests: XCTestCase {
-        
-//    override func setUp() {
-//        super.setUp()
-//        
-//        // Put setup code here. This method is called before the invocation of each test method in the class.
-//        
-//        // In UI tests it is usually best to stop immediately when a failure occurs.
-//        continueAfterFailure = false
-//        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-//        XCUIApplication().launch()
-//
-//        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-//    }
-//    
-//    override func tearDown() {
-//        // Put teardown code here. This method is called after the invocation of each test method in the class.
-//        super.tearDown()
-//    }
-//    
-//    func testExample() {
-//        // Use recording to get started writing UI tests.
-//        // Use XCTAssert and related functions to verify your tests produce the correct results.
-//    }
     
+    var sut : HeroDetailInteractor!
+    var outputSpy: HeroDetailInteractorOutputSpy!
+    var repoMock: RepositoryMock!
+    
+    class HeroDetailInteractorOutputSpy: HeroDetailViewInteractorOutput {
+        var presentCalled : Bool = false
+        var presentResponse : HeroModels.Detail.Response?
+        
+        func presentCharacterInfo(_ response: HeroModels.Detail.Response) {
+            presentCalled = true
+            presentResponse = response
+        }
+    }
+    
+    override func setUp() {
+        super.setUp()
+        setupInteractor()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        repoMock.clear()
+    }
+    
+    func setupInteractor() {
+        repoMock = RepositoryMock()
+        sut = HeroDetailInteractor(repository: repoMock)
+        outputSpy = HeroDetailInteractorOutputSpy()
+        sut.output = outputSpy
+    }
+    
+    func testHeroDetailInteractorCallsPresent() {
+        let request = HeroModels.Detail.Request(characterID: 100)
+        
+        sut.fetchCharacterInfo(request)
+        
+        XCTAssert(outputSpy.presentCalled)
+    }
+    
+    func testHeroDetailInteractorCallsPresentWithMeaningfulInfo() {
+        let request = HeroModels.Detail.Request(characterID: 100)
+        
+        sut.fetchCharacterInfo(request)
+        
+        XCTAssertEqual(outputSpy.presentResponse?.hero.name, "FakeHero")
+        XCTAssertEqual(outputSpy.presentResponse?.hero.identifier, 100)
+    }
 }

@@ -13,7 +13,7 @@ class HeroesListInteractorTests: XCTestCase {
     
     var outputSpy: HeroesListInteractorOutputSpy!
     var sut: HeroesListViewInteractor!
-    var repoMock: RespositoryMock!
+    var repoMock: RepositoryMock!
     var workerFake: HeroListWorkerFake!
     
     class HeroesListInteractorOutputSpy: HeroesListViewInteractorOutput {
@@ -32,7 +32,7 @@ class HeroesListInteractorTests: XCTestCase {
     }
     
     class HeroListWorkerFake: HeroesListWorker {
-        var repoMock: RespositoryMock!
+        var repoMock: RepositoryMock!
         
         override func fetch(request: MarvelApiRequest, type: HeroesListType) {
             isFetching = true
@@ -50,10 +50,11 @@ class HeroesListInteractorTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
+        repoMock.clear()
     }
     
     func setupInteractor() {
-        repoMock = RespositoryMock()
+        repoMock = RepositoryMock()
         sut = HeroesListViewInteractor(repository: repoMock)
         sut.dataRepository = repoMock
         outputSpy = HeroesListInteractorOutputSpy()

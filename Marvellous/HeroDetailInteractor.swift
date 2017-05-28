@@ -19,9 +19,14 @@ protocol HeroDetailViewInteractorOutput {
 class HeroDetailInteractor: HeroDetailViewInteractorInput {
     
     var output: HeroDetailViewInteractorOutput?
+    var dataRepository: CharactersRepository
+
+    required init(repository: CharactersRepository) {
+        dataRepository = repository
+    }
     
     func fetchCharacterInfo(_ request: HeroModels.Detail.Request) {
-        if let hero = CoreDataStack.sharedInstance.charactersRepository.getCharacter(request.characterID) {           
+        if let hero = dataRepository.getCharacter(request.characterID) {           
             let response = HeroModels.Detail.Response(hero: hero)
             output?.presentCharacterInfo(response)
         }

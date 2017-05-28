@@ -1,5 +1,5 @@
 //
-//  RespositoryMock.swift
+//  RepositoryMock.swift
 //  Marvellous
 //
 //  Created by Alexandros Katsaprakakis on 28/05/2017.
@@ -9,7 +9,7 @@
 import Foundation
 @testable import Marvellous
 
-class RespositoryMock: CharactersRepository {
+class RepositoryMock: CharactersRepository {
     var stack: CoreDataStackFake = CoreDataStackFake()
     
     func clear() {

@@ -7,30 +7,85 @@
 //
 
 import XCTest
+@testable import Marvellous 
 
 class HeroDetailViewControllerTests: XCTestCase {
+    
+    var sut: HeroDetailViewController!
+    var outputSpy: HeroDetailViewControllerOutputSpy!
+    
+    class HeroDetailViewControllerOutputSpy: HeroDetailViewControllerOutput {
+        var fetchCalled: Bool = false
+        var fetchRequested: HeroModels.Detail.Request!
         
-//    override func setUp() {
-//        super.setUp()
+        func fetchCharacterInfo(_ request: HeroModels.Detail.Request){
+            fetchCalled = true
+            fetchRequested = request
+        }
+    }
+    
+    
+    override func setUp() {
+        super.setUp()
+        setupViewController()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func setupViewController() {
+        outputSpy = HeroDetailViewControllerOutputSpy()
+        let story = UIStoryboard(name: "Main", bundle: Bundle.main)
+        sut = story.instantiateViewController(withIdentifier: "HeroDetailViewController") as! HeroDetailViewController
+        sut.output = outputSpy
+    }
+    
+    func testHeroDetailViewControllerCallsFetchCharacter() {
+        sut.heroID = 100
+        
+        XCTAssert(outputSpy.fetchCalled)
+    }
+    
+    func testHeroDetailViewControllerCallsFetchCharacterWithMeaningfulRequest() {
+        sut.heroID = 100
+
+        XCTAssertEqual(outputSpy.fetchRequested.characterID, 100)
+    }
+    
+    func testHeroDetailViewControllerFillsDescription() {
+        sut.loadView()
+        
+        let vm = createFakeViewModel()
+        sut.displayCharacterInfo(vm)
+        
+        XCTAssertEqual(sut.detailDescription.text, "desc")
+    }
+
+//    func testHeroDetailViewControllerFillsImage() {
+//        let vm = createFakeViewModel()
+//        sut.displayCharacterInfo(vm)
 //        
-//        // Put setup code here. This method is called before the invocation of each test method in the class.
-//        
-//        // In UI tests it is usually best to stop immediately when a failure occurs.
-//        continueAfterFailure = false
-//        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-//        XCUIApplication().launch()
-//
-//        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+//        XCTAssert(sut.detailImageView.image)
 //    }
-//    
-//    override func tearDown() {
-//        // Put teardown code here. This method is called after the invocation of each test method in the class.
-//        super.tearDown()
-//    }
-//    
-//    func testExample() {
-//        // Use recording to get started writing UI tests.
-//        // Use XCTAssert and related functions to verify your tests produce the correct results.
-//    }
-//    
+    
+    func testHeroDetailViewControllerStartsSpinner() {
+        sut.loadView()
+        
+        XCTAssert(sut.spinner.isAnimating)
+    }
+    
+    func testHeroDetailViewControllerStopsSpinner() {
+        sut.loadView()
+        
+        let vm = createFakeViewModel()
+        sut.displayCharacterInfo(vm)
+        
+        XCTAssertFalse(sut.spinner.isAnimating)        
+    }
+    
+    func createFakeViewModel() -> HeroModels.Detail.ViewModel {
+        let vm = HeroModels.Detail.ViewModel(name: "name", thumbnailUrl: "url", description: "desc", seriesNames: ["s1","s2"], comicsNames: ["c1"])
+        return vm
+    }
 }

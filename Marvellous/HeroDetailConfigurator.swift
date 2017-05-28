@@ -15,7 +15,7 @@ extension HeroDetailViewPresenter: HeroDetailViewInteractorOutput { }
 class HeroDetailConfigurator {
     
     func configure(_ vc: HeroDetailViewController) {
-        let interactor = HeroDetailInteractor()
+        let interactor = HeroDetailInteractor(repository: CoreDataStack.sharedInstance.charactersRepository)
         vc.output = interactor
         
         let presenter = HeroDetailViewPresenter()

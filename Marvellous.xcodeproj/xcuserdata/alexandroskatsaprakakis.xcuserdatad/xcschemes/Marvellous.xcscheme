@@ -42,15 +42,6 @@
                   Identifier = "ApiHandlerTests">
                </Test>
                <Test
-                  Identifier = "HeroDetailInteractorTests">
-               </Test>
-               <Test
-                  Identifier = "HeroDetailPresenterTests">
-               </Test>
-               <Test
-                  Identifier = "HeroDetailViewControllerTests">
-               </Test>
-               <Test
                   Identifier = "cdStackTests">
                </Test>
             </SkippedTests>
