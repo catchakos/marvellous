@@ -19,7 +19,7 @@ protocol HeroesListViewInteractorInput {
 
 protocol HeroesListViewInteractorOutput {
     func presentCharacters(_ response: HeroModels.List.Response)
-    func presentEmpty(_ type: HeroesListType, _ loading: Bool)
+    func presentEmpty(_ type: HeroesListType, _ loading: Bool, _ message: String?)
 }
 
 enum HeroesListType {
@@ -45,8 +45,12 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
     }
     
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest) {
-        let request = CharactersSearchRequest(text: request.startsWith)
-        worker.fetch(request: request, type: .Search)
+        if request.startsWith.characters.count > 2 {
+            let request = CharactersSearchRequest(text: request.startsWith)
+            worker.fetch(request: request, type: .Search)
+        }else{
+            output?.presentEmpty(.Search, false, "Should type more than 2 characters to search..")
+        }
     }
     
     func fetchAllCharactersFromOffset(offset: Int) {
@@ -70,11 +74,11 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
         case 0:
             worker.requestType = .AllHeroes
             heroes.removeAll()    
-            output?.presentEmpty(.AllHeroes, true)
+            output?.presentEmpty(.AllHeroes, true, nil)
             fetchAllCharactersFromOffset(offset: 0)
         case 1:
             worker.requestType = .Search
-            output?.presentEmpty(.Search, false)
+            output?.presentEmpty(.Search, false, nil)
         default:
             break
         }
@@ -104,6 +108,10 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
             let response = HeroModels.List.Response(heroes: self.heroes, type: ofType, isLoading: worker.isFetching)
             self.output?.presentCharacters(response)
         }
+    }
+    
+    func didNotFindSearchResults() {
+        output?.presentEmpty(.Search, false, nil)
     }
 
 }

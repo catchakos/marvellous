@@ -10,8 +10,8 @@ import Foundation
 
 protocol HeroesListViewPresenterInput {
     func presentCharacters(_ response: HeroModels.List.Response)
-    func presentEmpty(_ type: HeroesListType, _ loading: Bool)
-    }
+    func presentEmpty(_ type: HeroesListType, _ loading: Bool, _ message: String?)
+}
 
 protocol HeroesListViewPresenterOutput: class {
     func displayCharacters(_ viewModel: HeroModels.List.ViewModel)
@@ -38,20 +38,24 @@ class HeroesListViewPresenter: HeroesListViewPresenterInput {
         output.displayCharacters(viewModel)
     } 
     
-    func presentEmpty(_ type: HeroesListType, _ loading: Bool) {
-        var message = "..."
-        switch type {
-        case .AllHeroes:
-            // TODO: should treat 1st load without connection case 
-            message = "Loading.."
-        case .Search:
-            if loading {
-                message = "Loading.."
-            } else {
-                message = "No results"
+    func presentEmpty(_ type: HeroesListType, _ loading: Bool, _ message: String?) {
+        var msg = ""
+        if let customMessage = message {
+            msg = customMessage
+        } else {
+            switch type {
+            case .AllHeroes:
+                // TODO: should treat 1st load without connection case 
+                msg = "Loading.."
+            case .Search:
+                if loading {
+                    msg = "Loading.."
+                } else {
+                    msg = "No results"
+                }
             }
         }
-        let vm = HeroModels.List.EmptyListViewModel(message: message, type: type, isLoading: loading)
+        let vm = HeroModels.List.EmptyListViewModel(message: msg, type: type, isLoading: loading)
         output.displayEmpty(vm)
     }
 }

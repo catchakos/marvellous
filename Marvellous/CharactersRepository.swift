@@ -54,7 +54,7 @@ class CharactersRepository {
                     let ordered = request is CharactersRequest
                     let parser = MarvelParser(request: charactersParseRequest, ordered:ordered) 
                     self.listState = parser.parse(json: jsonFetched)
-                    self.informSuccess(true)
+                    self.informSuccess(self.listState.total > 0)
                 }else{
                     self.informSuccess(false)
                 }

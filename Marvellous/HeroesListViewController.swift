@@ -221,7 +221,7 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text {
-            if text.characters.count > 2 {
+            if text.characters.count > 0 {
                 requestCharacters(text)
             }
             searchBar.resignFirstResponder()

@@ -55,8 +55,8 @@
                                     <outlet property="delegate" destination="rMq-3D-lE9" id="Y4e-VO-Org"/>
                                 </connections>
                             </collectionView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKY-M5-JQb">
-                                <rect key="frame" x="186" y="417.66666666666669" width="42" height="21"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKY-M5-JQb">
+                                <rect key="frame" x="186.33333333333337" y="417.66666666666669" width="41.666666666666657" height="21"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -105,10 +105,12 @@
                             <constraint firstAttribute="trailing" secondItem="JXQ-OG-Q7u" secondAttribute="trailing" id="HLD-ce-gRy"/>
                             <constraint firstAttribute="trailing" secondItem="FIM-Xp-xfv" secondAttribute="trailing" id="L3P-be-X2I"/>
                             <constraint firstItem="KKY-M5-JQb" firstAttribute="centerY" secondItem="d24-hW-do8" secondAttribute="centerY" constant="60" id="SBY-jk-G0A"/>
+                            <constraint firstItem="KKY-M5-JQb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="d24-hW-do8" secondAttribute="leadingMargin" constant="8" id="Urp-Ip-yKQ"/>
                             <constraint firstItem="FIM-Xp-xfv" firstAttribute="top" secondItem="KlF-Ij-rcs" secondAttribute="bottom" constant="16" id="WKY-At-9ho"/>
                             <constraint firstItem="7s7-th-7XW" firstAttribute="top" secondItem="JXQ-OG-Q7u" secondAttribute="bottom" id="Y0T-XT-QHH"/>
                             <constraint firstItem="KlF-Ij-rcs" firstAttribute="top" secondItem="mr9-s7-rZ8" secondAttribute="bottom" constant="16" id="fel-mZ-lWI"/>
                             <constraint firstItem="JXQ-OG-Q7u" firstAttribute="leading" secondItem="d24-hW-do8" secondAttribute="leading" id="iOg-54-bys"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="KKY-M5-JQb" secondAttribute="trailing" constant="8" id="uhr-EB-LQr"/>
                             <constraint firstItem="7s7-th-7XW" firstAttribute="top" secondItem="E81-kb-ajZ" secondAttribute="bottom" id="zIN-pp-J9g"/>
                         </constraints>
                     </view>

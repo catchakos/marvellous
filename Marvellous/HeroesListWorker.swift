@@ -11,6 +11,7 @@ import CoreData
 
 protocol HeroesListWorkerDelegate: class {
     func didFetchHeroes(_ heroes: [Hero]?, forRequest: MarvelApiRequest, ofType: HeroesListType)
+    func didNotFindSearchResults()
 }
 
 class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
@@ -74,6 +75,11 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
             if let searchRequest = request as? CharactersSearchRequest {
                 CoreDataStack.sharedInstance.charactersRepository.getCharacters(searchRequest) { (success) in 
                     self.isFetching = false
+                    if !success {
+                        if let delegate = self.delegate {
+                            delegate.didNotFindSearchResults()
+                        }
+                    }
                 }
             }
         }
