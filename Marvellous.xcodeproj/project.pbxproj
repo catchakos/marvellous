@@ -30,7 +30,6 @@
 		ACF0AABB1ED8B41000301B0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF0AAB91ED8B41000301B0C /* Main.storyboard */; };
 		ACF0AABD1ED8B41000301B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACF0AABC1ED8B41000301B0C /* Assets.xcassets */; };
 		ACF0AAC01ED8B41000301B0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF0AABE1ED8B41000301B0C /* LaunchScreen.storyboard */; };
-		ACF0AACB1ED8B41000301B0C /* MarvellousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AACA1ED8B41000301B0C /* MarvellousTests.swift */; };
 		ACF0AAD61ED8B41000301B0C /* MarvellousUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAD51ED8B41000301B0C /* MarvellousUITests.swift */; };
 		ACF0AAEE1ED8C50500301B0C /* MarvelApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAED1ED8C50500301B0C /* MarvelApiHandler.swift */; };
 		ACF0AAF01ED8C67F00301B0C /* Cryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF0AAEF1ED8C67F00301B0C /* Cryptor.swift */; };
@@ -106,7 +105,6 @@
 		ACF0AABF1ED8B41000301B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACF0AAC11ED8B41000301B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACF0AAC61ED8B41000301B0C /* MarvellousTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvellousTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACF0AACA1ED8B41000301B0C /* MarvellousTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvellousTests.swift; sourceTree = "<group>"; };
 		ACF0AACC1ED8B41000301B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACF0AAD11ED8B41000301B0C /* MarvellousUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvellousUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF0AAD51ED8B41000301B0C /* MarvellousUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvellousUITests.swift; sourceTree = "<group>"; };
@@ -262,7 +260,6 @@
 		ACF0AAC91ED8B41000301B0C /* MarvellousTests */ = {
 			isa = PBXGroup;
 			children = (
-				ACF0AACA1ED8B41000301B0C /* MarvellousTests.swift */,
 				2A3AD7AC1EDAE24C00E4A616 /* HeroesList */,
 				2A3AD7B51EDAE29800E4A616 /* HeroDetail */,
 				2A3AD7B61EDAE2C500E4A616 /* ApiHandlerTests.swift */,
@@ -719,7 +716,6 @@
 				2AFF4A271EDA38A800767C8B /* CoreDataStackFake.swift in Sources */,
 				2A3AD7B21EDAE28600E4A616 /* HeroDetailPresenterTests.swift in Sources */,
 				2A3AD7B01EDAE27B00E4A616 /* HeroDetailInteractorTests.swift in Sources */,
-				ACF0AACB1ED8B41000301B0C /* MarvellousTests.swift in Sources */,
 				2A3AD7B41EDAE29000E4A616 /* HeroDetailViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -32,7 +32,7 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
     var output: HeroesListViewInteractorOutput?
 
     private var heroes = [Hero]()
-    private var worker: HeroesListWorker =  HeroesListWorker()
+    var worker: HeroesListWorker =  HeroesListWorker()
     var dataRepository: CharactersRepository
     
     required init(repository: CharactersRepository) {

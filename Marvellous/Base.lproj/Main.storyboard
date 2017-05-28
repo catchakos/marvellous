@@ -31,7 +31,7 @@
         <!--Heroes List View Controller-->
         <scene sceneID="7Gi-01-Q1z">
             <objects>
-                <viewController id="rMq-3D-lE9" customClass="HeroesListViewController" customModule="Marvellous" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeroesListViewController" id="rMq-3D-lE9" customClass="HeroesListViewController" customModule="Marvellous" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mr9-s7-rZ8"/>
                         <viewControllerLayoutGuide type="bottom" id="7s7-th-7XW"/>
@@ -132,7 +132,7 @@
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="HeroDetailViewController" customModule="Marvellous" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeroDetailViewController" title="Detail" id="JEX-9P-axG" customClass="HeroDetailViewController" customModule="Marvellous" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
                         <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
@@ -309,6 +309,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vLb-zC-5PM"/>
+        <segue reference="Tll-UG-LXB"/>
     </inferredMetricsTieBreakers>
 </document>

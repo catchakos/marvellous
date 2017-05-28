@@ -14,14 +14,32 @@ class HeroesListInteractorTests: XCTestCase {
     var outputSpy: HeroesListInteractorOutputSpy!
     var sut: HeroesListViewInteractor!
     var repoMock: RespositoryMock!
+    var workerFake: HeroListWorkerFake!
     
     class HeroesListInteractorOutputSpy: HeroesListViewInteractorOutput {
         var presentCalled: Bool = false
+        var emptyCalled: Bool = false
         var responseRecorded: HeroModels.List.Response!
         
         func presentCharacters(_ response: HeroModels.List.Response){
             presentCalled = true
             responseRecorded = response
+        }
+        
+        func presentEmpty(_ type: HeroesListType, _ loading: Bool, _ message: String?) {
+            emptyCalled = true
+        }
+    }
+    
+    class HeroListWorkerFake: HeroesListWorker {
+        var repoMock: RespositoryMock!
+        
+        override func fetch(request: MarvelApiRequest, type: HeroesListType) {
+            isFetching = true
+            requestType = type
+            let heroes = repoMock.givenThereAreHeroes()
+            delegate?.didFetchHeroes(heroes, forRequest: request, ofType: type)
+            isFetching = false
         }
     }
     
@@ -31,7 +49,6 @@ class HeroesListInteractorTests: XCTestCase {
     }
     
     override func tearDown() {
-        repoMock.clear()
         super.tearDown()
     }
     
@@ -41,53 +58,64 @@ class HeroesListInteractorTests: XCTestCase {
         sut.dataRepository = repoMock
         outputSpy = HeroesListInteractorOutputSpy()
         sut.output = outputSpy
+        workerFake = HeroListWorkerFake()
+        workerFake.repoMock = repoMock
+        workerFake.delegate = sut
+        sut.worker = workerFake
     }
     
-    func testHeroesListInteractorCallsPresentWithDefaultCharacters() {
-        _ = repoMock.givenThereAreHeroes()
-        
+    func testHeroesListInteractorCallsPresentWithDefaultCharacters() {        
         let request = HeroModels.List.DefaultRequest(page: 0)
         sut.fetchDefaultCharacters(request)
-        
-        let expect = expectation(description: "presentCalled")
-        //TODO: this is not the way..
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-            XCTAssert(self.outputSpy.presentCalled)
-            expect.fulfill()
-        })
-        waitForExpectations(timeout: 2, handler: nil)
+                
+        XCTAssert(outputSpy.presentCalled)
     }
     
-    func testHeroesListInteractorCallsPresentWithCharactersSearch() {
-        _ = repoMock.givenThereAreHeroes()
-        
+    func testHeroesListInteractorCallsPresentWithCharactersSearch() {        
         let request = HeroModels.List.SearchRequest(startsWith: "Hulk")
         sut.fetchCharactersStartingWith(request)
-        
-        let expect = expectation(description: "presentCalled")
-        //TODO: this is not the way..
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-            XCTAssert(self.outputSpy.presentCalled)
-            expect.fulfill()
-        })
-        waitForExpectations(timeout: 20, handler: nil)
+
+        XCTAssert(outputSpy.presentCalled)
     }
     
     func testHeroesListInteractorCallsPresentWithMeaningulResponseForCharactersSearch() {
-        _ = repoMock.givenThereAreHeroes()
-        
-        let request = HeroModels.List.SearchRequest(startsWith: "Hulk")
+        let request = HeroModels.List.SearchRequest(startsWith: "Fake")
         sut.fetchCharactersStartingWith(request)
         
-        let expect = expectation(description: "presentCalled")
-        //TODO: this is not the way..
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-            XCTAssertNotNil(self.outputSpy.responseRecorded)
-            XCTAssertGreaterThan(self.outputSpy.responseRecorded.heroes.count, 0)
-            XCTAssert((self.outputSpy.responseRecorded.heroes.first?.name?.contains("Hulk"))!)
-            expect.fulfill()
-        })
-        waitForExpectations(timeout: 2, handler: nil)
+        XCTAssertNotNil(self.outputSpy.responseRecorded)
+        XCTAssertGreaterThan(self.outputSpy.responseRecorded.heroes.count, 0)
+        XCTAssert((self.outputSpy.responseRecorded.heroes.first?.name?.contains("Fake"))!)
+    }
+    
+    func testHeroesListInteractorReturnsCorrectCharacterIdentifier() {
+        let request = HeroModels.List.DefaultRequest(page: 0)
+        sut.fetchDefaultCharacters(request)
+
+        XCTAssertEqual(sut.characterIdentifierAt(index: 0), 100)
+    }
+    
+    func testHeroesListInteractorReturnsResultsWhenNextPageCalles() {
+        repoMock.listState = (0, 200)
+        
+        let request = HeroModels.List.DefaultRequest(page: 0)
+        sut.fetchDefaultCharacters(request)
+
+        outputSpy.responseRecorded = nil
+        sut.nextPage()
+        
+        XCTAssertGreaterThan(self.outputSpy.responseRecorded.heroes.count, 0)
+    }
+    
+    func testHeroesListInteractorPresentsEmptyWhenSettingTypeToSearch() {
+        sut.changeListType(typeIndex: 1)
+        
+        XCTAssert(outputSpy.emptyCalled)
+    }
+    
+    func testHeroesListInteractorPresentsHeroesWhenSettingTypeToAllHeroes() {
+        sut.changeListType(typeIndex: 0)
+        
+        XCTAssert(outputSpy.presentCalled)
     }
     
 }
