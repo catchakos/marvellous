@@ -18,8 +18,6 @@ class CharactersRequest: MarvelApiRequest {
     var offset = 0
     
     var parameters: Parameters? {
-        let searchText = "Hulk"
-        
         let privateData = createHashFromTimestampAndKeys()
         
         guard let hash = privateData["hash"], let ts = privateData["ts"], let apiKey = privateData["apikey"] else{
@@ -27,7 +25,6 @@ class CharactersRequest: MarvelApiRequest {
         }
         
         let params: Parameters = [
-            "nameStartsWith": searchText,
             "limit": batchSize,
             "offset": offset,
             "hash": hash,

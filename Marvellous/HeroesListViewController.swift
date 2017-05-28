@@ -52,7 +52,7 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
             let request = HeroModels.List.SearchRequest(startsWith: searchText)
             output?.fetchCharactersStartingWith(request)
         }else{
-            let request = HeroModels.List.DefaultRequest()
+            let request = HeroModels.List.DefaultRequest(page: 0)
             output?.fetchDefaultCharacters(request)
         }
     }
@@ -104,7 +104,6 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     
-    
     // MARK: - CollectionView DataSource & Delegate
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -139,6 +138,16 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
         navigateToDetailAt(indexPath: indexPath)
     }
 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == collectionView {
+            if (scrollView.contentOffset.y + scrollView.bounds.size.height >= scrollView.contentSize.height)
+            {
+                print("bottom \(scrollView.contentOffset)")
+            }
+
+        }
+    }
+    
     func navigateToDetailAt(indexPath: IndexPath) {
         if let heroID = output?.characterIdentifierAt(index: indexPath.item) {
             performSegue(withIdentifier: "showDetail", sender: heroID)

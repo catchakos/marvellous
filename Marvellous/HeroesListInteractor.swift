@@ -13,6 +13,7 @@ protocol HeroesListViewInteractorInput {
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest) 
     
     func characterIdentifierAt(index: Int) -> Int64?
+    func nextPage()
 }
 
 protocol HeroesListViewInteractorOutput {
@@ -34,7 +35,6 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
         worker.delegate = self
     }
     
-    
     func fetchDefaultCharacters(_ request: HeroModels.List.DefaultRequest) {
         let request = CharactersRequest()
         worker.fetch(request: request, type: .AllHeroes)
@@ -43,6 +43,10 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest) {
         let request = CharactersSearchRequest(text: request.startsWith)
         worker.fetch(request: request, type: .Search)
+    }
+    
+    func nextPage() {
+        
     }
     
     func characterIdentifierAt(index: Int) -> Int64? {

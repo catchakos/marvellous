@@ -11,7 +11,7 @@ import Foundation
 struct HeroModels {
     struct List {
         struct DefaultRequest {
-            
+            let page: Int
         }
         struct SearchRequest {
             let startsWith: String
