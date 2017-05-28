@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A3AD7AE1EDAE26400E4A616 /* HeroesListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3AD7AD1EDAE26400E4A616 /* HeroesListViewControllerTests.swift */; };
+		2A3AD7B01EDAE27B00E4A616 /* HeroDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3AD7AF1EDAE27B00E4A616 /* HeroDetailInteractorTests.swift */; };
+		2A3AD7B21EDAE28600E4A616 /* HeroDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3AD7B11EDAE28600E4A616 /* HeroDetailPresenterTests.swift */; };
+		2A3AD7B41EDAE29000E4A616 /* HeroDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3AD7B31EDAE29000E4A616 /* HeroDetailViewControllerTests.swift */; };
+		2A3AD7B71EDAE2C500E4A616 /* ApiHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3AD7B61EDAE2C500E4A616 /* ApiHandlerTests.swift */; };
+		2A3AD7B91EDAE2CF00E4A616 /* cdStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3AD7B81EDAE2CF00E4A616 /* cdStackTests.swift */; };
 		2AFF4A231EDA2F3800767C8B /* HeroesListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF4A221EDA2F3800767C8B /* HeroesListInteractorTests.swift */; };
 		2AFF4A251EDA358500767C8B /* RespositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF4A241EDA358500767C8B /* RespositoryMock.swift */; };
 		2AFF4A271EDA38A800767C8B /* CoreDataStackFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF4A261EDA38A800767C8B /* CoreDataStackFake.swift */; };
@@ -70,6 +76,12 @@
 
 /* Begin PBXFileReference section */
 		16ECEE390F24282BEF7E1012 /* Pods_Marvellous.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvellous.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A3AD7AD1EDAE26400E4A616 /* HeroesListViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesListViewControllerTests.swift; sourceTree = "<group>"; };
+		2A3AD7AF1EDAE27B00E4A616 /* HeroDetailInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailInteractorTests.swift; sourceTree = "<group>"; };
+		2A3AD7B11EDAE28600E4A616 /* HeroDetailPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailPresenterTests.swift; sourceTree = "<group>"; };
+		2A3AD7B31EDAE29000E4A616 /* HeroDetailViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		2A3AD7B61EDAE2C500E4A616 /* ApiHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiHandlerTests.swift; sourceTree = "<group>"; };
+		2A3AD7B81EDAE2CF00E4A616 /* cdStackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cdStackTests.swift; sourceTree = "<group>"; };
 		2AFF4A221EDA2F3800767C8B /* HeroesListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesListInteractorTests.swift; sourceTree = "<group>"; };
 		2AFF4A241EDA358500767C8B /* RespositoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RespositoryMock.swift; sourceTree = "<group>"; };
 		2AFF4A261EDA38A800767C8B /* CoreDataStackFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackFake.swift; sourceTree = "<group>"; };
@@ -163,6 +175,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2A3AD7AC1EDAE24C00E4A616 /* HeroesList */ = {
+			isa = PBXGroup;
+			children = (
+				2AFF4A221EDA2F3800767C8B /* HeroesListInteractorTests.swift */,
+				2AFF4A281EDA3D8400767C8B /* HeroesListPresenterTests.swift */,
+				2A3AD7AD1EDAE26400E4A616 /* HeroesListViewControllerTests.swift */,
+			);
+			name = HeroesList;
+			sourceTree = "<group>";
+		};
+		2A3AD7B51EDAE29800E4A616 /* HeroDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2A3AD7AF1EDAE27B00E4A616 /* HeroDetailInteractorTests.swift */,
+				2A3AD7B11EDAE28600E4A616 /* HeroDetailPresenterTests.swift */,
+				2A3AD7B31EDAE29000E4A616 /* HeroDetailViewControllerTests.swift */,
+			);
+			name = HeroDetail;
+			sourceTree = "<group>";
+		};
 		6B2E7FD7B898EFEF9E2FA292 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,11 +250,13 @@
 			isa = PBXGroup;
 			children = (
 				ACF0AACA1ED8B41000301B0C /* MarvellousTests.swift */,
-				2AFF4A221EDA2F3800767C8B /* HeroesListInteractorTests.swift */,
-				2AFF4A281EDA3D8400767C8B /* HeroesListPresenterTests.swift */,
+				2A3AD7AC1EDAE24C00E4A616 /* HeroesList */,
+				2A3AD7B51EDAE29800E4A616 /* HeroDetail */,
+				2A3AD7B61EDAE2C500E4A616 /* ApiHandlerTests.swift */,
+				2A3AD7B81EDAE2CF00E4A616 /* cdStackTests.swift */,
+				ACF0AAFC1ED97D4800301B0C /* characters.json */,
 				2AFF4A241EDA358500767C8B /* RespositoryMock.swift */,
 				2AFF4A261EDA38A800767C8B /* CoreDataStackFake.swift */,
-				ACF0AAFC1ED97D4800301B0C /* characters.json */,
 				ACF0AACC1ED8B41000301B0C /* Info.plist */,
 			);
 			path = MarvellousTests;
@@ -662,9 +696,15 @@
 			files = (
 				2AFF4A251EDA358500767C8B /* RespositoryMock.swift in Sources */,
 				2AFF4A291EDA3D8400767C8B /* HeroesListPresenterTests.swift in Sources */,
+				2A3AD7AE1EDAE26400E4A616 /* HeroesListViewControllerTests.swift in Sources */,
+				2A3AD7B71EDAE2C500E4A616 /* ApiHandlerTests.swift in Sources */,
 				2AFF4A231EDA2F3800767C8B /* HeroesListInteractorTests.swift in Sources */,
+				2A3AD7B91EDAE2CF00E4A616 /* cdStackTests.swift in Sources */,
 				2AFF4A271EDA38A800767C8B /* CoreDataStackFake.swift in Sources */,
+				2A3AD7B21EDAE28600E4A616 /* HeroDetailPresenterTests.swift in Sources */,
+				2A3AD7B01EDAE27B00E4A616 /* HeroDetailInteractorTests.swift in Sources */,
 				ACF0AACB1ED8B41000301B0C /* MarvellousTests.swift in Sources */,
+				2A3AD7B41EDAE29000E4A616 /* HeroDetailViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

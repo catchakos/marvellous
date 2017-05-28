@@ -41,7 +41,7 @@ class HeroesListPresenterTests: XCTestCase {
     }
     
     func testDisplayCharactersIsCalled() {
-        let heroes = givenThereAreHeroes()
+        let heroes = repoMock.givenThereAreHeroes()
         
         let response = HeroModels.List.Response(heroes:heroes)
         sut.presentCharacters(response)
@@ -50,7 +50,7 @@ class HeroesListPresenterTests: XCTestCase {
     }
     
     func testDisplayCharactersIsCalledWithMeaningfulViewModel() {
-        let heroes = givenThereAreHeroes()
+        let heroes = repoMock.givenThereAreHeroes()
         
         let response = HeroModels.List.Response(heroes:heroes)
         sut.presentCharacters(response)
@@ -63,13 +63,5 @@ class HeroesListPresenterTests: XCTestCase {
         }
     }
     
-    func givenThereAreHeroes() -> [Hero] {
-        var heroes = [Hero]()
-        for _ in 0...5 {
-            let hero = repoMock.stack.createFakeHero()
-            heroes.append(hero)
-        }
-        return heroes
-    }
-    
 }
+

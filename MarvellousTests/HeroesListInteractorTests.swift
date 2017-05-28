@@ -44,36 +44,50 @@ class HeroesListInteractorTests: XCTestCase {
     }
     
     func testHeroesListInteractorCallsPresentWithDefaultCharacters() {
-        let request = HeroModels.List.DefaultRequest(page: 0)
+        _ = repoMock.givenThereAreHeroes()
         
+        let request = HeroModels.List.DefaultRequest(page: 0)
         sut.fetchDefaultCharacters(request)
         
-        XCTAssert(outputSpy.presentCalled)
+        let expect = expectation(description: "presentCalled")
+        //TODO: this is not the way..
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            XCTAssert(self.outputSpy.presentCalled)
+            expect.fulfill()
+        })
+        waitForExpectations(timeout: 2, handler: nil)
     }
     
     func testHeroesListInteractorCallsPresentWithCharactersSearch() {
-        let request = HeroModels.List.SearchRequest(startsWith: "Hul")
+        _ = repoMock.givenThereAreHeroes()
         
+        let request = HeroModels.List.SearchRequest(startsWith: "Hulk")
         sut.fetchCharactersStartingWith(request)
         
-        XCTAssert(outputSpy.presentCalled)
+        let expect = expectation(description: "presentCalled")
+        //TODO: this is not the way..
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            XCTAssert(self.outputSpy.presentCalled)
+            expect.fulfill()
+        })
+        waitForExpectations(timeout: 20, handler: nil)
     }
     
     func testHeroesListInteractorCallsPresentWithMeaningulResponseForCharactersSearch() {
-        let request = HeroModels.List.SearchRequest(startsWith: "Hul")
+        _ = repoMock.givenThereAreHeroes()
         
+        let request = HeroModels.List.SearchRequest(startsWith: "Hulk")
         sut.fetchCharactersStartingWith(request)
         
-        if let response = outputSpy.responseRecorded {
-            XCTAssertGreaterThan(response.heroes.count, 0)
-            if let hero = response.heroes.first?.name {
-                XCTAssert(hero.contains("Fake"))
-            }else{
-                XCTFail()
-            }
-        }else{
-            XCTFail()
-        }
+        let expect = expectation(description: "presentCalled")
+        //TODO: this is not the way..
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+            XCTAssertNotNil(self.outputSpy.responseRecorded)
+            XCTAssertGreaterThan(self.outputSpy.responseRecorded.heroes.count, 0)
+            XCTAssert((self.outputSpy.responseRecorded.heroes.first?.name?.contains("Hulk"))!)
+            expect.fulfill()
+        })
+        waitForExpectations(timeout: 2, handler: nil)
     }
     
 }

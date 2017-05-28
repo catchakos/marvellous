@@ -38,5 +38,13 @@ class RespositoryMock: CharactersRepository {
         return stack.createFakeHero()
     }
     
+    func givenThereAreHeroes() -> [Hero] {
+        var heroes = [Hero]()
+        for _ in 0...5 {
+            let hero = self.stack.createFakeHero()
+            heroes.append(hero)
+        }
+        return heroes
+    }
     
 }
