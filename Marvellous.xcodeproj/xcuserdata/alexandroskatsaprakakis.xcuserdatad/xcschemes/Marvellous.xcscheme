@@ -37,16 +37,14 @@
                BlueprintName = "MarvellousTests"
                ReferencedContainer = "container:Marvellous.xcodeproj">
             </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ACF0AAD01ED8B41000301B0C"
-               BuildableName = "MarvellousUITests.xctest"
-               BlueprintName = "MarvellousUITests"
-               ReferencedContainer = "container:Marvellous.xcodeproj">
-            </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "ApiHandlerTests">
+               </Test>
+               <Test
+                  Identifier = "cdStackTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

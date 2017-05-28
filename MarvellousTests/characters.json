@@ -1,0 +1,1252 @@
+{
+  "copyright" : "© 2017 MARVEL",
+  "status" : "Ok",
+  "data" : {
+    "results" : [
+      {
+        "thumbnail" : {
+          "path" : "http:\/\/i.annihil.us\/u\/prod\/marvel\/i\/mg\/5\/a0\/538615ca33ab0",
+          "extension" : "jpg"
+        },
+        "comics" : {
+          "returned" : 20,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1009351\/comics",
+          "items" : [
+            {
+              "name" : "5 Ronin (Hardcover)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/41112"
+            },
+            {
+              "name" : "5 Ronin (2010) #2",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/36365"
+            },
+            {
+              "name" : "5 Ronin (2010) #2 (BROOKS COVER)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/38753"
+            },
+            {
+              "name" : "A+X (2012) #1",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/43488"
+            },
+            {
+              "name" : "A+X (2012) #7",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/43506"
+            },
+            {
+              "name" : "Actor Presents Spider-Man and the Incredible Hulk (2003) #1",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/320"
+            },
+            {
+              "name" : "Age of X: Universe (2011) #1",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/38524"
+            },
+            {
+              "name" : "All-New Savage She-Hulk (2009) #1",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/24053"
+            },
+            {
+              "name" : "All-New Savage She-Hulk (2009) #2",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/24252"
+            },
+            {
+              "name" : "Alpha Flight (1983) #110",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/12650"
+            },
+            {
+              "name" : "Alpha Flight (1983) #111",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/12651"
+            },
+            {
+              "name" : "Alpha Flight (1983) #127",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/12668"
+            },
+            {
+              "name" : "Amazing Spider-Man (1963) #14",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/6527"
+            },
+            {
+              "name" : "Amazing Spider-Man (1963) #119",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/6504"
+            },
+            {
+              "name" : "Amazing Spider-Man (1963) #120",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/6506"
+            },
+            {
+              "name" : "Amazing Spider-Man (1963) #381",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/6795"
+            },
+            {
+              "name" : "Amazing Spider-Man (1999) #667",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/35528"
+            },
+            {
+              "name" : "Amazing Spider-Man Annual (1964) #3",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/16904"
+            },
+            {
+              "name" : "Amazing Spider-Man Annual (1964) #12",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/16886"
+            },
+            {
+              "name" : "Amazing Spider-Man Annual (2011) #38",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/36956"
+            }
+          ],
+          "available" : 1380
+        },
+        "series" : {
+          "returned" : 20,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1009351\/series",
+          "items" : [
+            {
+              "name" : "5 Ronin (2011)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/15276"
+            },
+            {
+              "name" : "5 Ronin (2010)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/12429"
+            },
+            {
+              "name" : "A+X (2012 - Present)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/16450"
+            },
+            {
+              "name" : "Actor Presents Spider-Man and the Incredible Hulk (2003)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/458"
+            },
+            {
+              "name" : "Age of X: Universe (2011)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/13896"
+            },
+            {
+              "name" : "All-New Savage She-Hulk (2009)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/7231"
+            },
+            {
+              "name" : "Alpha Flight (1983 - 1994)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/2116"
+            },
+            {
+              "name" : "Amazing Spider-Man (1963 - 1998)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/1987"
+            },
+            {
+              "name" : "Amazing Spider-Man (1999 - 2013)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/454"
+            },
+            {
+              "name" : "Amazing Spider-Man Annual (1964 - 2009)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/2984"
+            },
+            {
+              "name" : "Amazing Spider-Man Annual (2011)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/13205"
+            },
+            {
+              "name" : "Avengers (1963 - 1996)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/1991"
+            },
+            {
+              "name" : "Avengers (2010 - 2012)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/9085"
+            },
+            {
+              "name" : "Avengers (1998 - 2004)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/354"
+            },
+            {
+              "name" : "Avengers (1996 - 1997)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/3621"
+            },
+            {
+              "name" : "Avengers & the Infinity Gauntlet (2011)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/10035"
+            },
+            {
+              "name" : "Avengers & the Infinity Gauntlet (2010)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/9859"
+            },
+            {
+              "name" : "Avengers Annual (1967 - 1994)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/1988"
+            },
+            {
+              "name" : "Avengers Assemble (2004)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/1340"
+            },
+            {
+              "name" : "Avengers Assemble (2012 - Present)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/15373"
+            }
+          ],
+          "available" : 342
+        },
+        "id" : 1009351,
+        "stories" : {
+          "returned" : 20,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1009351\/stories",
+          "items" : [
+            {
+              "name" : "Interior #703",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/703",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Interior #705",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/705",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Interior #707",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/707",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Interior #873",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/873",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Interior #875",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/875",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Interior #1134",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/1134",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Interior #1218",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/1218",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Interior #1220",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/1220",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Interior #1222",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/1222",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Interior #1224",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/1224",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Interior #1226",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/1226",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Interior #1228",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/1228",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Interior #1230",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/1230",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Interior #1232",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/1232",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Interior #1233",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/1233",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "1 of 6 - Tempus Fugit",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/1234",
+              "type" : "cover"
+            },
+            {
+              "name" : "1 of 6 - Tempus Fugit",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/1235",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "2 of 6 - Tempus Fugit",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/1236",
+              "type" : "cover"
+            },
+            {
+              "name" : "2 of 6 - Tempus Fugit",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/1237",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "3 of 5 - Tempest Fugit",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/1239",
+              "type" : "interiorStory"
+            }
+          ],
+          "available" : 2059
+        },
+        "events" : {
+          "returned" : 20,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1009351\/events",
+          "items" : [
+            {
+              "name" : "Acts of Vengeance!",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/116"
+            },
+            {
+              "name" : "Age of X",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/303"
+            },
+            {
+              "name" : "Chaos War",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/296"
+            },
+            {
+              "name" : "Dark Reign",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/318"
+            },
+            {
+              "name" : "Fall of the Hulks",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/297"
+            },
+            {
+              "name" : "Fall of the Mutants",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/248"
+            },
+            {
+              "name" : "Fear Itself",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/302"
+            },
+            {
+              "name" : "House of M",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/251"
+            },
+            {
+              "name" : "Infinity",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/315"
+            },
+            {
+              "name" : "Infinity Gauntlet",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/253"
+            },
+            {
+              "name" : "Infinity War",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/29"
+            },
+            {
+              "name" : "Inhumanity",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/317"
+            },
+            {
+              "name" : "Initiative",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/255"
+            },
+            {
+              "name" : "Marvel NOW!",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/311"
+            },
+            {
+              "name" : "Maximum Security",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/37"
+            },
+            {
+              "name" : "Onslaught",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/154"
+            },
+            {
+              "name" : "Planet Hulk",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/212"
+            },
+            {
+              "name" : "Realm of Kings",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/295"
+            },
+            {
+              "name" : "Secret Invasion",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/269"
+            },
+            {
+              "name" : "Secret Wars",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/270"
+            }
+          ],
+          "available" : 25
+        },
+        "urls" : [
+          {
+            "type" : "detail",
+            "url" : "http:\/\/marvel.com\/characters\/25\/hulk?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          },
+          {
+            "type" : "wiki",
+            "url" : "http:\/\/marvel.com\/universe\/Hulk_(Bruce_Banner)?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          },
+          {
+            "type" : "comiclink",
+            "url" : "http:\/\/marvel.com\/comics\/characters\/1009351\/hulk?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          }
+        ],
+        "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1009351",
+        "description" : "Caught in a gamma bomb explosion while trying to save the life of a teenager, Dr. Bruce Banner was transformed into the incredibly powerful creature called the Hulk. An all too often misunderstood hero, the angrier the Hulk gets, the stronger the Hulk gets.",
+        "modified" : "2014-06-10T16:12:58-0400",
+        "name" : "Hulk"
+      },
+      {
+        "thumbnail" : {
+          "path" : "http:\/\/i.annihil.us\/u\/prod\/marvel\/i\/mg\/d\/10\/5232027069e61",
+          "extension" : "jpg"
+        },
+        "comics" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017098\/comics",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "series" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017098\/series",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "id" : 1017098,
+        "stories" : {
+          "returned" : 1,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017098\/stories",
+          "items" : [
+            {
+              "name" : "cover from Free Comic Book Day 2013 (Avengers\/Hulk) (2013) #1",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/105929",
+              "type" : "cover"
+            }
+          ],
+          "available" : 1
+        },
+        "events" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017098\/events",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "urls" : [
+          {
+            "type" : "detail",
+            "url" : "http:\/\/marvel.com\/characters\/25\/hulk?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          },
+          {
+            "type" : "comiclink",
+            "url" : "http:\/\/marvel.com\/comics\/characters\/1017098\/hulk_has?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          }
+        ],
+        "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017098",
+        "description" : "The Hulk is the biggest, strongest, smashing-est hero in the Marvel Universe - the green glue that holds his crazy family-like team together. Hulk loves saving the world by smashing every alien, sea creature, and planet (literally) that tries to destroy it. He is the star of his best bud A-Bomb's web series, and just wants to show people his good intentions!",
+        "modified" : "2013-09-12T14:06:16-0400",
+        "name" : "Hulk (HAS)"
+      },
+      {
+        "thumbnail" : {
+          "path" : "http:\/\/i.annihil.us\/u\/prod\/marvel\/i\/mg\/6\/f0\/5239c399a35df",
+          "extension" : "jpg"
+        },
+        "comics" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017333\/comics",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "series" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017333\/series",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "id" : 1017333,
+        "stories" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017333\/stories",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "events" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017333\/events",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "urls" : [
+          {
+            "type" : "detail",
+            "url" : "http:\/\/marvel.com\/characters\/25\/hulk?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          },
+          {
+            "type" : "comiclink",
+            "url" : "http:\/\/marvel.com\/comics\/characters\/1017333\/hulk_lego_marvel_super_heroes?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          }
+        ],
+        "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017333",
+        "description" : "",
+        "modified" : "2013-09-18T11:15:54-0400",
+        "name" : "Hulk (LEGO Marvel Super Heroes)"
+      },
+      {
+        "thumbnail" : {
+          "path" : "http:\/\/i.annihil.us\/u\/prod\/marvel\/i\/mg\/3\/00\/53176c115da55",
+          "extension" : "jpg"
+        },
+        "comics" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1011118\/comics",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "series" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1011118\/series",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "id" : 1011118,
+        "stories" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1011118\/stories",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "events" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1011118\/events",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "urls" : [
+          {
+            "type" : "detail",
+            "url" : "http:\/\/marvel.com\/characters\/25\/hulk?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          },
+          {
+            "type" : "wiki",
+            "url" : "http:\/\/marvel.com\/universe\/Hulk_(Marvel_Zombies)?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          },
+          {
+            "type" : "comiclink",
+            "url" : "http:\/\/marvel.com\/comics\/characters\/1011118\/hulk_marvel_zombies?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          }
+        ],
+        "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1011118",
+        "description" : "",
+        "modified" : "2014-03-05T13:25:50-0500",
+        "name" : "Hulk (Marvel Zombies)"
+      },
+      {
+        "thumbnail" : {
+          "path" : "http:\/\/i.annihil.us\/u\/prod\/marvel\/i\/mg\/6\/b0\/5239b5d891fc1",
+          "extension" : "jpg"
+        },
+        "comics" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017303\/comics",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "series" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017303\/series",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "id" : 1017303,
+        "stories" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017303\/stories",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "events" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017303\/events",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "urls" : [
+          {
+            "type" : "detail",
+            "url" : "http:\/\/marvel.com\/characters\/25\/hulk?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          },
+          {
+            "type" : "comiclink",
+            "url" : "http:\/\/marvel.com\/comics\/characters\/1017303\/hulk_marvel_avengers_alliance?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          }
+        ],
+        "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017303",
+        "description" : "",
+        "modified" : "2013-09-18T10:17:06-0400",
+        "name" : "Hulk (Marvel: Avengers Alliance)"
+      },
+      {
+        "thumbnail" : {
+          "path" : "http:\/\/i.annihil.us\/u\/prod\/marvel\/i\/mg\/c\/03\/53176c06e3974",
+          "extension" : "jpg"
+        },
+        "comics" : {
+          "returned" : 16,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1011005\/comics",
+          "items" : [
+            {
+              "name" : "Ultimate Comics Hawkeye (2011) #3",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/38944"
+            },
+            {
+              "name" : "Ultimate Comics Thor (2010) #4",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/33578"
+            },
+            {
+              "name" : "Ultimate Comics Ultimates  (2011) #7",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/38686"
+            },
+            {
+              "name" : "Ultimate Comics Ultimates  (2011) #8",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/38685"
+            },
+            {
+              "name" : "Ultimate Comics X (2010) #5",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/30612"
+            },
+            {
+              "name" : "Ultimate Human (2008) #3",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/20898"
+            },
+            {
+              "name" : "Ultimate Marvel Team-Up (2001) #2",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/15776"
+            },
+            {
+              "name" : "Ultimate Marvel Team-Up (2001) #3",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/15777"
+            },
+            {
+              "name" : "Ultimate Marvel Team-Up Ultimate Collection (Trade Paperback)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/5132"
+            },
+            {
+              "name" : "Ultimate War (2003) #1",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/18474"
+            },
+            {
+              "name" : "Ultimate War (2003) #2",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/18475"
+            },
+            {
+              "name" : "Ultimate Wolverine Vs. Hulk (2005) #1",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/3227"
+            },
+            {
+              "name" : "Ultimate Wolverine Vs. Hulk (2005) #6",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/24155"
+            },
+            {
+              "name" : "Ultimate X-Men Vol. 5: Ultimate War (Trade Paperback)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/1158"
+            },
+            {
+              "name" : "Ultimates 2 (2004) #3",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/1620"
+            },
+            {
+              "name" : "Ultimates 2 Vol. 1: Gods and Monsters (Trade Paperback)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/2963"
+            }
+          ],
+          "available" : 16
+        },
+        "series" : {
+          "returned" : 12,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1011005\/series",
+          "items" : [
+            {
+              "name" : "Ultimate Comics Hawkeye (2011)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/14068"
+            },
+            {
+              "name" : "Ultimate Comics Thor (2010 - 2011)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/11272"
+            },
+            {
+              "name" : "Ultimate Comics Ultimates  (2011 - Present)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/13936"
+            },
+            {
+              "name" : "Ultimate Comics X (2010 - 2011)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/8512"
+            },
+            {
+              "name" : "Ultimate Human (2008)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/3421"
+            },
+            {
+              "name" : "Ultimate Marvel Team-Up (2001 - 2002)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/2311"
+            },
+            {
+              "name" : "Ultimate Marvel Team-Up Ultimate Collection (2006)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/1823"
+            },
+            {
+              "name" : "Ultimate War (2003)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/3659"
+            },
+            {
+              "name" : "Ultimate Wolverine Vs. Hulk (2005 - 2009)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/1022"
+            },
+            {
+              "name" : "Ultimate X-Men Vol. 5: Ultimate War (1999)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/216"
+            },
+            {
+              "name" : "Ultimates 2 (2004 - 2006)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/709"
+            },
+            {
+              "name" : "Ultimates 2 Vol. 1: Gods and Monsters (2005)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/1178"
+            }
+          ],
+          "available" : 12
+        },
+        "id" : 1011005,
+        "stories" : {
+          "returned" : 16,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1011005\/stories",
+          "items" : [
+            {
+              "name" : "1 of 1 - Trial of the Hulk",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/2727",
+              "type" : "cover"
+            },
+            {
+              "name" : "Cover #5706",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/5706",
+              "type" : "cover"
+            },
+            {
+              "name" : "[untitled]",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/32048",
+              "type" : "cover"
+            },
+            {
+              "name" : "[Previously ...]",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/32049",
+              "type" : "recap"
+            },
+            {
+              "name" : "Spider-Man & Hulk",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/32050",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "[untitled]",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/32066",
+              "type" : "cover"
+            },
+            {
+              "name" : "Spider-Man & Hulk",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/32067",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Free Preview of Hulk #50",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/39349",
+              "type" : "promo"
+            },
+            {
+              "name" : "Free Preview of Hulk #50",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/39352",
+              "type" : "promo"
+            },
+            {
+              "name" : "4XLS 3 of 4",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/44750",
+              "type" : "cover"
+            },
+            {
+              "name" : "6XLS 6 of 6",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/53525",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Cover #70050",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/70050",
+              "type" : "cover"
+            },
+            {
+              "name" : "Cover #75634",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/75634",
+              "type" : "cover"
+            },
+            {
+              "name" : "Ultimate Hawkeye #3",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/85451",
+              "type" : "cover"
+            },
+            {
+              "name" : "ULTIMATE COMICS THE ULTIMATES #7 Story",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/95549",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Ultimate Comics Ultimates #8",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/95781",
+              "type" : "interiorStory"
+            }
+          ],
+          "available" : 16
+        },
+        "events" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1011005\/events",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "urls" : [
+          {
+            "type" : "detail",
+            "url" : "http:\/\/marvel.com\/characters\/25\/hulk?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          },
+          {
+            "type" : "wiki",
+            "url" : "http:\/\/marvel.com\/universe\/Hulk_%28Ultimate%29?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          },
+          {
+            "type" : "comiclink",
+            "url" : "http:\/\/marvel.com\/comics\/characters\/1011005\/hulk_ultimate?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          }
+        ],
+        "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1011005",
+        "description" : "",
+        "modified" : "2014-03-05T13:25:55-0500",
+        "name" : "Hulk (Ultimate)"
+      },
+      {
+        "thumbnail" : {
+          "path" : "http:\/\/i.annihil.us\/u\/prod\/marvel\/i\/mg\/b\/40\/image_not_available",
+          "extension" : "jpg"
+        },
+        "comics" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1010721\/comics",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "series" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1010721\/series",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "id" : 1010721,
+        "stories" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1010721\/stories",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "events" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1010721\/events",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "urls" : [
+          {
+            "type" : "detail",
+            "url" : "http:\/\/marvel.com\/characters\/985\/hulk-dok?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          },
+          {
+            "type" : "comiclink",
+            "url" : "http:\/\/marvel.com\/comics\/characters\/1010721\/hulk-dok?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          }
+        ],
+        "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1010721",
+        "description" : "",
+        "modified" : "1969-12-31T19:00:00-0500",
+        "name" : "Hulk-dok"
+      },
+      {
+        "thumbnail" : {
+          "path" : "http:\/\/i.annihil.us\/u\/prod\/marvel\/i\/mg\/0\/03\/523219b086a17",
+          "extension" : "jpg"
+        },
+        "comics" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017107\/comics",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "series" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017107\/series",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "id" : 1017107,
+        "stories" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017107\/stories",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "events" : {
+          "returned" : 0,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017107\/events",
+          "items" : [
+
+          ],
+          "available" : 0
+        },
+        "urls" : [
+          {
+            "type" : "detail",
+            "url" : "http:\/\/marvel.com\/characters\/25\/hulk?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          },
+          {
+            "type" : "comiclink",
+            "url" : "http:\/\/marvel.com\/comics\/characters\/1017107\/hulkbruce_banner_maa?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          }
+        ],
+        "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1017107",
+        "description" : "Scientist Bruce Banner was transformed into the Hulk as a result to gamma radiation exposure. Over 8 feet tall and weighing 1,040 pounds, it's Hulk's strength that makes him the strongest hero in the Marvel Universe! Hulk smashes all threats that dare disturb the peace and friendship he has found in the Avengers. ",
+        "modified" : "2013-09-18T15:49:50-0400",
+        "name" : "Hulk\/Bruce Banner (MAA)"
+      },
+      {
+        "thumbnail" : {
+          "path" : "http:\/\/i.annihil.us\/u\/prod\/marvel\/i\/mg\/8\/20\/4c003ed070fa0",
+          "extension" : "jpg"
+        },
+        "comics" : {
+          "returned" : 19,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1009355\/comics",
+          "items" : [
+            {
+              "name" : "Avengers: The Children's Crusade - Young Avengers (2010) #1",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/37421"
+            },
+            {
+              "name" : "Avengers: The Initiative (2007) #1",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/6232"
+            },
+            {
+              "name" : "Civil War (2006) #2",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/4313"
+            },
+            {
+              "name" : "Civil War (2006) #7",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/5793"
+            },
+            {
+              "name" : "Civil War (2006) #7 (Turner Variant)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/5794"
+            },
+            {
+              "name" : "Civil War (2006) #7 (Turner Sketch Variant)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/5859"
+            },
+            {
+              "name" : "Mighty Avengers (2007) #24",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/23964"
+            },
+            {
+              "name" : "New Avengers (2015) #16",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/60137"
+            },
+            {
+              "name" : "New Avengers (2015) #17",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/61035"
+            },
+            {
+              "name" : "New Avengers (2015) #18",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/61036"
+            },
+            {
+              "name" : "Siege: Young Avengers (2010) #1",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/32938"
+            },
+            {
+              "name" : "Young Avengers (2005) #1",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/1629"
+            },
+            {
+              "name" : "Young Avengers (2005) #1 (Director's Cut)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/1932"
+            },
+            {
+              "name" : "Young Avengers (2005) #2",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/1721"
+            },
+            {
+              "name" : "Young Avengers (2005) #6",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/2162"
+            },
+            {
+              "name" : "Young Avengers (2005) #9",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/3018"
+            },
+            {
+              "name" : "Young Avengers Vol. 1: Sidekicks (Hardcover)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/2396"
+            },
+            {
+              "name" : "Young Avengers Vol. 1: Sidekicks (Trade Paperback)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/4084"
+            },
+            {
+              "name" : "Young Avengers Vol. 2: Family Matters (Trade Paperback)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/comics\/6280"
+            }
+          ],
+          "available" : 19
+        },
+        "series" : {
+          "returned" : 10,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1009355\/series",
+          "items" : [
+            {
+              "name" : "Avengers: The Children's Crusade - Young Avengers (2010 - 2011)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/13447"
+            },
+            {
+              "name" : "Avengers: The Initiative (2007 - 2010)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/1945"
+            },
+            {
+              "name" : "Civil War (2006 - 2007)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/1067"
+            },
+            {
+              "name" : "Mighty Avengers (2007 - 2010)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/1866"
+            },
+            {
+              "name" : "New Avengers (2015 - Present)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/20841"
+            },
+            {
+              "name" : "Siege: Young Avengers (2010)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/9765"
+            },
+            {
+              "name" : "Young Avengers (2005 - 2006)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/756"
+            },
+            {
+              "name" : "Young Avengers Vol. 1: Sidekicks (2006)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/1661"
+            },
+            {
+              "name" : "Young Avengers Vol. 1: Sidekicks (2005)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/1250"
+            },
+            {
+              "name" : "Young Avengers Vol. 2: Family Matters (2007)",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/series\/1955"
+            }
+          ],
+          "available" : 10
+        },
+        "id" : 1009355,
+        "stories" : {
+          "returned" : 18,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1009355\/stories",
+          "items" : [
+            {
+              "name" : "Cover #479",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/479",
+              "type" : "cover"
+            },
+            {
+              "name" : "1 of 6",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/3502",
+              "type" : "cover"
+            },
+            {
+              "name" : "2 of 6 - Sidekicks",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/3504",
+              "type" : "cover"
+            },
+            {
+              "name" : "6 of 6 - Sidekicks",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/3512",
+              "type" : "cover"
+            },
+            {
+              "name" : "1 of 4",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/3520",
+              "type" : "cover"
+            },
+            {
+              "name" : "2 of 7 - 7XLS",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/5876",
+              "type" : "cover"
+            },
+            {
+              "name" : "7 of 7 - 7XLS",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/5903",
+              "type" : "cover"
+            },
+            {
+              "name" : "Cover #5905",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/5905",
+              "type" : "cover"
+            },
+            {
+              "name" : "Cover #5907",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/5907",
+              "type" : "cover"
+            },
+            {
+              "name" : "AVENGERS: THE INITIATIVE (2007) #1",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/8381",
+              "type" : "cover"
+            },
+            {
+              "name" : "1 of 6 - 6XLS",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/8383",
+              "type" : "cover"
+            },
+            {
+              "name" : "1 of 1",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/53148",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "Cover #74200",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/74200",
+              "type" : "cover"
+            },
+            {
+              "name" : "Avengers: The Children's Crusade - Young Avengers (2010) #1",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/82840",
+              "type" : "cover"
+            },
+            {
+              "name" : "Avengers: The Children's Crusade - Iron Lad (2010) #1 ",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/82841",
+              "type" : "interiorStory"
+            },
+            {
+              "name" : "cover from New Avengers (2015) #16",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/130783",
+              "type" : "cover"
+            },
+            {
+              "name" : "cover from New Avengers (2015) #17",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/132523",
+              "type" : "cover"
+            },
+            {
+              "name" : "cover from New Avengers (2015) #18",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/stories\/132525",
+              "type" : "cover"
+            }
+          ],
+          "available" : 18
+        },
+        "events" : {
+          "returned" : 3,
+          "collectionURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1009355\/events",
+          "items" : [
+            {
+              "name" : "Civil War",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/238"
+            },
+            {
+              "name" : "Dark Reign",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/318"
+            },
+            {
+              "name" : "Siege",
+              "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/events\/273"
+            }
+          ],
+          "available" : 3
+        },
+        "urls" : [
+          {
+            "type" : "detail",
+            "url" : "http:\/\/marvel.com\/characters\/988\/hulkling?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          },
+          {
+            "type" : "wiki",
+            "url" : "http:\/\/marvel.com\/universe\/Hulkling?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          },
+          {
+            "type" : "comiclink",
+            "url" : "http:\/\/marvel.com\/comics\/characters\/1009355\/hulkling?utm_campaign=apiRef&utm_source=e4269f535eab5233421b585d4555766c"
+          }
+        ],
+        "resourceURI" : "http:\/\/gateway.marvel.com\/v1\/public\/characters\/1009355",
+        "description" : "",
+        "modified" : "2011-03-10T15:02:10-0500",
+        "name" : "Hulkling"
+      }
+    ],
+    "offset" : 0,
+    "count" : 9,
+    "total" : 9,
+    "limit" : 20
+  },
+  "attributionText" : "Data provided by Marvel. © 2017 MARVEL",
+  "code" : 200,
+  "etag" : "9f94f9146967b92253bb165a134edb1b4373191f",
+  "attributionHTML" : "<a href=\"http:\/\/marvel.com\">Data provided by Marvel. © 2017 MARVEL<\/a>"
+}

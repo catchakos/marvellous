@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Comic" representedClassName="Comic" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="resourceURI" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Hero" representedClassName="Hero" syncable="YES">
+        <attribute name="desc" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="modified" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="thumbnailUrl" attributeType="String" syncable="YES"/>
+        <relationship name="appearsInComics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comic" syncable="YES"/>
+        <relationship name="appearsInSeries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Series" syncable="YES"/>
+    </entity>
+    <entity name="Series" representedClassName="Series" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="resourceURI" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Comic" positionX="-245" positionY="27" width="128" height="73"/>
+        <element name="Hero" positionX="-36" positionY="-108" width="128" height="165"/>
+        <element name="Series" positionX="189" positionY="27" width="128" height="73"/>
+    </elements>
+</model>
