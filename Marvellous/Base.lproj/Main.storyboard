@@ -55,9 +55,6 @@
                                     <outlet property="delegate" destination="rMq-3D-lE9" id="Y4e-VO-Org"/>
                                 </connections>
                             </collectionView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Tgw-TC-kZM">
-                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
-                            </activityIndicatorView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKY-M5-JQb">
                                 <rect key="frame" x="186" y="417.66666666666669" width="42" height="21"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -72,6 +69,20 @@
                                     <outlet property="delegate" destination="rMq-3D-lE9" id="8pT-J4-ftV"/>
                                 </connections>
                             </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXQ-OG-Q7u" userLabel="LoadingView">
+                                <rect key="frame" x="0.0" y="686" width="414" height="50"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Tgw-TC-kZM">
+                                        <rect key="frame" x="188.66666666666666" y="6.6666666666666288" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Tgw-TC-kZM" firstAttribute="centerX" secondItem="JXQ-OG-Q7u" secondAttribute="centerX" id="2v2-fp-SL2"/>
+                                    <constraint firstAttribute="height" constant="50" id="5LV-hz-uUv"/>
+                                    <constraint firstItem="Tgw-TC-kZM" firstAttribute="centerY" secondItem="JXQ-OG-Q7u" secondAttribute="centerY" id="xiW-89-Gzm"/>
+                                </constraints>
+                            </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KlF-Ij-rcs">
                                 <rect key="frame" x="117.66666666666669" y="80" width="179" height="29"/>
                                 <segments>
@@ -91,19 +102,22 @@
                             <constraint firstItem="E81-kb-ajZ" firstAttribute="top" secondItem="FIM-Xp-xfv" secondAttribute="bottom" id="CAP-fQ-VHz"/>
                             <constraint firstAttribute="trailing" secondItem="E81-kb-ajZ" secondAttribute="trailing" id="D9V-ZP-hDk"/>
                             <constraint firstItem="KKY-M5-JQb" firstAttribute="centerX" secondItem="d24-hW-do8" secondAttribute="centerX" id="DTx-tf-cen"/>
+                            <constraint firstAttribute="trailing" secondItem="JXQ-OG-Q7u" secondAttribute="trailing" id="HLD-ce-gRy"/>
                             <constraint firstAttribute="trailing" secondItem="FIM-Xp-xfv" secondAttribute="trailing" id="L3P-be-X2I"/>
                             <constraint firstItem="KKY-M5-JQb" firstAttribute="centerY" secondItem="d24-hW-do8" secondAttribute="centerY" constant="60" id="SBY-jk-G0A"/>
                             <constraint firstItem="FIM-Xp-xfv" firstAttribute="top" secondItem="KlF-Ij-rcs" secondAttribute="bottom" constant="16" id="WKY-At-9ho"/>
+                            <constraint firstItem="7s7-th-7XW" firstAttribute="top" secondItem="JXQ-OG-Q7u" secondAttribute="bottom" id="Y0T-XT-QHH"/>
                             <constraint firstItem="KlF-Ij-rcs" firstAttribute="top" secondItem="mr9-s7-rZ8" secondAttribute="bottom" constant="16" id="fel-mZ-lWI"/>
-                            <constraint firstItem="Tgw-TC-kZM" firstAttribute="centerX" secondItem="d24-hW-do8" secondAttribute="centerX" id="kKd-Af-eEz"/>
-                            <constraint firstItem="Tgw-TC-kZM" firstAttribute="centerY" secondItem="d24-hW-do8" secondAttribute="centerY" id="rvZ-B6-eiu"/>
+                            <constraint firstItem="JXQ-OG-Q7u" firstAttribute="leading" secondItem="d24-hW-do8" secondAttribute="leading" id="iOg-54-bys"/>
                             <constraint firstItem="7s7-th-7XW" firstAttribute="top" secondItem="E81-kb-ajZ" secondAttribute="bottom" id="zIN-pp-J9g"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xZ2-ka-nHe"/>
                     <connections>
                         <outlet property="collectionView" destination="E81-kb-ajZ" id="Ogl-Mb-VQu"/>
+                        <outlet property="loadingViewToBottomConstraint" destination="Y0T-XT-QHH" id="oXz-PJ-Zkf"/>
                         <outlet property="messageLabel" destination="KKY-M5-JQb" id="YUA-xp-fQT"/>
+                        <outlet property="searchBar" destination="FIM-Xp-xfv" id="1MX-L8-4lD"/>
                         <outlet property="spinner" destination="Tgw-TC-kZM" id="7Rz-q1-aMy"/>
                         <outlet property="switcher" destination="KlF-Ij-rcs" id="Yt6-wa-sqO"/>
                         <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="vLb-zC-5PM"/>
@@ -139,17 +153,17 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="QGw-9h-fym">
-                                <rect key="frame" x="189" y="349.66666666666669" width="37" height="37"/>
+                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="soA-1O-OoF">
-                                <rect key="frame" x="24" y="272.33333333333326" width="181.66666666666666" height="133.66666666666669"/>
+                                <rect key="frame" x="40" y="471" width="334" height="545"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="JEX-9P-axG" id="O2C-8m-nfK"/>
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Snz-Wg-ELQ">
-                                <rect key="frame" x="209.66666666666663" y="272.33333333333326" width="181.33333333333337" height="133.66666666666669"/>
+                                <rect key="frame" x="394" y="471" width="334" height="545"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="JEX-9P-axG" id="4RE-lW-pw3"/>

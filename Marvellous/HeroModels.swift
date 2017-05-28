@@ -19,10 +19,12 @@ struct HeroModels {
         struct Response {
             let heroes: [Hero]
             let type: HeroesListType
+            let isLoading: Bool
         }
         struct ViewModel {
             let items: [ItemViewModel]
             let type: HeroesListType
+            let isLoading: Bool
         }
         struct ItemViewModel {
             let name: String
@@ -31,6 +33,7 @@ struct HeroModels {
         struct EmptyListViewModel {
             let message : String
             let type: HeroesListType
+            let isLoading: Bool
         }
     }
     

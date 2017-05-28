@@ -29,6 +29,8 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var switcher: UISegmentedControl!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var loadingViewToBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var configurator: HeroesListConfigurator = HeroesListConfigurator()
     var output: HeroesListViewControllerOutput?
@@ -90,6 +92,7 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     }
 
     func configureView() {
+        automaticallyAdjustsScrollViewInsets = false
         let nib = HeroesListCollectionViewCell.nib()
         collectionView.register(nib, forCellWithReuseIdentifier: HeroesListCollectionViewCell.nibName())
         collectionView.allowsSelection = true
@@ -102,7 +105,15 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
             self.messageLabel.alpha = 0.0
             self.switcher.selectedSegmentIndex = viewModel.type == .AllHeroes ? 0 : 1
         }
-        print("viewmodel with \(viewModel.items.count)")
+
+        switch viewModel.type {
+        case .AllHeroes:
+            searchBar.resignFirstResponder()
+            searchBar.text = ""
+        case .Search:
+            break
+        }
+        
         self.heroesList = viewModel
         self.collectionView.performBatchUpdates({
             let set = IndexSet(integer:0)
@@ -111,7 +122,9 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
 //        let zeroIndexPath = IndexPath(item: 0, section: 0)
 //        self.navigateToDetailAt(indexPath: zeroIndexPath)
         
-        spinner.stopAnimating()
+        changeSpinnerState(viewModel.isLoading)
+        
+        switcher.isUserInteractionEnabled = !viewModel.isLoading
     }
     
     func displayEmpty(_ viewModel: HeroModels.List.EmptyListViewModel) {
@@ -120,9 +133,25 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
             self.collectionView.alpha = 0.0
             self.messageLabel.alpha = 1.0
             self.switcher.selectedSegmentIndex = viewModel.type == .AllHeroes ? 0 : 1
-        }        
+        }
+        changeSpinnerState(viewModel.isLoading)
+        
+        switcher.isUserInteractionEnabled = !viewModel.isLoading
     }
     
+    func changeSpinnerState(_ loading: Bool) {
+        if loading {
+            spinner.startAnimating()
+            UIView.animate(withDuration: 0.3, animations: { 
+                self.loadingViewToBottomConstraint.constant = 0.0
+            })
+        }else{
+            spinner.stopAnimating()
+            UIView.animate(withDuration: 0.3, animations: { 
+                self.loadingViewToBottomConstraint.constant = -50.0
+            })
+        }
+    }
     
     // MARK: - CollectionView DataSource & Delegate
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -199,7 +228,6 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     // MARK - List type segmented control Switcher action
-
     @IBAction func switcherDidChange(_ sender: UISegmentedControl) {
         output?.changeListType(typeIndex: sender.selectedSegmentIndex)
     }

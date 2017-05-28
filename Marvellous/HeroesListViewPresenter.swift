@@ -10,7 +10,7 @@ import Foundation
 
 protocol HeroesListViewPresenterInput {
     func presentCharacters(_ response: HeroModels.List.Response)
-    func presentEmpty(_ type: HeroesListType)
+    func presentEmpty(_ type: HeroesListType, _ loading: Bool)
     }
 
 protocol HeroesListViewPresenterOutput: class {
@@ -34,12 +34,12 @@ class HeroesListViewPresenter: HeroesListViewPresenterInput {
             let vm = HeroModels.List.ItemViewModel(name: name, thumbnailUrl: url)
             heroesListModels.append(vm)
         }
-        let viewModel = HeroModels.List.ViewModel(items: heroesListModels, type: response.type)
+        let viewModel = HeroModels.List.ViewModel(items: heroesListModels, type: response.type, isLoading: response.isLoading)
         output.displayCharacters(viewModel)
     } 
     
-    func presentEmpty(_ type: HeroesListType) {
-        let vm = HeroModels.List.EmptyListViewModel(message: "No results", type: type)
+    func presentEmpty(_ type: HeroesListType, _ loading: Bool) {
+        let vm = HeroModels.List.EmptyListViewModel(message: "No results", type: type, isLoading: loading)
         output.displayEmpty(vm)
     }
 }

@@ -2,7 +2,7 @@
 //  HeroesListInteractorTests.swift
 //  Marvellous
 //
-//  Created by Maria Pons Sanchez on 28/05/2017.
+//  Created by Alexandros Katsaprakakis on 28/05/2017.
 //  Copyright © 2017 Alexandros Katsaprakakis. All rights reserved.
 //
 

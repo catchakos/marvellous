@@ -20,8 +20,7 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
     weak var delegate: HeroesListWorkerDelegate?
     var isFetching: Bool = false
     
-    var offset: Int = 0
-    var batchSize: Int = 50
+    var offset: Int = 0    
 
     override init() {
         super.init()
@@ -33,10 +32,7 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
         
         switch type {
         case .AllHeroes:
-            guard let req = request as? CharactersRequest else {
-                return
-            }
-            fetchedResultsController.fetchRequest.fetchBatchSize = req.batchSize
+            fetchedResultsController.fetchRequest.fetchBatchSize = heroesBatchSize
             fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "identifier != 0")
 
         case .Search:
@@ -49,6 +45,9 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
 
         do {
             try fetchedResultsController.performFetch()
+//            if let fetchedChunk = fetchedResultsController.fetchedObjects?.prefix(upTo: heroesBatchSize) {
+//                informDelegate(withFetched: Array(fetchedChunk))
+//            }
 //            print("FETCHED: \(String(describing: fetchedResultsController.fetchedObjects))")
         } catch {
             print("fetch failed")
@@ -66,15 +65,14 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
         case .AllHeroes:
             if let allRequest = request as? CharactersRequest {
                 offset = allRequest.offset
-                batchSize = allRequest.batchSize
                 print("getting characters with offset \(offset)")
-                CoreDataStack.sharedInstance.charactersRepository.getCharacters(allRequest) { (newHeroes, error) in 
+                CoreDataStack.sharedInstance.charactersRepository.getCharacters(allRequest) { (success) in 
                     self.isFetching = false
                 }
             }
         case .Search:
             if let searchRequest = request as? CharactersSearchRequest {
-                CoreDataStack.sharedInstance.charactersRepository.getCharacters(searchRequest) { (newHeroes, error) in 
+                CoreDataStack.sharedInstance.charactersRepository.getCharacters(searchRequest) { (success) in 
                     self.isFetching = false
                 }
             }
@@ -93,7 +91,7 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
         fetchRequest.entity = entity
         
         // Set the batch size to a suitable number.
-        fetchRequest.fetchBatchSize = 50
+        fetchRequest.fetchBatchSize = heroesBatchSize
         
         // Edit the sort key as appropriate.
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
@@ -125,14 +123,17 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        informDelegate(withFetched: fetchedResultsController.fetchedObjects)
+    }
+    
+    func informDelegate(withFetched: [Hero]?) {
         if let delegate = delegate,
-           let request = activeRequest,
-           let type = requestType {
-            if let fetched = controller.fetchedObjects as? [Hero] {
+            let request = activeRequest,
+            let type = requestType {
+            if let fetched = withFetched as? [Hero] {
                 delegate.didFetchHeroes(fetched, forRequest: request, ofType: type)
             }
         }
     }
-    
     
 }

@@ -12,14 +12,15 @@ import CoreData
 
 class CharactersRepository {
     
-    private var completionHandler: (([Hero]?,Error?) -> Void)?
+    private var completionHandler: ((Bool) -> Void)?
+    var listState : (offsetReached: Int, total: Int) = (0, Int.max)
     
-    func getCharacters(_ request: CharactersRequest, completion: @escaping(_ responseHeroes: [Hero]?, _ error: Error?) -> Void) {
+    func getCharacters(_ request: CharactersRequest, completion: @escaping(_ success: Bool) -> Void) {
         completionHandler = completion
         fetchCharactersRemotely(request)
     }
     
-    func getCharacters(_ request: CharactersSearchRequest, completion: @escaping(_ responseHeroes: [Hero]?, _ error: Error?) -> Void) {
+    func getCharacters(_ request: CharactersSearchRequest, completion: @escaping(_ success: Bool) -> Void) {
         completionHandler = completion
         fetchCharactersRemotely(request)
     }
@@ -39,15 +40,9 @@ class CharactersRepository {
         }
     }
 
-    private func informHeroes(_ heroes: [Hero]?) {
+    private func informSuccess(_ success: Bool) {
         if let closure = completionHandler {
-            closure(heroes, nil)            
-        }
-    }
-
-    private func informError(_ error: Error?) {
-        if let closure = completionHandler {
-            closure(nil, error)            
+            closure(success)            
         }
     }
     
@@ -57,19 +52,15 @@ class CharactersRepository {
             if let jsonFetched = json {
                 if let charactersParseRequest = request.parseRequest {
                     let parser = MarvelParser(request: charactersParseRequest)
-                    if let heroesFetched : [Hero] = parser.parse(json: jsonFetched) as? [Hero] {
-                        if let closure = self.completionHandler {
-                            closure(heroesFetched, nil)
-                        }
-                    }else{
-                        self.informError(nil)
-                    }
+                    self.listState = parser.parse(json: jsonFetched)
+                    self.informSuccess(true)
                 }else{
-                    self.informError(error)
+                    self.informSuccess(false)
                 }
             }else{
-                self.informError(error)
+                self.informSuccess(false)
             }
         }
     }
+    
 }

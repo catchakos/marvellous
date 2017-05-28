@@ -19,7 +19,7 @@ protocol HeroesListViewInteractorInput {
 
 protocol HeroesListViewInteractorOutput {
     func presentCharacters(_ response: HeroModels.List.Response)
-    func presentEmpty(_ type: HeroesListType)
+    func presentEmpty(_ type: HeroesListType, _ loading: Bool)
 }
 
 enum HeroesListType {
@@ -56,8 +56,11 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
     }
     
     func nextPage() {
-        if worker.requestType == .AllHeroes && !worker.isFetching {
-            fetchAllCharactersFromOffset(offset: worker.offset + worker.batchSize)
+        if worker.requestType == .AllHeroes && !worker.isFetching && self.heroes.count < dataRepository.listState.total {
+            fetchAllCharactersFromOffset(offset: worker.offset + heroesBatchSize)
+            
+            let response = HeroModels.List.Response(heroes: self.heroes, type: .AllHeroes, isLoading: worker.isFetching)
+            output?.presentCharacters(response)
         }
     }
     
@@ -66,11 +69,11 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
         case 0:
             worker.requestType = .AllHeroes
             heroes.removeAll()    
-            output?.presentEmpty(.AllHeroes)
+            output?.presentEmpty(.AllHeroes, true)
             fetchAllCharactersFromOffset(offset: 0)
         case 1:
             worker.requestType = .Search
-            output?.presentEmpty(.Search)
+            output?.presentEmpty(.Search, false)
         default:
             break
         }
@@ -97,7 +100,7 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
         if let fetchedHeroes = heroesFetched {
             self.heroes = fetchedHeroes 
             print("interactor has \(self.heroes.count) heroes")
-            let response = HeroModels.List.Response(heroes: self.heroes, type: ofType)
+            let response = HeroModels.List.Response(heroes: self.heroes, type: ofType, isLoading: worker.isFetching)
             self.output?.presentCharacters(response)
         }
     }

@@ -9,12 +9,13 @@
 import Foundation
 import Alamofire
 
+let heroesBatchSize = 100
+
 class CharactersRequest: MarvelApiRequest {
     let resourcePath = "v1/public/characters"
     var parseRequest: MarvelParseRequest? {
         return CharactersParseRequest()
     }
-    let batchSize = 50
     var offset = 0
     
     var parameters: Parameters? {
@@ -25,7 +26,7 @@ class CharactersRequest: MarvelApiRequest {
         }
         
         let params: Parameters = [
-            "limit": batchSize,
+            "limit": heroesBatchSize,
             "offset": offset,
             "hash": hash,
             "ts": ts,
