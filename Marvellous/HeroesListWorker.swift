@@ -33,14 +33,14 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
         switch type {
         case .AllHeroes:
             fetchedResultsController.fetchRequest.fetchBatchSize = heroesBatchSize
-            fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "identifier != 0")
+            fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "identifier != 0 && order > 0")
 
         case .Search:
             guard let req = request as? CharactersSearchRequest else {
                 return
             }
             fetchedResultsController.fetchRequest.fetchBatchSize = 0
-            fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "identifier != 0 AND name BEGINSWITH %@", argumentArray: [req.searchText])
+            fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "identifier != 0 AND name BEGINSWITH %@", argumentArray: [ req.searchText.capitalized ])
         }
 
         do {

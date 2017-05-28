@@ -26,7 +26,7 @@ class CoreDataStackFake {
         do {
             try managedObjectContext.save()
         } catch {
-            print("could not save fake pattern due to error: \(error)")
+            print("could not save fake hero due to error: \(error)")
         }
     }
     

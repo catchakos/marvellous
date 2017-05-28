@@ -21,7 +21,8 @@ extension Hero {
     @NSManaged public var modified: NSDate?
     @NSManaged public var name: String?
     @NSManaged public var thumbnailUrl: String?
-    
+    @NSManaged public var order: Int64
+
     @NSManaged public var appearsInComics: NSSet?
     @NSManaged public var appearsInSeries: NSSet?
 }

@@ -12,7 +12,7 @@ import CoreData
 
 class CharactersParseRequest: MarvelParseRequest {
     
-    func inflateElementIfNeeded(_ json: JSON,_ intoContext: NSManagedObjectContext) -> Any? {
+    func inflateElementIfNeeded(_ json: JSON,_ intoContext: NSManagedObjectContext, _ order : Int?) -> Any? {
         guard let name = json["name"].string,
               let desc = json["description"].string,
               let thumbPath = json["thumbnail"]["path"].string,
@@ -27,7 +27,7 @@ class CharactersParseRequest: MarvelParseRequest {
         
         let request = NSFetchRequest<Hero>(entityName: "Hero")
         //TODO: check modified date as well
-        let predicate = NSPredicate(format: "identifier == %@", argumentArray: [Int64(heroID)])
+        let predicate = NSPredicate(format: "identifier == %@ AND order > 0", argumentArray: [Int64(heroID)])
         request.predicate = predicate
         request.fetchLimit = 1
         
@@ -45,6 +45,9 @@ class CharactersParseRequest: MarvelParseRequest {
             }
             hero?.thumbnailUrl = thumbUrl
             hero?.identifier = heroID
+            if let heroOrder = order {
+                hero?.order = Int64(heroOrder)
+            }
             
             if let jsonSeries = json["series"]["items"].array {
                 for oneJsonSeries in jsonSeries {
@@ -72,4 +75,6 @@ class CharactersParseRequest: MarvelParseRequest {
             return nil
         }
     }
+    
+    
 }

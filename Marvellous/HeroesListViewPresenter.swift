@@ -39,7 +39,19 @@ class HeroesListViewPresenter: HeroesListViewPresenterInput {
     } 
     
     func presentEmpty(_ type: HeroesListType, _ loading: Bool) {
-        let vm = HeroModels.List.EmptyListViewModel(message: "No results", type: type, isLoading: loading)
+        var message = "..."
+        switch type {
+        case .AllHeroes:
+            // TODO: should treat 1st load without connection case 
+            message = "Loading.."
+        case .Search:
+            if loading {
+                message = "Loading.."
+            } else {
+                message = "No results"
+            }
+        }
+        let vm = HeroModels.List.EmptyListViewModel(message: message, type: type, isLoading: loading)
         output.displayEmpty(vm)
     }
 }

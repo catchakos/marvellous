@@ -35,7 +35,7 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     var configurator: HeroesListConfigurator = HeroesListConfigurator()
     var output: HeroesListViewControllerOutput?
     
-    let itemPadding: CGFloat = 8.0
+    let itemPadding: CGFloat = 2.0
     let itemHeight: CGFloat = 100.0
     let numberOfColumns: Int = 2
     var collectionItemSize: CGSize = CGSize.zero
@@ -100,6 +100,7 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
 
     // MARK: - Input 
     func displayCharacters(_ viewModel: HeroModels.List.ViewModel) {
+        self.messageLabel.isHidden = true
         UIView.animate(withDuration: 0.4) { 
             self.collectionView.alpha = 1.0
             self.messageLabel.alpha = 0.0
@@ -129,6 +130,7 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     
     func displayEmpty(_ viewModel: HeroModels.List.EmptyListViewModel) {
         self.messageLabel.text = viewModel.message
+        self.messageLabel.isHidden = false
         UIView.animate(withDuration: 0.4) { 
             self.collectionView.alpha = 0.0
             self.messageLabel.alpha = 1.0
@@ -220,8 +222,7 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text {
             if text.characters.count > 2 {
-                let request = HeroModels.List.SearchRequest(startsWith: text)
-                output?.fetchCharactersStartingWith(request)        
+                requestCharacters(text)
             }
             searchBar.resignFirstResponder()
         }

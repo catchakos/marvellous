@@ -57,7 +57,8 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
     
     func nextPage() {
         if worker.requestType == .AllHeroes && !worker.isFetching && self.heroes.count < dataRepository.listState.total {
-            fetchAllCharactersFromOffset(offset: worker.offset + heroesBatchSize)
+            let offset = max(worker.offset + heroesBatchSize, self.heroes.count)
+            fetchAllCharactersFromOffset(offset: offset)
             
             let response = HeroModels.List.Response(heroes: self.heroes, type: .AllHeroes, isLoading: worker.isFetching)
             output?.presentCharacters(response)

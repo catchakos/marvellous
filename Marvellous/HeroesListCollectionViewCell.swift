@@ -37,10 +37,10 @@ class HeroesListCollectionViewCell: UICollectionViewCell {
         
         if let urlString = imageUrl {
             let url = URL(string: urlString)
-            self.heroImageView.image = nil
+            self.heroImageView.isHidden = false
             self.heroImageView.sd_setImage(with: url, placeholderImage: nil, options: .refreshCached)            
         }else{
-            self.heroImageView.image = nil
+            self.heroImageView.isHidden = true
         }
         
     }

@@ -55,7 +55,6 @@ class CoreDataStack: NSObject {
         guard let contextSaved = notification.object as? NSManagedObjectContext else { return } 
         if  contextSaved != managedObjectContext && contextSaved.persistentStoreCoordinator == managedObjectContext.persistentStoreCoordinator {
             managedObjectContext.mergeChanges(fromContextDidSave: notification)
-            print("save child")   
         }
     }
     

@@ -51,7 +51,8 @@ class CharactersRepository {
         apiHandler.get(request) { (json, error) in
             if let jsonFetched = json {
                 if let charactersParseRequest = request.parseRequest {
-                    let parser = MarvelParser(request: charactersParseRequest)
+                    let ordered = request is CharactersRequest
+                    let parser = MarvelParser(request: charactersParseRequest, ordered:ordered) 
                     self.listState = parser.parse(json: jsonFetched)
                     self.informSuccess(true)
                 }else{
