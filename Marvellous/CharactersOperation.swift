@@ -1,5 +1,5 @@
 //
-//  CharactersOperation.swift
+//  CharactersRepository.swift
 //  Marvellous
 //
 //  Created by Alexandros Katsaprakakis on 27/05/2017.
@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 import CoreData
 
-class CharactersOperation {
+class CharactersRepository {
     
     private var completionHandler: (([Hero]?,Error?) -> Void)?
     

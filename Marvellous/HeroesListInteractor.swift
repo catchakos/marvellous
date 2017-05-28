@@ -28,10 +28,13 @@ enum HeroesListType {
 class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerDelegate {
     
     var output: HeroesListViewInteractorOutput?
+
     private var heroes = [Hero]()
     private var worker: HeroesListWorker =  HeroesListWorker()
+    var dataRepository: CharactersRepository
     
-    init() {
+    required init(repository: CharactersRepository) {
+        dataRepository = repository
         worker.delegate = self
     }
     

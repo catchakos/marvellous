@@ -21,7 +21,7 @@ class HeroDetailInteractor: HeroDetailViewInteractorInput {
     var output: HeroDetailViewInteractorOutput?
     
     func fetchCharacterInfo(_ request: HeroModels.Detail.Request) {
-        if let hero = CoreDataStack.sharedInstance.charactersOperation.getCharacter(request.characterID) {           
+        if let hero = CoreDataStack.sharedInstance.charactersRepository.getCharacter(request.characterID) {           
             let response = HeroModels.Detail.Response(hero: hero)
             output?.presentCharacterInfo(response)
         }

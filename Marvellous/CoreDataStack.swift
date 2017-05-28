@@ -15,7 +15,7 @@ class CoreDataStack: NSObject {
     
     private override init() {}
     
-    let charactersOperation: CharactersOperation = CharactersOperation()
+    let charactersRepository: CharactersRepository = CharactersRepository()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
         let modelURL = Bundle.main.url(forResource: "HeroModel", withExtension: "momd")!

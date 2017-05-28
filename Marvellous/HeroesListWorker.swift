@@ -43,7 +43,6 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
             fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "identifier != 0 AND name BEGINSWITH %@", argumentArray: [req.searchText])
         }
 
-        
         do {
             try fetchedResultsController.performFetch()
             print("FETCHED: \(String(describing: fetchedResultsController.fetchedObjects))")
@@ -60,9 +59,9 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
         }
         switch type {
         case .AllHeroes:
-            CoreDataStack.sharedInstance.charactersOperation.getCharacters(request as! CharactersRequest) { (newHeroes, error) in }            
+            CoreDataStack.sharedInstance.charactersRepository.getCharacters(request as! CharactersRequest) { (newHeroes, error) in }            
         case .Search:
-            CoreDataStack.sharedInstance.charactersOperation.getCharacters(request as! CharactersSearchRequest) { (newHeroes, error) in }
+            CoreDataStack.sharedInstance.charactersRepository.getCharacters(request as! CharactersSearchRequest) { (newHeroes, error) in }
         }
 
     }
