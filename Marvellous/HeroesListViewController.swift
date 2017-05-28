@@ -102,7 +102,7 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
             self.messageLabel.alpha = 0.0
             self.switcher.selectedSegmentIndex = viewModel.type == .AllHeroes ? 0 : 1
         }
-
+        print("viewmodel with \(viewModel.items.count)")
         self.heroesList = viewModel
         self.collectionView.performBatchUpdates({
             let set = IndexSet(integer:0)
@@ -142,11 +142,8 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
         guard let heroCell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroesListCollectionViewCell.nibName(), for: indexPath) as? HeroesListCollectionViewCell else {
             return UICollectionViewCell() 
         }
-        if let hero = heroesList?.items[indexPath.item] {
-            heroCell.heroNameLabel.text = hero.name
-            let url = URL(string: hero.thumbnailUrl)
-            heroCell.heroImageView.sd_setImage(with: url, placeholderImage: nil, options: .refreshCached)
-        }
+        let hero = heroesList?.items[indexPath.item]
+        heroCell.configure(withName:hero?.name, imageUrl: hero?.thumbnailUrl)
         return heroCell
     }
     

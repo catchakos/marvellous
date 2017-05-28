@@ -23,6 +23,7 @@ class HeroesListViewPresenter: HeroesListViewPresenterInput {
     weak var output: HeroesListViewPresenterOutput!
     
     func presentCharacters(_ response: HeroModels.List.Response) {
+        print("present \(response.heroes.count) items")
         var heroesListModels: [HeroModels.List.ItemViewModel] = []
         for hero in response.heroes {
             guard let name = hero.name, 

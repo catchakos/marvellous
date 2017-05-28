@@ -14,7 +14,7 @@ class CharactersRequest: MarvelApiRequest {
     var parseRequest: MarvelParseRequest? {
         return CharactersParseRequest()
     }
-    let batchSize = 20
+    let batchSize = 50
     var offset = 0
     
     var parameters: Parameters? {

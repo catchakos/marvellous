@@ -21,7 +21,7 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
     var isFetching: Bool = false
     
     var offset: Int = 0
-    var batchSize: Int = 20
+    var batchSize: Int = 50
 
     override init() {
         super.init()
@@ -49,7 +49,7 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
 
         do {
             try fetchedResultsController.performFetch()
-            print("FETCHED: \(String(describing: fetchedResultsController.fetchedObjects))")
+//            print("FETCHED: \(String(describing: fetchedResultsController.fetchedObjects))")
         } catch {
             print("fetch failed")
         }
@@ -93,7 +93,7 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
         fetchRequest.entity = entity
         
         // Set the batch size to a suitable number.
-        fetchRequest.fetchBatchSize = 20
+        fetchRequest.fetchBatchSize = 50
         
         // Edit the sort key as appropriate.
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)

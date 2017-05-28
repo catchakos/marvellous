@@ -32,7 +32,7 @@ class MarvelApiHandler {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("\(json)")
+//                print("\(json)")
                 completion(json, nil)
             case .failure(let error):
                 print(error)

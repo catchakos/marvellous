@@ -93,9 +93,10 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
         case .Search:
             heroes.removeAll()    
         }
-        
+        print("worker did fetch \(heroesFetched!.count)")
         if let fetchedHeroes = heroesFetched {
-            self.heroes.append(contentsOf:fetchedHeroes)  
+            self.heroes = fetchedHeroes 
+            print("interactor has \(self.heroes.count) heroes")
             let response = HeroModels.List.Response(heroes: self.heroes, type: ofType)
             self.output?.presentCharacters(response)
         }
