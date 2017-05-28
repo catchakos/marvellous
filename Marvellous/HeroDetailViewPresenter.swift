@@ -24,20 +24,24 @@ class HeroDetailViewPresenter: HeroDetailViewPresenterInput {
         let hero = response.hero
         guard let name = hero.name, 
               let url = hero.thumbnailUrl,
-              let desc = hero.desc,
-              let comics = hero.appearsInComics,
-              let series = hero.appearsInSeries
+              let desc = hero.desc
         else {
             return
         }
 
         var seriesNames = [String]() 
         var comicsNames = [String]()
-        if let comicsArray = Array(comics) as? [Comic] {
-            comicsNames = comicsArray.map { $0.name! }
+
+        if let comics = hero.appearsInComics {
+            if let comicsArray = Array(comics) as? [Comic] {
+                comicsNames = comicsArray.map { $0.name! }
+            }
         }
-        if let seriesArray = Array(series) as? [Series] {
-            seriesNames = seriesArray.map { $0.name! }
+        
+        if let series = hero.appearsInSeries {
+            if let seriesArray = Array(series) as? [Series] {
+                seriesNames = seriesArray.map { $0.name! }
+            }
         }
         
         let model = HeroModels.Detail.ViewModel(name: name, thumbnailUrl: url, description: desc, seriesNames: seriesNames, comicsNames: comicsNames)

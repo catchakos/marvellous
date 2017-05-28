@@ -38,7 +38,11 @@ class CharactersParseRequest: MarvelParseRequest {
                 hero = NSEntityDescription.insertNewObject(forEntityName: "Hero", into: intoContext) as? Hero
             }
             hero?.name = name
-            hero?.desc = desc
+            if desc == "" {
+                hero?.desc = "No Description.."
+            }else{
+                hero?.desc = desc
+            }
             hero?.thumbnailUrl = thumbUrl
             hero?.identifier = heroID
             

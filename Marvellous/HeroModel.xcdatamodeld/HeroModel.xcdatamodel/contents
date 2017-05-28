@@ -10,8 +10,8 @@
         <attribute name="modified" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="thumbnailUrl" attributeType="String" syncable="YES"/>
-        <relationship name="appearsInComics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comic" syncable="YES"/>
-        <relationship name="appearsInSeries" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Series" syncable="YES"/>
+        <relationship name="appearsInComics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comic" syncable="YES"/>
+        <relationship name="appearsInSeries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Series" syncable="YES"/>
     </entity>
     <entity name="Series" representedClassName="Series" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>

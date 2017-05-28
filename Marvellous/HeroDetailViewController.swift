@@ -46,6 +46,11 @@ class HeroDetailViewController: UIViewController, HeroDetailViewControllerInput,
         }
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        detailDescription.scrollRectToVisible( CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
+    }
+    
     func setupDetailView() {
         singleTableView.register(HeroDetailTableViewCell.nib(), forCellReuseIdentifier: HeroDetailTableViewCell.nibName())
         comicsTableView.register(HeroDetailTableViewCell.nib(), forCellReuseIdentifier: HeroDetailTableViewCell.nibName())
@@ -73,7 +78,7 @@ class HeroDetailViewController: UIViewController, HeroDetailViewControllerInput,
         }
         if let desc = detailDescription {
             desc.text = viewModel.description
-        }
+        }        
         if let image = detailImageView {
             let url = URL(string: viewModel.thumbnailUrl)
             image.sd_setImage(with: url, placeholderImage: nil, options: .refreshCached)
@@ -159,20 +164,23 @@ class HeroDetailViewController: UIViewController, HeroDetailViewControllerInput,
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let seriesHeader = "Some series the hero appears in:"
+        let comicsHeader = "Some comics the hero appears in:"
+        
         switch tableView {
         case singleTableView:
             switch section {
             case 0:
-                return "Comics"
+                return comicsHeader
             case 1:
-                return "Series"
+                return seriesHeader
             default:
                 return ""
             }
         case seriesTableView:
-            return "Series"
+            return seriesHeader
         case comicsTableView:
-            return "Comics"
+            return comicsHeader
         default:
             return ""
         }
