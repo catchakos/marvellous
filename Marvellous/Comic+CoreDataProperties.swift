@@ -2,7 +2,7 @@
 //  Comic+CoreDataProperties.swift
 //  Marvellous
 //
-//  Created by Alexandros Katsaprakakis on 27/05/2017.
+//  Created by Alexandros Katsaprakakis on 28/05/2017.
 //  Copyright © 2017 Alexandros Katsaprakakis. All rights reserved.
 //
 
@@ -18,6 +18,5 @@ extension Comic {
 
     @NSManaged public var name: String?
     @NSManaged public var resourceURI: String?
-    @NSManaged public var newRelationship: Hero?
 
 }

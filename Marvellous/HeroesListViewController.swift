@@ -11,6 +11,7 @@ import SDWebImage
 
 protocol HeroesListViewControllerInput {
     func displayCharacters(_ viewModel: HeroModels.List.ViewModel)
+    func displayEmpty(_ viewModel: HeroModels.List.EmptyListViewModel)
 }
 
 protocol HeroesListViewControllerOutput {
@@ -18,12 +19,16 @@ protocol HeroesListViewControllerOutput {
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest)
     
     func characterIdentifierAt(index: Int) -> Int64?
+    func changeListType(typeIndex: Int)
+    func nextPage()
 }
 
 class HeroesListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, HeroesListViewControllerInput, UISearchBarDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var switcher: UISegmentedControl!
+    @IBOutlet weak var messageLabel: UILabel!
     
     var configurator: HeroesListConfigurator = HeroesListConfigurator()
     var output: HeroesListViewControllerOutput?
@@ -92,6 +97,12 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
 
     // MARK: - Input 
     func displayCharacters(_ viewModel: HeroModels.List.ViewModel) {
+        UIView.animate(withDuration: 0.4) { 
+            self.collectionView.alpha = 1.0
+            self.messageLabel.alpha = 0.0
+            self.switcher.selectedSegmentIndex = viewModel.type == .AllHeroes ? 0 : 1
+        }
+        print("viewmodel with \(viewModel.items.count)")
         self.heroesList = viewModel
         self.collectionView.performBatchUpdates({
             let set = IndexSet(integer:0)
@@ -101,6 +112,15 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
 //        self.navigateToDetailAt(indexPath: zeroIndexPath)
         
         spinner.stopAnimating()
+    }
+    
+    func displayEmpty(_ viewModel: HeroModels.List.EmptyListViewModel) {
+        self.messageLabel.text = viewModel.message
+        UIView.animate(withDuration: 0.4) { 
+            self.collectionView.alpha = 0.0
+            self.messageLabel.alpha = 1.0
+            self.switcher.selectedSegmentIndex = viewModel.type == .AllHeroes ? 0 : 1
+        }        
     }
     
     
@@ -122,11 +142,8 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
         guard let heroCell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroesListCollectionViewCell.nibName(), for: indexPath) as? HeroesListCollectionViewCell else {
             return UICollectionViewCell() 
         }
-        if let hero = heroesList?.items[indexPath.item] {
-            heroCell.heroNameLabel.text = hero.name
-            let url = URL(string: hero.thumbnailUrl)
-            heroCell.heroImageView.sd_setImage(with: url, placeholderImage: nil, options: .refreshCached)
-        }
+        let hero = heroesList?.items[indexPath.item]
+        heroCell.configure(withName:hero?.name, imageUrl: hero?.thumbnailUrl)
         return heroCell
     }
     
@@ -140,11 +157,9 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == collectionView {
-            if (scrollView.contentOffset.y + scrollView.bounds.size.height >= scrollView.contentSize.height)
-            {
-                print("bottom \(scrollView.contentOffset)")
+            if (scrollView.contentOffset.y + scrollView.bounds.size.height >= scrollView.contentSize.height) {
+                output?.nextPage()
             }
-
         }
     }
     
@@ -183,4 +198,9 @@ class HeroesListViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     
+    // MARK - List type segmented control Switcher action
+
+    @IBAction func switcherDidChange(_ sender: UISegmentedControl) {
+        output?.changeListType(typeIndex: sender.selectedSegmentIndex)
+    }
 }

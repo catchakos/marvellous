@@ -29,6 +29,7 @@ class MarvelParser {
             for element in dataArray.array! {
                 _ = self.parseRequest.inflateElementIfNeeded(element, context)
             }
+            print("insertd \(context.insertedObjects.count) objects")
             context.saveChanges()
         } 
     }

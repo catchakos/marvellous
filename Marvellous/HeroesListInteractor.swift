@@ -12,12 +12,14 @@ protocol HeroesListViewInteractorInput {
     func fetchDefaultCharacters(_ request: HeroModels.List.DefaultRequest)
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest) 
     
+    func changeListType(typeIndex: Int)
     func characterIdentifierAt(index: Int) -> Int64?
     func nextPage()
 }
 
 protocol HeroesListViewInteractorOutput {
     func presentCharacters(_ response: HeroModels.List.Response)
+    func presentEmpty(_ type: HeroesListType)
 }
 
 enum HeroesListType {
@@ -39,8 +41,7 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
     }
     
     func fetchDefaultCharacters(_ request: HeroModels.List.DefaultRequest) {
-        let request = CharactersRequest()
-        worker.fetch(request: request, type: .AllHeroes)
+        fetchAllCharactersFromOffset(offset: 0)
     }
     
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest) {
@@ -48,8 +49,31 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
         worker.fetch(request: request, type: .Search)
     }
     
+    func fetchAllCharactersFromOffset(offset: Int) {
+        let request = CharactersRequest()
+        request.offset = offset
+        worker.fetch(request: request, type: .AllHeroes)
+    }
+    
     func nextPage() {
-        
+        if worker.requestType == .AllHeroes && !worker.isFetching {
+            fetchAllCharactersFromOffset(offset: worker.offset + worker.batchSize)
+        }
+    }
+    
+    func changeListType(typeIndex: Int) {
+        switch typeIndex {
+        case 0:
+            worker.requestType = .AllHeroes
+            heroes.removeAll()    
+            output?.presentEmpty(.AllHeroes)
+            fetchAllCharactersFromOffset(offset: 0)
+        case 1:
+            worker.requestType = .Search
+            output?.presentEmpty(.Search)
+        default:
+            break
+        }
     }
     
     func characterIdentifierAt(index: Int) -> Int64? {
@@ -69,10 +93,11 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
         case .Search:
             heroes.removeAll()    
         }
-        
+        print("worker did fetch \(heroesFetched!.count)")
         if let fetchedHeroes = heroesFetched {
-            self.heroes.append(contentsOf:fetchedHeroes)  
-            let response = HeroModels.List.Response(heroes: self.heroes)
+            self.heroes = fetchedHeroes 
+            print("interactor has \(self.heroes.count) heroes")
+            let response = HeroModels.List.Response(heroes: self.heroes, type: ofType)
             self.output?.presentCharacters(response)
         }
     }

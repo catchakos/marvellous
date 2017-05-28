@@ -25,11 +25,23 @@ class HeroesListCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureView()
     }
     
-    func configureView() {
+    func configure(withName: String?, imageUrl: String?) {
+        if let name = withName {
+            self.heroNameLabel.text = name
+        }else{
+            self.heroNameLabel.text = "..."
+        }
+        
+        if let urlString = imageUrl {
+            let url = URL(string: urlString)
+            self.heroImageView.image = nil
+            self.heroImageView.sd_setImage(with: url, placeholderImage: nil, options: .refreshCached)            
+        }else{
+            self.heroImageView.image = nil
+        }
         
     }
-
+    
 }

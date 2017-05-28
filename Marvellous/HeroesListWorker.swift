@@ -18,7 +18,11 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
     var activeRequest: MarvelApiRequest?
     var requestType: HeroesListType?
     weak var delegate: HeroesListWorkerDelegate?
+    var isFetching: Bool = false
     
+    var offset: Int = 0
+    var batchSize: Int = 50
+
     override init() {
         super.init()
     }
@@ -45,7 +49,7 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
 
         do {
             try fetchedResultsController.performFetch()
-            print("FETCHED: \(String(describing: fetchedResultsController.fetchedObjects))")
+//            print("FETCHED: \(String(describing: fetchedResultsController.fetchedObjects))")
         } catch {
             print("fetch failed")
         }
@@ -57,13 +61,24 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
         guard let request = activeRequest, let type = requestType else {
             return
         }
+        isFetching = true
         switch type {
         case .AllHeroes:
-            CoreDataStack.sharedInstance.charactersRepository.getCharacters(request as! CharactersRequest) { (newHeroes, error) in }            
+            if let allRequest = request as? CharactersRequest {
+                offset = allRequest.offset
+                batchSize = allRequest.batchSize
+                print("getting characters with offset \(offset)")
+                CoreDataStack.sharedInstance.charactersRepository.getCharacters(allRequest) { (newHeroes, error) in 
+                    self.isFetching = false
+                }
+            }
         case .Search:
-            CoreDataStack.sharedInstance.charactersRepository.getCharacters(request as! CharactersSearchRequest) { (newHeroes, error) in }
+            if let searchRequest = request as? CharactersSearchRequest {
+                CoreDataStack.sharedInstance.charactersRepository.getCharacters(searchRequest) { (newHeroes, error) in 
+                    self.isFetching = false
+                }
+            }
         }
-
     }
     
     // MARK: - Fetched results controller & Delegate
@@ -78,7 +93,7 @@ class HeroesListWorker: NSObject, NSFetchedResultsControllerDelegate{
         fetchRequest.entity = entity
         
         // Set the batch size to a suitable number.
-        fetchRequest.fetchBatchSize = 20
+        fetchRequest.fetchBatchSize = 50
         
         // Edit the sort key as appropriate.
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)

@@ -10,10 +10,12 @@ import Foundation
 
 protocol HeroesListViewPresenterInput {
     func presentCharacters(_ response: HeroModels.List.Response)
-}
+    func presentEmpty(_ type: HeroesListType)
+    }
 
 protocol HeroesListViewPresenterOutput: class {
     func displayCharacters(_ viewModel: HeroModels.List.ViewModel)
+    func displayEmpty(_ viewModel: HeroModels.List.EmptyListViewModel)
 }
 
 class HeroesListViewPresenter: HeroesListViewPresenterInput {
@@ -21,6 +23,7 @@ class HeroesListViewPresenter: HeroesListViewPresenterInput {
     weak var output: HeroesListViewPresenterOutput!
     
     func presentCharacters(_ response: HeroModels.List.Response) {
+        print("present \(response.heroes.count) items")
         var heroesListModels: [HeroModels.List.ItemViewModel] = []
         for hero in response.heroes {
             guard let name = hero.name, 
@@ -31,7 +34,12 @@ class HeroesListViewPresenter: HeroesListViewPresenterInput {
             let vm = HeroModels.List.ItemViewModel(name: name, thumbnailUrl: url)
             heroesListModels.append(vm)
         }
-        let viewModel = HeroModels.List.ViewModel(items: heroesListModels)
+        let viewModel = HeroModels.List.ViewModel(items: heroesListModels, type: response.type)
         output.displayCharacters(viewModel)
     } 
+    
+    func presentEmpty(_ type: HeroesListType) {
+        let vm = HeroModels.List.EmptyListViewModel(message: "No results", type: type)
+        output.displayEmpty(vm)
+    }
 }
