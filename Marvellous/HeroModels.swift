@@ -18,13 +18,19 @@ struct HeroModels {
         }
         struct Response {
             let heroes: [Hero]
+            let type: HeroesListType
         }
         struct ViewModel {
             let items: [ItemViewModel]
+            let type: HeroesListType
         }
         struct ItemViewModel {
             let name: String
             let thumbnailUrl: String
+        }
+        struct EmptyListViewModel {
+            let message : String
+            let type: HeroesListType
         }
     }
     

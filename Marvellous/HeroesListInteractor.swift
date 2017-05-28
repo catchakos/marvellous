@@ -12,12 +12,14 @@ protocol HeroesListViewInteractorInput {
     func fetchDefaultCharacters(_ request: HeroModels.List.DefaultRequest)
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest) 
     
+    func changeListType(typeIndex: Int)
     func characterIdentifierAt(index: Int) -> Int64?
     func nextPage()
 }
 
 protocol HeroesListViewInteractorOutput {
     func presentCharacters(_ response: HeroModels.List.Response)
+    func presentEmpty(_ type: HeroesListType)
 }
 
 enum HeroesListType {
@@ -39,8 +41,7 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
     }
     
     func fetchDefaultCharacters(_ request: HeroModels.List.DefaultRequest) {
-        let request = CharactersRequest()
-        worker.fetch(request: request, type: .AllHeroes)
+        startFetchingAllCharacters()
     }
     
     func fetchCharactersStartingWith(_ request: HeroModels.List.SearchRequest) {
@@ -48,8 +49,28 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
         worker.fetch(request: request, type: .Search)
     }
     
+    func startFetchingAllCharacters() {
+        let request = CharactersRequest()
+        worker.fetch(request: request, type: .AllHeroes)
+    }
+    
     func nextPage() {
         
+    }
+    
+    func changeListType(typeIndex: Int) {
+        switch typeIndex {
+        case 0:
+            worker.requestType = .AllHeroes
+            heroes.removeAll()    
+            output?.presentEmpty(.AllHeroes)
+            startFetchingAllCharacters()
+        case 1:
+            worker.requestType = .Search
+            output?.presentEmpty(.Search)
+        default:
+            break
+        }
     }
     
     func characterIdentifierAt(index: Int) -> Int64? {
@@ -72,7 +93,7 @@ class HeroesListViewInteractor: HeroesListViewInteractorInput, HeroesListWorkerD
         
         if let fetchedHeroes = heroesFetched {
             self.heroes.append(contentsOf:fetchedHeroes)  
-            let response = HeroModels.List.Response(heroes: self.heroes)
+            let response = HeroModels.List.Response(heroes: self.heroes, type: ofType)
             self.output?.presentCharacters(response)
         }
     }
